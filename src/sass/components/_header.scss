@@ -1,0 +1,72 @@
+.nbd-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .75rem;
+
+    @include for-tablet-landscape {
+
+    }
+
+    &__logo {
+        align-self: center;
+    }
+
+    &__menu-right {
+        display: flex;
+        align-items: center;
+        column-gap: 1.5rem;
+
+        &--icons {
+            display: flex;
+            column-gap: 1.5rem;
+            a {
+                position: relative;
+                top: 2px;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__menu-right ul,
+    &__menu-left ul {
+        display: flex;
+        list-style-type: none;
+        column-gap: 1.5rem;
+        padding: 0;
+        margin: 0;
+
+        li {
+            a {
+                text-transform: uppercase;
+                text-decoration: none;
+                position: relative;
+                padding: 0 0 .2rem;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0.1rem;
+                    background-color: hotpink;
+                    opacity: 0;
+                    transition: opacity 300ms, transform 300ms;
+                }
+                &:hover::after,
+                &:focus::after {
+                opacity: 1;
+                transform: translate3d(0, 0.1rem, 0);
+                }
+            }
+        }
+    }
+
+    h2 {
+        @include font-primary(2rem, 700);
+        text-transform: uppercase;
+        line-height: .9;
+        text-decoration: underline;
+    }
+}

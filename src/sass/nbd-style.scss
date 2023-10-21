@@ -1,0 +1,13 @@
+@import "./layout/typography";
+@import "./layout/breakpoints";
+
+@import "./components/header";
+
+
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0;
+}
