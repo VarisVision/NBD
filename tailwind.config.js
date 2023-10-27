@@ -1,6 +1,5 @@
-
 module.exports = {
-  content: ['**/*.scss'],
+  content: [],
   theme: {
     extend: {},
   },
