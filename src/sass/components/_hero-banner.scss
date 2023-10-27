@@ -1,0 +1,32 @@
+.nbd-hero {
+    position: relative;
+    picture, img {
+        display: block;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        max-height: 70vw;
+
+        @include for-tablet-landscape {
+            max-height: 38vw;
+        }
+    }
+
+    &__gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &.top {
+            background-image: linear-gradient(180deg, rgba(0, 0, 0, 25%) 0%, rgba(0, 0, 0, 0) 40%);
+        }
+
+        &.bottom {
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 25%) 0%, rgba(0, 0, 0, 0) 40%);
+        }
+    }
+}

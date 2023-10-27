@@ -1,15 +1,16 @@
 .nbd-header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: .75rem;
 
-    @include for-tablet-landscape {
-
-    }
-
     &__logo {
-        align-self: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -53%);
+        min-width: 174px;
     }
 
     &__menu-right {
@@ -17,47 +18,91 @@
         align-items: center;
         column-gap: 1.5rem;
 
+        ul {
+            display: none;
+
+            @include for-tablet-landscape {
+                display: block;
+            }
+        }
+
         &--icons {
             display: flex;
             column-gap: 1.5rem;
+
             a {
                 position: relative;
                 top: 2px;
                 text-decoration: none;
+
+                &:first-child {
+                    display: none;
+
+                    @include for-tablet-landscape {
+                        display: block;
+                    }
+                }
             }
         }
     }
 
-    &__menu-right ul,
-    &__menu-left ul {
-        display: flex;
-        list-style-type: none;
-        column-gap: 1.5rem;
-        padding: 0;
-        margin: 0;
+    &__menu-left {
+        display: none;
 
-        li {
-            a {
-                text-transform: uppercase;
-                text-decoration: none;
-                position: relative;
-                padding: 0 0 .2rem;
+        @include for-tablet-landscape {
+            display: block;
+        }
+    }
 
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 0.1rem;
-                    background-color: hotpink;
-                    opacity: 0;
-                    transition: opacity 300ms, transform 300ms;
-                }
-                &:hover::after,
-                &:focus::after {
-                opacity: 1;
-                transform: translate3d(0, 0.1rem, 0);
+    &__mobile {
+        &--btn {
+            display: block;
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+
+            @include for-tablet-landscape {
+                display: none;
+            }
+        }
+        .slide-out-panel-container.open {
+            width: 86% !important;
+        }
+    }
+
+    &__menu-right,
+    &__menu-left {
+        ul {
+            @include for-tablet-landscape {
+                display: flex;
+                column-gap: 1.5rem;
+                padding: 0;
+                margin: 0;
+            }
+    
+            li {
+                a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    position: relative;
+                    padding: 0 0 .2rem;
+    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 0.1rem;
+                        background-color: hotpink;
+                        opacity: 0;
+                        transition: opacity 300ms, transform 300ms;
+                    }
+                    &:hover::after,
+                    &:focus::after {
+                    opacity: 1;
+                    transform: translate3d(0, 0.05rem, 0);
+                    }
                 }
             }
         }
