@@ -1,32 +1,27 @@
 <?php 
-require_once('components/front-page-products.php');
+require_once('components/category-products.php');
+require_once('components/hero-banner.php');
 $imageFirst = get_field('first_category_image');
-$pictureFirstSrc = $imageFirst['sizes']['large'];
-$pictureFirst = $imageFirst['alt'];
 
-get_header();?>
+get_header();
+?>
 
 <main class="no-bad-days">
-    <div class="nbd-hero">
-        <picture>
-        <img src="<?php echo $pictureFirstSrc ?>" alt="<?php echo $imageFirst['alt'] ?>" />
-        </picture>
-        <div class="nbd-hero__gradient top"></div>
-        <div class="nbd-hero__gradient bottom"></div>
-    </div>
-
+    <?php 
+        heroBanner($imageFirst['sizes']['large'], $imageFirst['alt']);
+    ?>
     <section class="nbd-front-page__section">
-        <div class="nbd-front-page__products">
+        <div class="nbd-four-column-products">
             <?php    
-                frontPageProducts('t-shirt');
+                categoryProducts('t-shirt');
             ?>
         </div>
     </section>
 
     <section class="nbd-front-page__section">
-        <div class="nbd-front-page__products">
+        <div class="nbd-four-column-products">
             <?php    
-                frontPageProducts('hoodie');
+                categoryProducts('hoodie');
             ?>
         </div>
     </section>
@@ -39,4 +34,5 @@ get_header();?>
 
 
 <?php
-get_footer();?>
+get_footer();
+?>

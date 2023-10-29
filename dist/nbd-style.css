@@ -22,17 +22,18 @@ a:hover {
   text-decoration: underline;
 }
 
-.nbd-front-page__section {
+.nbd-section {
   padding: 0 0.75rem;
   margin: 0.75rem 0;
 }
-.nbd-front-page__products {
+
+.nbd-four-column-products {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
 }
 @media only screen and (min-width: 992px) {
-  .nbd-front-page__products {
+  .nbd-four-column-products {
     grid-template-columns: repeat(4, 1fr);
   }
 }
