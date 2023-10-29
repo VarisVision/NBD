@@ -1,0 +1,26 @@
+@mixin tooltip {
+    &::before, &::after {
+        position: absolute;
+        background-color: #333;
+        top: 0;
+        left: 50%;
+    }
+    &::before {
+        content: "";
+        width: .625rem;
+        height: .625rem;
+        transform: translate(-50%,-110%) rotate(45deg);
+        transform-origin: 50% 50%;
+    }
+
+    &::after {
+        color: #fff;
+        content: "ADD TO CART";
+        @include font-primary(.75rem, 300);
+        text-align: center;
+        padding: .375rem .75rem;
+        transform: translate(-50%, -122%);
+        min-width: max-content;
+        z-index: 1;
+    }
+}

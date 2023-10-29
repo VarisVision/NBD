@@ -1,0 +1,10 @@
+.nbd-variation {
+    button {
+        position: relative;
+        text-transform: uppercase;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

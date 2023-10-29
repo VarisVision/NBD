@@ -1,0 +1,14 @@
+.nbd-front-page {
+    &__section {
+        padding: 0 .75rem;
+        margin: .75rem 0;
+    }
+    &__products {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: .75rem;
+        @include for-tablet-landscape {
+            grid-template-columns: repeat(4,1fr);
+        }
+    }
+}

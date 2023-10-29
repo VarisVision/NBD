@@ -34,7 +34,17 @@ jQuery(document).ready(function ($) {
       }
     });
   });
-  console.log("kokot");
+  $('.nbd-product-card__image, .nbd-product-card__info').hover(function () {
+    if (window.innerWidth > 900) {
+      $(this).parent().find('.nbd-product-card__link').hide();
+      $(this).parent().find('.nbd-product-card__quick-add').css('display', 'flex');
+    }
+  }, function () {
+    if (window.innerWidth > 900) {
+      $(this).parent().find('.nbd-product-card__quick-add').hide();
+      $(this).parent().find('.nbd-product-card__link').show();
+    }
+  });
 });
 
 /***/ }),
