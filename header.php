@@ -1,15 +1,15 @@
 <?php include get_template_directory() . './components/head.php';?>
 
 <header class="nbd-header">
-    <div class="nbd-header__menu-left">
-        <?php
-        wp_nav_menu(
-            array(
-                'theme_location' => 'main-nav-left',
-            )
-        );
-        ?>
-    </div>
+    <?php
+    wp_nav_menu(
+        array(
+            'theme_location' => 'main-nav-left',
+            'container' => 'nav',
+            'container_class' => 'nbd-header__menu-left',
+        )
+    );
+    ?>
     
     <?php include get_template_directory() . './components/mobil-navigation.php';?>
 
@@ -24,15 +24,16 @@
                 <a href="/"><h2><?php bloginfo('name');?></h2></a>
         <?php endif; ?>
     </div>
-    <div class="nbd-header__menu-right">
+        <div class="nbd-header__menu-right">
         <?php
-        wp_nav_menu(
-            array(
-                'theme_location' => 'main-nav-right',
-            )
-        );
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'main-nav-right',
+                    'container' => 'nav',
+                )
+            );
         ?>
-        <div class="nbd-header__menu-right--icons">
+        <nav class="nbd-header__menu-right--icons">
             <a href="">
                 <span class="material-symbols-outlined">
                     search
@@ -43,6 +44,6 @@
                     shopping_bag
                 </span>
             </a>
-        </div>
+        </nav>
     </div>
 </header>

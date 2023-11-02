@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap);
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
@@ -36,6 +36,10 @@ a:hover {
   .nbd-four-column-products {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+.nbd-svg {
+  display: none;
 }
 
 .nbd-header {
@@ -226,6 +230,63 @@ a:hover {
   min-width: -moz-max-content;
   min-width: max-content;
   z-index: 1;
+}
+
+.nbd-footer {
+  background-color: #f2f2f2;
+}
+.nbd-footer__container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80rem;
+  padding: 2.5rem 1.5rem;
+  margin: 0 auto;
+}
+.nbd-footer__menu {
+  display: flex;
+  gap: 7rem;
+}
+.nbd-footer__menu--items a {
+  font-size: 1.125rem;
+}
+.nbd-footer__offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 5rem;
+  border-right: 2px solid #ddd;
+  border-left: 2px solid #ddd;
+}
+.nbd-footer__offer h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.nbd-footer__offer p {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+.nbd-footer__payment-methods {
+  display: flex;
+  gap: 0.25rem;
+}
+.nbd-footer__payment-methods li {
+  display: flex;
+}
+.nbd-footer__back-to-top {
+  padding: 0.5rem 0;
+  background-color: #fff;
+}
+.nbd-footer__back-to-top p {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+}
+.nbd-footer__back-to-top p span svg {
+  vertical-align: bottom;
 }
 
 * {

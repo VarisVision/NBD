@@ -44,6 +44,8 @@ register_nav_menus (
         'main-nav-left' => 'Main Navigation Left Location',
         'main-nav-right' => 'Main Navigation Right Location',
         'main-nav-mobile' => 'Main Navigation Mobile Location',
+        'footer-menu-one' => 'Footer One Location',
+        'footer-menu-two' => 'Footer Two Location',
     )
 );
 
@@ -67,3 +69,30 @@ function add_variation_to_cart() {
     }
     wp_die();
 }
+
+function nbd_customize_register($wp_customize) {
+    $wp_customize->add_panel('nbd_panel', array(
+        'title'    => __('No Bad Days Theme', 'no-bad-days'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_section('nbd_footer', array(
+        'title'        => __('Footer', 'no-bad-days'),
+        'priority'     => 10,
+        'panel'        => 'nbd_panel',
+    ));
+
+    $wp_customize->add_setting('nbd_field_setting', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('nbd_field_control', array(
+        'label'    => __('Instagram URL', 'no-bad-days'),
+        'section'  => 'nbd_footer',
+        'settings' => 'nbd_field_setting',
+        'type'     => 'text',
+    ));
+}
+
+add_action('customize_register', 'nbd_customize_register');

@@ -13,6 +13,8 @@
         wp_nav_menu(
             array(
                 'theme_location' => 'main-nav-mobile',
+                'container' => 'nav',
+                'container_class' => 'nbd-header__mobile--nav',
             )
         );
         ?>
