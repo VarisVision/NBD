@@ -9,11 +9,11 @@
     &__info {
         min-height: 74px;
         h2 {
-            @include font-primary($base, 300);
+            @include font-primary($regular, 300);
         }
 
         .amount {
-            @include font-primary($small, 600)
+            @include font-primary($base, 600)
         }
     }
     &__quick-add {

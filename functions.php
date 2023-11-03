@@ -82,15 +82,39 @@ function nbd_customize_register($wp_customize) {
         'panel'        => 'nbd_panel',
     ));
 
-    $wp_customize->add_setting('nbd_field_setting', array(
+    $wp_customize->add_setting('nbd_instagram_setting', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('nbd_field_control', array(
+    $wp_customize->add_control('nbd_instagram_control', array(
         'label'    => __('Instagram URL', 'no-bad-days'),
         'section'  => 'nbd_footer',
-        'settings' => 'nbd_field_setting',
+        'settings' => 'nbd_instagram_setting',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('nbd_facebook_setting', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('nbd_facebook_control', array(
+        'label'    => __('Facebook URL', 'no-bad-days'),
+        'section'  => 'nbd_footer',
+        'settings' => 'nbd_facebook_setting',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('nbd_tiktok_setting', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('nbd_tiktok_control', array(
+        'label'    => __('TikTok URL', 'no-bad-days'),
+        'section'  => 'nbd_footer',
+        'settings' => 'nbd_tiktok_setting',
         'type'     => 'text',
     ));
 }
