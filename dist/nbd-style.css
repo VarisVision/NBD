@@ -284,6 +284,10 @@ a:hover {
   font-size: 1.5rem;
   font-weight: 300;
 }
+.nbd-footer__connect--socials ul {
+  display: flex;
+  justify-content: end;
+}
 .nbd-footer__back-to-top {
   padding: 0.5rem 0;
   background-color: #fff;

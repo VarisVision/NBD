@@ -54,6 +54,13 @@
         h2 {
             @include font-primary($large, 300);
         }
+
+        &--socials {
+            ul {
+                display: flex;
+                justify-content: end;
+            }
+        }
     }
 
     &__back-to-top {
