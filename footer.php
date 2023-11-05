@@ -25,28 +25,20 @@
                 <h2>10% Off Your First Order</h2>
                 <p>Subscribe to our mailing list for 10% off your order.</p>
             </div>
-            <ul class="nbd-footer__payment-methods">
-                <li>
-                    <svg viewBox="0 0 780 500" width="45" height="28">
-                        <use href="#visa"></use>
-                    </svg>
-                </li>
-                <li>
-                    <svg viewBox="0 0 780 500" width="45" height="28">
-                        <use href="#mastercard"></use>
-                    </svg>
-                </li>
-                <li>
-                    <svg viewBox="0 0 780 500" width="45" height="28">
-                        <use href="#dinners"></use>
-                    </svg>
-                </li>
-                <li>
-                    <svg viewBox="0 0 780 500" width="45" height="28">
-                        <use href="#amex"></use>
-                    </svg>
-                </li>
-            </ul>
+            <div class="nbd-subscribe tnp tnp-subscription">
+                <form method="post" action="http://nbd.local/?na=s">
+                    <div class="nbd-subscribe__container">
+                        <input type="hidden" name="nlang" value="">
+                        <div class="tnp-field tnp-field-email nbd-subscribe__field">
+                            <label for="tnp-1">Email</label>
+                            <input class="tnp-email" type="email" name="ne" placeholder="Enter your email" id="tnp-1" value="" required>
+                        </div>
+                        <div class="tnp-field tnp-field-button">
+                            <input class="tnp-submit" type="submit" value="Subscribe" >
+                        </div>
+                    </div>
+                </form>
+            </div>
         </section>
         <section class="nbd-footer__connect">
             <div class="nbd-footer__connect--socials">
@@ -94,20 +86,28 @@
                 ?>
                 </ul>
             </div>
-            <div class="nbd-subscribe tnp tnp-subscription">
-                <form method="post" action="http://nbd.local/?na=s">
-                    <div class="nbd-subscribe__container">
-                        <input type="hidden" name="nlang" value="">
-                        <div class="tnp-field tnp-field-email">
-                            <label for="tnp-1">Email</label>
-                            <input class="tnp-email" type="email" name="ne" id="tnp-1" value="" required>
-                        </div>
-                    </div>
-                    <div class="tnp-field tnp-field-button">
-                        <input class="tnp-submit" type="submit" value="Subscribe" >
-                    </div>
-                </form>
-            </div>         
+            <ul class="nbd-footer__payment-methods">
+                <li>
+                    <svg viewBox="0 0 780 500" width="45" height="28">
+                        <use href="#visa"></use>
+                    </svg>
+                </li>
+                <li>
+                    <svg viewBox="0 0 780 500" width="45" height="28">
+                        <use href="#mastercard"></use>
+                    </svg>
+                </li>
+                <li>
+                    <svg viewBox="0 0 780 500" width="45" height="28">
+                        <use href="#dinners"></use>
+                    </svg>
+                </li>
+                <li>
+                    <svg viewBox="0 0 780 500" width="45" height="28">
+                        <use href="#amex"></use>
+                    </svg>
+                </li>
+            </ul>
         </section>
     </div>
     <div class="nbd-footer__back-to-top">

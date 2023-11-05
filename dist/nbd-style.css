@@ -1,19 +1,4 @@
 @import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap);
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
-}
-
-a {
-  font-family: "Oswald", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #000;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
 .nbd-variation button {
   position: relative;
   text-transform: uppercase;
@@ -40,6 +25,171 @@ a:hover {
 
 .nbd-svg {
   display: none;
+}
+
+.nbd-social svg {
+  transition: all 0.3s ease-out;
+}
+.nbd-social:hover svg {
+  transform: scale(1.2);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.nbd-footer {
+  background-color: #f2f2f2;
+}
+.nbd-footer__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 22rem;
+  padding: 2.5rem 1.5rem;
+  margin: 0 auto;
+  gap: 2.5rem;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer__container {
+    flex-direction: row;
+    align-items: unset;
+    max-width: 80rem;
+    gap: 1.5rem;
+  }
+}
+.nbd-footer__menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer__menu {
+    justify-content: unset;
+    width: auto;
+    gap: 3rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .nbd-footer__menu {
+    gap: 7rem;
+  }
+}
+.nbd-footer__menu--items a {
+  font-size: 1.125rem;
+}
+.nbd-footer h2, .nbd-footer__connect--socials ul {
+  margin-bottom: 0.75rem;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer h2, .nbd-footer__connect--socials ul {
+    margin-bottom: 0.5rem;
+  }
+}
+.nbd-footer__offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer__offer {
+    padding: 0 2.5rem;
+    border-right: 2px solid #ddd;
+    border-left: 2px solid #ddd;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .nbd-footer__offer {
+    padding: 0 5rem;
+  }
+}
+.nbd-footer__offer h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.nbd-footer__offer p {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.nbd-footer__payment-methods {
+  display: flex;
+  gap: 0.25rem;
+}
+.nbd-footer__payment-methods li {
+  display: flex;
+}
+.nbd-footer__connect {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer__connect {
+    align-items: flex-end;
+  }
+}
+.nbd-footer__connect h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.nbd-footer__connect--socials ul {
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer__connect--socials ul {
+    justify-content: flex-end;
+  }
+}
+.nbd-footer__back-to-top {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  background-color: #fff;
+}
+.nbd-footer__back-to-top p {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.nbd-footer__back-to-top p span svg {
+  position: relative;
+  vertical-align: bottom;
+}
+.nbd-footer__back-to-top p:hover span svg {
+  animation: moveUpAndBack 2s ease infinite;
+}
+@keyframes moveUpAndBack {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.25rem);
+  }
 }
 
 .nbd-header {
@@ -144,6 +294,7 @@ a:hover {
   font-family: "Oswald", sans-serif;
   font-size: 2rem;
   font-weight: 700;
+  letter-spacing: 1px;
   text-transform: uppercase;
   line-height: 0.9;
   text-decoration: underline;
@@ -194,11 +345,13 @@ a:hover {
   font-family: "Oswald", sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
+  letter-spacing: 1px;
 }
 .nbd-product-card__info .amount {
   font-family: "Oswald", sans-serif;
   font-size: 1rem;
   font-weight: 600;
+  letter-spacing: 1px;
 }
 .nbd-product-card__quick-add {
   display: none;
@@ -224,6 +377,7 @@ a:hover {
   font-family: "Oswald", sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
+  letter-spacing: 1px;
   text-align: center;
   padding: 0.375rem 0.75rem;
   transform: translate(-50%, -122%);
@@ -232,75 +386,52 @@ a:hover {
   z-index: 1;
 }
 
-.nbd-footer {
-  background-color: #f2f2f2;
-}
-.nbd-footer__container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 80rem;
-  padding: 2.5rem 1.5rem;
-  margin: 0 auto;
-}
-.nbd-footer__menu {
-  display: flex;
-  gap: 7rem;
-}
-.nbd-footer__menu--items a {
-  font-size: 1.125rem;
-}
-.nbd-footer__offer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0 5rem;
-  border-right: 2px solid #ddd;
-  border-left: 2px solid #ddd;
-}
-.nbd-footer__offer h2 {
-  font-family: "Oswald", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-.nbd-footer__offer p {
-  font-family: "Oswald", sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-}
-.nbd-footer__payment-methods {
-  display: flex;
-  gap: 0.25rem;
-}
-.nbd-footer__payment-methods li {
-  display: flex;
-}
-.nbd-footer__connect {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.nbd-footer__connect h2 {
-  font-family: "Oswald", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-.nbd-footer__connect--socials ul {
-  display: flex;
-  justify-content: end;
-}
-.nbd-footer__back-to-top {
-  padding: 0.5rem 0;
+.nbd-subscribe.tnp-subscription, .nbd-subscribe.tnp-subscription .tnp-field {
+  margin: 0;
   background-color: #fff;
 }
-.nbd-footer__back-to-top p {
+.nbd-subscribe.tnp-subscription input[type=email], .nbd-subscribe.tnp-subscription .tnp-field input[type=email] {
+  background: url("icons/mail.svg") no-repeat left #fff;
+  padding: 0.5rem 0 0.5rem 2.1rem;
+  color: #000;
   font-family: "Oswald", sans-serif;
   font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  text-align: center;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
-.nbd-footer__back-to-top p span svg {
-  vertical-align: bottom;
+.nbd-subscribe.tnp-subscription input[type=email]::-moz-placeholder, .nbd-subscribe.tnp-subscription .tnp-field input[type=email]::-moz-placeholder {
+  color: #393939;
+}
+.nbd-subscribe.tnp-subscription input[type=email]::placeholder, .nbd-subscribe.tnp-subscription .tnp-field input[type=email]::placeholder {
+  color: #393939;
+}
+.nbd-subscribe.tnp-subscription input[type=email]:focus-visible, .nbd-subscribe.tnp-subscription .tnp-field input[type=email]:focus-visible {
+  outline: none;
+}
+.nbd-subscribe.tnp-subscription .tnp-field-email, .nbd-subscribe.tnp-subscription .tnp-field .tnp-field-email {
+  width: 68%;
+}
+.nbd-subscribe.tnp-subscription .tnp-field-button, .nbd-subscribe.tnp-subscription .tnp-field .tnp-field-button {
+  display: flex;
+}
+.nbd-subscribe.tnp-subscription input[type=submit], .nbd-subscribe.tnp-subscription .tnp-field input[type=submit] {
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+.nbd-subscribe.tnp-subscription input[type=submit]:hover, .nbd-subscribe.tnp-subscription .tnp-field input[type=submit]:hover {
+  transform: scale(1.1);
+}
+.nbd-subscribe__container {
+  display: flex;
+  padding-left: 0.75rem;
+  justify-content: space-between;
+}
+.nbd-subscribe__field label {
+  display: none !important;
 }
 
 * {

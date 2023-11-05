@@ -1,0 +1,53 @@
+.nbd-subscribe {
+    &.tnp-subscription, 
+    &.tnp-subscription .tnp-field {
+        margin: 0;
+        background-color: #fff;
+
+        input[type=email] {
+            background: url("icons/mail.svg") no-repeat left #fff;
+            padding: .5rem 0  .5rem 2.1rem;
+            color: #000;
+            @include font-primary($base, 300);
+    
+            &::placeholder {
+                color: $grey;
+                
+            }
+    
+            &:focus-visible {
+                outline: none;
+            }
+        }
+
+        .tnp-field-email {
+            width: 68%;
+        }
+
+        .tnp-field-button {
+            display: flex;
+        }
+
+        input[type=submit] {
+            text-transform: uppercase;
+            @include font-primary($small, 500);
+            transition: all .3s ease-out;
+    
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__container {
+        display: flex;
+        padding-left: .75rem;
+        justify-content: space-between;
+    }
+
+    &__field {
+        & label {
+            display: none !important;
+        }
+    }
+}

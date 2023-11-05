@@ -26,3 +26,14 @@
 .nbd-svg {
     display: none;
 }
+
+.nbd-social {
+    svg {
+        transition: all .3s ease-out;
+    }
+    &:hover {
+        svg {
+            transform: scale(1.2);
+        }
+    }
+}

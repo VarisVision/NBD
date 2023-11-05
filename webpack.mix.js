@@ -4,7 +4,7 @@ let mix = require('laravel-mix');
 
 mix.setPublicPath(`dist/`);
 mix.options({
-    processCssUrls: false
+    processCssUrls: false,
 })
 mix.js('src/js/nbd-script.js', 'dist/')
     .sass('src/sass/nbd-style.scss', 'dist/')
@@ -14,4 +14,10 @@ mix.browserSync({
     files: [
         './**/*.*'
     ]
+});
+
+mix.webpackConfig({
+    stats: {
+         children: true
+    }
 });

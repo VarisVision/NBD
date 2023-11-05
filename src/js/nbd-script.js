@@ -42,5 +42,9 @@ jQuery(document).ready(function($){
                 $(this).parent().find('.nbd-product-card__quick-add').hide();
                 $(this).parent().find('.nbd-product-card__link').show();
             }
-        });
+    });
+
+    $(".nbd-footer__back-to-top p").click(function(){
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    });
 })

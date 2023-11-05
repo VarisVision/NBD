@@ -3,15 +3,36 @@
 
     &__container {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        max-width: 80rem;
+        align-items: center;
+        max-width: 22rem;
         padding: 2.5rem 1.5rem;
         margin: 0 auto;
+        gap: 2.5rem;
+
+        @include for-tablet-landscape {
+            flex-direction: row;
+            align-items: unset;
+            max-width: 80rem;
+            gap: 1.5rem;
+        }
     }
 
     &__menu {
         display: flex;
-        gap: 7rem;
+        justify-content: space-between;
+        width: 100%;
+
+        @include for-tablet-landscape {
+            justify-content: unset;
+            width: auto;
+            gap: 3rem;
+        }
+
+        @include for-desktop {
+            gap: 7rem;
+        }
 
         &--items {
             a {
@@ -20,21 +41,37 @@
         }
     }
 
+    h2, &__connect--socials ul {
+        margin-bottom: .75rem;
+
+        @include for-tablet-landscape {
+            margin-bottom: .5rem;
+        }
+    }
 
     &__offer {
-        h2 {
-            @include font-primary($large, 600);
-        }
-        p {
-            @include font-primary($regular, 300);
-        }
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 0 5rem;
-        border-right: 2px solid #ddd;
-        border-left: 2px solid #ddd;
+        gap: 2.5rem;
+
+        @include for-tablet-landscape {
+            padding: 0 2.5rem;
+            border-right: 2px solid #ddd;
+            border-left: 2px solid #ddd;
+        }
+
+        @include for-desktop {
+            padding: 0 5rem;
+        }
+
+        h2 {
+            @include font-primary($large, 600);
+        }
+
+        p {
+            @include font-primary($regular, 300);
+        }
     }
 
     &__payment-methods {
@@ -49,31 +86,58 @@
     &__connect {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        justify-content: space-between;
+        align-items: center;
+
+        @include for-tablet-landscape {
+            align-items: flex-end;
+        }
 
         h2 {
             @include font-primary($large, 300);
         }
 
         &--socials {
+            
             ul {
                 display: flex;
-                justify-content: end;
+                justify-content: center;
+
+                @include for-tablet-landscape {
+                    justify-content: flex-end;
+                }
             }
         }
     }
 
     &__back-to-top {
+        display: flex;
+        justify-content: center;
         padding: .5rem 0;
         background-color: #fff;
 
         p {
             @include font-primary($base, 500);
             text-transform: uppercase;
-            text-align: center;
+            cursor: pointer;
 
             span svg {
+                position: relative;
                 vertical-align: bottom;
+
+            }
+
+            &:hover span svg {
+                animation: moveUpAndBack 2s ease infinite;
+            }
+
+            @keyframes moveUpAndBack {
+                0%, 100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-.25rem);
+                }
             }
         }
     }

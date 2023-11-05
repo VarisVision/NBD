@@ -1,13 +1,14 @@
-@import "./layout/typography";
 @import "./layout/breakpoints";
+@import "./layout/colors";
 @import "./layout/elements";
 @import "./layout/mixins";
+@import "./layout/typography";
 
+@import "./components/footer";
 @import "./components/header";
 @import "./components/hero-banner";
 @import "./components/product-card";
-@import "./components/footer";
-@import "./components/subsrcibe";
+@import "./components/subscribe";
 
 * {
     box-sizing: border-box;
