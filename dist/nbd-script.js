@@ -50,6 +50,7 @@ jQuery(document).ready(function ($) {
       scrollTop: 0
     }, "slow");
   });
+  $(".nbd-footer__copyright--year").text(new Date().getFullYear());
 });
 
 /***/ }),

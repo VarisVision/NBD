@@ -120,3 +120,4 @@ function nbd_customize_register($wp_customize) {
 }
 
 add_action('customize_register', 'nbd_customize_register');
+
