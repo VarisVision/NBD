@@ -121,3 +121,6 @@ function nbd_customize_register($wp_customize) {
 
 add_action('customize_register', 'nbd_customize_register');
 
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+require_once get_template_directory() . '/components/single-product.php';
