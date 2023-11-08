@@ -1,0 +1,29 @@
+.nbd-single-product {
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+
+        & > div:nth-child(-n+2) {
+            width: 100%;
+
+            @include for-tablet-landscape {
+                width: 50%;
+            }
+        }
+    }
+    .entry-summary {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .related {
+        .products {
+            display: flex;
+            flex-direction: column;
+            @include for-tablet-landscape {
+                flex-direction: row;
+            }
+        }
+    }
+}

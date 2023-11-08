@@ -6,8 +6,10 @@ mix.setPublicPath(`dist/`);
 mix.options({
     processCssUrls: false,
 })
-mix.js('src/js/nbd-script.js', 'dist/')
-    .sass('src/sass/nbd-style.scss', 'dist/')
+mix.sass('src/sass/nbd-style.scss', 'dist/')
+    .js('src/js/nbd-script.js', 'dist/scripts')
+    .js('src/js/components/single-product.js', 'dist/scripts')
+    
 
 mix.browserSync({
     proxy: "http://nbd.local/",

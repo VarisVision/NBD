@@ -1,4 +1,5 @@
 {
-    "/nbd-script.js": "/nbd-script.js",
+    "/scripts/nbd-script.js": "/scripts/nbd-script.js",
+    "/scripts/single-product.js": "/scripts/single-product.js",
     "/nbd-style.css": "/nbd-style.css"
 }
