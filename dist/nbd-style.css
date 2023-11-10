@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap);
-.nbd-variation button {
+.nbd-quick-variation button {
   position: relative;
   text-transform: uppercase;
 }
-.nbd-variation button:hover {
+.nbd-quick-variation button:hover {
   text-decoration: underline;
 }
 
@@ -36,6 +36,10 @@
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 a {
@@ -409,11 +413,42 @@ a:hover {
     width: 50%;
   }
 }
+.nbd-single-product__slide img {
+  display: block;
+  margin: 0 auto;
+}
 .nbd-single-product .entry-summary {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: center;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.nbd-single-product__title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #000;
+}
+.nbd-single-product .woocommerce-Price-amount {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.nbd-single-product .gmrbw-variations {
+  display: flex;
+}
+.nbd-single-product .gmrbw-variation-selector {
+  display: none;
+}
+.nbd-single-product .quantity, .nbd-single-product .product_meta, .nbd-single-product .gmrbw-variation-price, .nbd-single-product .gmrbw-variation-availability {
+  display: none !important;
 }
 .nbd-single-product .related .products {
   display: flex;

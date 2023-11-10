@@ -11,12 +11,53 @@
             }
         }
     }
+
+    &__slide {
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
     .entry-summary {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        align-content: center;
+        max-width: 420px;
+        margin: 0 auto;
+
     }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #000;
+    }
+
+    .woocommerce-Price-amount {
+        @include font-primary($regular, 300);
+    }
+
+    .gmrbw-variations {
+        display: flex;
+    }
+
+    .gmrbw-variation {
+        &-selector {
+            display: none;
+        }
+    }
+
+    .quantity, .product_meta, .gmrbw-variation-price, .gmrbw-variation-availability {
+        display: none !important;
+    }
+
     .related {
         .products {
             display: flex;

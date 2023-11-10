@@ -33,7 +33,7 @@ function categoryProducts($category) {
 
                             foreach ($variations as $variation) {
                                 echo 
-                                    '<li class="nbd-variation">
+                                    '<li class="nbd-quick-variation">
                                         <button 
                                             class="add-to-cart-variation"
                                             data-product-id="' . $product->get_id() . '" 
