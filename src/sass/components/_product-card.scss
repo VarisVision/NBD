@@ -20,9 +20,5 @@
         display: none;
         gap: .75rem;
         height: inherit;
-
-        .nbd-variation button:hover {
-            @include tooltip;
-        }
     }
 }

@@ -28,33 +28,95 @@
         align-content: center;
         max-width: 420px;
         margin: 0 auto;
-
+    }
+    .variations_form.cart {
+        width: 100%;
     }
 
     &__title {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
         width: 100%;
         padding-bottom: 1rem;
         margin-bottom: 1.5rem;
         border-bottom: 1px solid #000;
+
+        h1 {
+            @include font-primary($large, 600);
+        }
     }
 
     .woocommerce-Price-amount {
         @include font-primary($regular, 300);
     }
 
-    .gmrbw-variations {
+    &__variations {
         display: flex;
-    }
+        justify-content: space-between;
+        align-items: center;
 
-    .gmrbw-variation {
-        &-selector {
-            display: none;
+        p {
+            @include font-primary($regular, 300);
+        }
+
+        ul {
+            display: flex;
+            gap: .75rem;
+            margin-top: 5px;
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2.5rem;
+                height: 2.5rem;
+
+                div {
+                    --s: 10px; /* the size on the corner */
+                    --t: 1px;  /* the thickness of the border */
+                    --g: .5rem; /* the gap between the border and image */
+                    
+                    padding: calc(var(--g) + var(--t));
+                    outline: var(--t) solid #000; /* the color here */
+                    outline-offset: calc(-1*var(--t));
+                    -webkit-mask:
+                      conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+                      0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+                      linear-gradient(#000 0 0) content-box;
+                    transition: .3s;
+                    cursor: pointer;
+
+                    &:hover {
+                        padding: 4px;
+                    }
+
+                    &.active {
+                        padding: 4px;
+                        -webkit-mask:
+                      conic-gradient(at var(--s) var(--s),#000 0,#000 0)
+                      0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+                      linear-gradient(#000 0 0) content-box;
+                    
+                        span {
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 1.45rem;
+                    min-height: 1.45rem;
+                    font-size: .75rem;
+                }
+            }
         }
     }
 
-    .quantity, .product_meta, .gmrbw-variation-price, .gmrbw-variation-availability {
+    .quantity, .product_meta, .variations {
         display: none !important;
     }
 
@@ -65,6 +127,15 @@
             @include for-tablet-landscape {
                 flex-direction: row;
             }
+        }
+    }
+
+    .single_add_to_cart_button {
+        @include button;
+
+        &.disabled {
+            color: #000;
+            background-color: transparent;
         }
     }
 }

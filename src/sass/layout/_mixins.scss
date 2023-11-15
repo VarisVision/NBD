@@ -24,3 +24,20 @@
         z-index: 1;
     }
 }
+
+@mixin button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    @include font-primary(.875rem, 500);
+    color: #fff;
+    background-color: #444;
+    margin-top: 1.5rem;
+    padding: .7rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}

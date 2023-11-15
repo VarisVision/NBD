@@ -40,17 +40,22 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 				'orderby'    => 'menu_order',
 			) );
 			?>
-
-			<ul class="nbd-variations">
-				<?php echo wc_attribute_label( $attribute_name ); ?>
-				<?php foreach ( $terms as $term ) : ?>
-					<?php
-					$option = $term->name;
-					$value  = $term->slug;
-					?>
-					<li><span data-nbd-value="<?php echo esc_html( $value ); ?>"><?php echo esc_html( $option ); ?></sp></li>
-				<?php endforeach; ?>
-			</ul>
+			<div class="nbd-single-product__variations">
+				<p><?php echo wc_attribute_label( $attribute_name ); ?></p>
+				<ul>	
+					<?php foreach ( $terms as $term ) : ?>
+						<?php
+						$option = $term->name;
+						$value  = $term->slug;
+						?>
+						<li>
+							<div>
+								<span data-nbd-value="<?php echo esc_html( $value ); ?>"><?php echo esc_html( $option ); ?></span>
+							</div>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
 		<?php endforeach; ?>
 		<!-- End of VaroDesign Edit-->
 		<table class="variations" cellspacing="0" role="presentation">
