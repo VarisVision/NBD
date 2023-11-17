@@ -16,9 +16,11 @@ jQuery(document).ready(function($){
         if($(this).find("div").hasClass("active")){
             $(this).find("div").removeClass("active");
             $('.reset_variations').trigger('click');
+            $(".single_add_to_cart_button").text("Select a size")
         } else {
             $(this).parent().find("div").removeClass("active");
             $(this).find("div").addClass("active");
+            $(".single_add_to_cart_button").text("Add to cart")
         }
 
 
@@ -27,4 +29,5 @@ jQuery(document).ready(function($){
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
     }
+
 });

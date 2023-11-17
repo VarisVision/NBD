@@ -135,7 +135,11 @@
 
         &.disabled {
             color: #000;
-            background-color: transparent;
+            background-color: #f2f2f2;
+
+            &:hover {
+                transform: scale(1);
+            }
         }
     }
 }

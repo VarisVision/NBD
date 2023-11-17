@@ -551,11 +551,14 @@ button, input[type=submit], input[type=reset] {
   transition: all 0.3s ease-out;
 }
 .nbd-single-product .single_add_to_cart_button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .nbd-single-product .single_add_to_cart_button.disabled {
   color: #000;
-  background-color: transparent;
+  background-color: #f2f2f2;
+}
+.nbd-single-product .single_add_to_cart_button.disabled:hover {
+  transform: scale(1);
 }
 
 .nbd-subscribe.tnp-subscription, .nbd-subscribe.tnp-subscription .tnp-field {

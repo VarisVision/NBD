@@ -67,3 +67,7 @@ function after_product_title() {
  }
  add_action( 'woocommerce_before_add_to_cart_form' , 'after_product_title', 10 );
 
+ add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_add_to_cart_button_text_single' ); 
+ function woocommerce_add_to_cart_button_text_single() {
+     return __( 'Select size', 'woocommerce' ); 
+ }
