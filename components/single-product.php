@@ -1,12 +1,4 @@
 <?php
-
-function enqueue_custom_script() {
-    if (is_product()) {
-        wp_enqueue_script('single-product', get_template_directory_uri() . '/dist/scripts/single-product.js', ['jquery'], 1, true);
-    }
-}
-add_action('wp_enqueue_scripts', 'enqueue_custom_script');
-
 function wrap_product_content_start() {
     if (is_product()) {
         echo '<main class="nbd-single-product">';
@@ -69,5 +61,5 @@ function after_product_title() {
 
  add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_add_to_cart_button_text_single' ); 
  function woocommerce_add_to_cart_button_text_single() {
-     return __( 'Select size', 'woocommerce' ); 
+     return __( 'Select a size', 'woocommerce' ); 
  }

@@ -1,17 +1,5 @@
 
 jQuery(document).ready(function($){
-
-    const mobileNavSettings = {
-        slideFrom: 'left',
-        width: '350px',
-    }
-
-    const mobileNav = $('#nbd-header__mobile--menu').SlideOutPanel( mobileNavSettings );
-
-    $(".nbd-header__mobile--btn").on("click", function() {
-        mobileNav.open();
-    });
-
     $('.add-to-cart-variation').click(function(e) {
         e.preventDefault();
         

@@ -39,11 +39,7 @@
                     search
                 </span>
             </a>
-            <a href="">
-                <span class="material-symbols-outlined">
-                    shopping_bag
-                </span>
-            </a>
+            <?php include get_template_directory() . './components/side-cart.php';?>
         </nav>
     </div>
 </header>

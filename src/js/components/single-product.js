@@ -1,4 +1,3 @@
-console.log("kokoo");
 jQuery(document).ready(function($){
 
     $('.nbd-single-product__slider').slick({
