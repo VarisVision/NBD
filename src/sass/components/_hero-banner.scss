@@ -1,5 +1,7 @@
 .nbd-hero {
     position: relative;
+    z-index: 1;
+    
     picture, img {
         display: block;
     }

@@ -54,7 +54,7 @@
                     if ($instagram_value) {
                         echo 
                         '<li class="nbd-social">
-                            <a href="' . esc_html($instagram_value) . '" target="_blank">
+                            <a href="' . esc_html($instagram_value) . '" target="_blank" aria-label="Follow us No Bad Days Club on Instagram">
                                 <svg viewBox="0 0 64 64" width="' . $icon_width . '" height="'.$icon_height.'">
                                     <use href="#instagram"></use>
                                 </svg>
@@ -65,7 +65,7 @@
                     if ($facebook_value) {
                         echo 
                         '<li class="nbd-social">
-                            <a href="' . esc_html($facebook_value) . '" target="_blank">
+                            <a href="' . esc_html($facebook_value) . '" target="_blank" aria-label="Follow us No Bad Days Club on Facebook">
                                 <svg fill="#393939" viewBox="0 0 64 64" width="'.$icon_width.'" height="'.$icon_height.'">
                                     <use href="#facebook"></use>
                                 </svg>
@@ -76,7 +76,7 @@
                     if ($tiktok_value) {
                         echo 
                         '<li class="nbd-social">
-                            <a href="' . esc_html($facebook_value) . '" target="_blank">
+                            <a href="' . esc_html($facebook_value) . '" target="_blank" aria-label="Follow us No Bad Days Club on TikTok">
                                 <svg viewBox="0 0 64 64" width="'.$icon_width.'" height="'.$icon_height.'">
                                     <use href="#tiktok"></use>
                                 </svg>

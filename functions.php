@@ -21,9 +21,9 @@ add_action('wp_enqueue_scripts', 'scripts');
 function enqueue_nbd_script() {
     wp_enqueue_script('nbd-script', get_template_directory_uri() . '/dist/nbd-script.js', ['jquery'], 1, true);
 
-    wp_localize_script('nbd-script', 'my_ajax_object', array(
+    wp_localize_script('nbd-script', 'nbdAjaxObject', array(
         'nonce' => wp_create_nonce('my_nonce_action'),
-        'ajax_url' => admin_url('admin-ajax.php'),
+        'ajaxUrl' => admin_url('admin-ajax.php'),
     ));
 }
 
@@ -59,9 +59,6 @@ function nobaddays_add_woocommerce_support() {
 
 add_action( 'after_setup_theme', 'nobaddays_add_woocommerce_support' );
 
-add_action('wp_ajax_add_variation_to_cart', 'add_variation_to_cart');
-add_action('wp_ajax_nopriv_add_variation_to_cart', 'add_variation_to_cart');
-
 function add_variation_to_cart() {
     if (isset($_POST['product_id']) && isset($_POST['variation_id'])) {
         $product_id = intval($_POST['product_id']);
@@ -69,10 +66,13 @@ function add_variation_to_cart() {
 
         WC()->cart->add_to_cart($product_id, 1, $variation_id);
         
-        echo 'Variation added to cart successfully.';
+        echo woocommerce_mini_cart();
     }
     wp_die();
 }
+
+add_action('wp_ajax_add_variation_to_cart', 'add_variation_to_cart');
+add_action('wp_ajax_nopriv_add_variation_to_cart', 'add_variation_to_cart');
 
 function nbd_customize_register($wp_customize) {
     $wp_customize->add_panel('nbd_panel', array(
@@ -128,3 +128,11 @@ add_action('customize_register', 'nbd_customize_register');
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 require_once get_template_directory() . '/components/single-product.php';
+
+function get_cart_count() {
+    echo WC()->cart->get_cart_contents_count();
+    die();
+}
+
+add_action('wp_ajax_get_cart_count', 'get_cart_count');
+add_action('wp_ajax_nopriv_get_cart_count', 'get_cart_count');
