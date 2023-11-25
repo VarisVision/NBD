@@ -1,0 +1,105 @@
+.nbd-side-cart {
+
+    .slide-out-panel-container {
+        .slide-out-content {
+            height: 100%;
+            padding: .75rem;
+            .close-slide-out-panel {
+                display: block;
+                top: 1.6rem;
+                right: .75rem;
+                font-size: $base;
+            }
+        }
+    }
+
+    h3 {
+        @include font-primary($base, 400);
+        border-bottom: 1px solid #ddd;
+        padding-bottom: .75rem;
+    }
+
+    .widget_shopping_cart_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100% - 2.375rem);
+    }
+
+
+    .woocommerce-mini-cart {
+        overflow-y: auto;
+        width: 100%;
+        min-height: 250px;
+    }
+
+    .mini_cart_item {
+        display: flex;
+        gap: .75rem;
+        padding: 0.75rem 0.75rem 0.75rem 0;
+        border-bottom: 1px solid #ddd;
+
+        &:last-child {
+            border-bottom: unset;
+        }
+    }
+
+    &__product-details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &--header, &--footer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &--size {
+            font-size: small;
+        }
+
+        &--footer {
+            margin-top: auto;
+
+            .woocommerce-Price-amount {
+                @include font-primary($base, 400);
+            }
+            .quantity-input {
+                @include font-primary($small, 400);
+                padding: 0 .75rem;
+            }
+        }
+    }
+
+    &__footer {
+        margin-top: auto;
+        padding-top: .75rem;
+        border-top: 1px solid #ddd;
+
+        .woocommerce-mini-cart__total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            strong{
+                @include font-primary($base, 400);
+            }
+
+
+            .woocommerce-Price-amount {
+                @include font-primary($large, 400);
+            }
+        }
+
+        .woocommerce-mini-cart__buttons {
+            a:first-child {
+                display: none;
+            }
+
+            .checkout {
+                @include button;
+
+            }
+        }
+    }
+}

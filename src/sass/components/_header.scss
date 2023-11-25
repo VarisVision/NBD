@@ -33,20 +33,6 @@
         &--icons {
             display: flex;
             column-gap: 1.5rem;
-
-            a {
-                position: relative;
-                top: 2px;
-                text-decoration: none;
-
-                &:first-child {
-                    display: none;
-
-                    @include for-tablet-landscape {
-                        display: block;
-                    }
-                }
-            }
         }
     }
 
@@ -76,7 +62,7 @@
 
     &__menu-right,
     &__menu-left {
-        ul {
+        ul.menu {
             @include for-tablet-landscape {
                 display: flex;
                 column-gap: 1.5rem;

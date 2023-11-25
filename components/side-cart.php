@@ -9,11 +9,11 @@
         ?>
         </span>
     </div>
-    <div id="nbd-side-cart__drawer">
+    <div id="nbd-side-cart__drawer" class="">
         <section>
-            <h2>kokooot</h2>
-            <div class="nbd-side-cart__content">
-                <div class="widget_shopping_cart_content"><?php woocommerce_mini_cart(); ?></div>
+            <h3>Shopping Cart</h3>
+            <div class="widget_shopping_cart_content">
+                <?php woocommerce_mini_cart(); ?>
             </div>
         </section>
     </div>

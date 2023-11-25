@@ -136,3 +136,18 @@ function get_cart_count() {
 
 add_action('wp_ajax_get_cart_count', 'get_cart_count');
 add_action('wp_ajax_nopriv_get_cart_count', 'get_cart_count');
+
+
+function update_cart_item_quantity() {
+    $cart_item_key = $_POST['cart_item_key'];
+    $new_quantity = $_POST['quantity'];
+
+    WC()->cart->set_quantity($cart_item_key, $new_quantity);
+
+    $subtotal = WC()->cart->get_cart_subtotal();
+    echo $subtotal;
+    exit;
+}
+
+add_action('wp_ajax_update_cart_item_quantity', 'update_cart_item_quantity');
+add_action('wp_ajax_nopriv_update_cart_item_quantity', 'update_cart_item_quantity');

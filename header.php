@@ -1,4 +1,4 @@
-<?php include get_template_directory() . './components/head.php';?>
+<?php include get_template_directory() . '/components/head.php';?>
 
 <header class="nbd-header">
     <?php
@@ -11,7 +11,7 @@
     );
     ?>
     
-    <?php include get_template_directory() . './components/mobil-navigation.php';?>
+    <?php include get_template_directory() . '/components/mobil-navigation.php';?>
 
     <div class="nbd-header__logo">
         <?php if ( get_theme_mod( 'custom_logo' ) ) : ?>
@@ -39,7 +39,7 @@
                     search
                 </span>
             </a>
-            <?php include get_template_directory() . './components/side-cart.php';?>
+            <?php include get_template_directory() . '/components/side-cart.php';?>
         </nav>
     </div>
 </header>

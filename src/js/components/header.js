@@ -14,8 +14,12 @@ jQuery(document).ready(function($){
         slideFrom: 'right',
         width: '350px',
     }
-
+    
     const sideCart = $('#nbd-side-cart__drawer').SlideOutPanel( sideCartSettings );
+
+    $("body").ready(function(){
+        sideCart.open();
+    })
 
     $(".nbd-side-cart").on("click", function() {
         sideCart.open();

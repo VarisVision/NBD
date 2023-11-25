@@ -65,4 +65,43 @@ jQuery(document).ready(function($){
             }
         });
     });
+
+    $('.quantity-plus').click(updateQuantity('+'));
+    $('.quantity-minus').click(updateQuantity('-'));
+
+    function updateQuantity(action) {
+        return function () {
+            let cartItemKey = $(this).data('cart-item-key');
+            let quantityInput = $(this).siblings('.quantity-input');
+            let currentQuantity = parseInt(quantityInput.text());
+    
+            let newQuantity;
+            if (action === '+') {
+                newQuantity = currentQuantity + 1;
+            } 
+            else {
+                newQuantity = currentQuantity > 1 ? currentQuantity - 1 : 1;
+            }
+
+            quantityInput.text(newQuantity);
+            updateCartItemQuantity(cartItemKey, newQuantity);
+        };
+    }
+
+    function updateCartItemQuantity(cartItemKey, quantity) {
+        $.ajax({
+            type: 'POST',
+            url: nbdAjaxObject.ajaxUrl,
+            data: {
+                action: 'update_cart_item_quantity',
+                cart_item_key: cartItemKey,
+                quantity: quantity,
+            },
+            success: function (response) {
+                $('.order-total .woocommerce-Price-amount.amount, .woocommerce-mini-cart__total .woocommerce-Price-amount.amount').replaceWith(response);
+                updateCartCount();
+            },
+        });
+    }
+
 })
