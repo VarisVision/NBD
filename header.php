@@ -34,11 +34,11 @@
             );
         ?>
         <nav class="nbd-header__menu-right--icons">
-            <a href="">
-                <span class="material-symbols-outlined">
-                    search
-                </span>
-            </a>
+            <button href="" class="nbd-search__btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" xml:space="preserve">
+                    <use href="#search"></use>
+                </svg>
+            </button>
             <?php include get_template_directory() . '/components/side-cart.php';?>
         </nav>
     </div>

@@ -91,13 +91,13 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 									echo apply_filters(
 										'woocommerce_widget_cart_item_quantity',
 										'<div class="quantity">
-											<button class="quantity-minus" data-cart-item-key="' . esc_attr($cart_item_key) . '">
+											<button title="Take less" class="quantity-minus" data-cart-item-key="' . esc_attr($cart_item_key) . '">
 												<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 -960 960 960">
 													<use href="#minus"></use>
 												</svg>
 											</button>
 											<span class="quantity-input">' . esc_html($cart_item['quantity']) . '</span>
-											<button class="quantity-plus" data-cart-item-key="' . esc_attr($cart_item_key) . '">
+											<button title="Add more" class="quantity-plus" data-cart-item-key="' . esc_attr($cart_item_key) . '">
 												<svg xmlns="http://www.w3.org/2000/svg"  width="12" height="12" viewBox="0 -960 960 960">
 													<use href="#plus"></use>
 												</svg>

@@ -17,6 +17,11 @@
         min-width: 174px;
     }
 
+    nav .menu a {
+        font-size: .85rem;
+        font-weight: 500;
+    }
+
     &__menu-right {
         display: flex;
         align-items: center;
@@ -33,6 +38,15 @@
         &--icons {
             display: flex;
             column-gap: 1.5rem;
+            position: relative;
+            align-items: center;
+            top: 2px;
+
+
+            .nbd-search__btn svg {
+                position: relative;
+                top: 1px;
+            }
         }
     }
 

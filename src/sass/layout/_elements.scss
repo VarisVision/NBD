@@ -6,6 +6,11 @@ body {
     margin: 0;
 }
 
+main, footer {
+    position: relative;
+    top: 58px;
+}
+
 ul {
     list-style-type: none;
     padding: 0;

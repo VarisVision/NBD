@@ -17,10 +17,6 @@ jQuery(document).ready(function($){
     
     const sideCart = $('#nbd-side-cart__drawer').SlideOutPanel( sideCartSettings );
 
-    $("body").ready(function(){
-        sideCart.open();
-    })
-
     $(".nbd-side-cart").on("click", function() {
         sideCart.open();
     });

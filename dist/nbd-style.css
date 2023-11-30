@@ -23,6 +23,11 @@ body {
   margin: 0;
 }
 
+main, footer {
+  position: relative;
+  top: 58px;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -272,6 +277,10 @@ button, input[type=submit], input[type=reset] {
   transform: translate(-50%, -53%);
   min-width: 174px;
 }
+.nbd-header nav .menu a {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
 .nbd-header__menu-right {
   display: flex;
   align-items: center;
@@ -290,6 +299,13 @@ button, input[type=submit], input[type=reset] {
   display: flex;
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
+  position: relative;
+  align-items: center;
+  top: 2px;
+}
+.nbd-header__menu-right--icons .nbd-search__btn svg {
+  position: relative;
+  top: 1px;
 }
 .nbd-header__menu-left {
   display: none;
@@ -603,6 +619,9 @@ button, input[type=submit], input[type=reset] {
   display: none !important;
 }
 
+.nbd-side-cart {
+  position: relative;
+}
 .nbd-side-cart .slide-out-panel-container .slide-out-content {
   height: 100%;
   padding: 0.75rem;
@@ -612,6 +631,18 @@ button, input[type=submit], input[type=reset] {
   top: 1.6rem;
   right: 0.75rem;
   font-size: 1rem;
+}
+.nbd-side-cart__count {
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  font-family: sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #000;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 .nbd-side-cart h3 {
   font-family: "Oswald", sans-serif;
@@ -631,6 +662,14 @@ button, input[type=submit], input[type=reset] {
   overflow-y: auto;
   width: 100%;
   min-height: 250px;
+}
+.nbd-side-cart .woocommerce-mini-cart__empty-message {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 0.75rem;
 }
 .nbd-side-cart .mini_cart_item {
   display: flex;

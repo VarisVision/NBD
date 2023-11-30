@@ -98,7 +98,7 @@ jQuery(document).ready(function($){
                 quantity: quantity,
             },
             success: function (response) {
-                $('.order-total .woocommerce-Price-amount.amount, .woocommerce-mini-cart__total .woocommerce-Price-amount.amount').replaceWith(response);
+                $('.woocommerce-mini-cart__total .woocommerce-Price-amount.amount').replaceWith(response);
                 updateCartCount();
             },
         });
