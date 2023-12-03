@@ -441,6 +441,9 @@ button, input[type=submit], input[type=reset] {
     width: 50%;
   }
 }
+.nbd-single-product__carousel {
+  position: relative;
+}
 .nbd-single-product__slide img {
   display: block;
   margin: 0 auto;
@@ -503,11 +506,11 @@ button, input[type=submit], input[type=reset] {
   height: 2.5rem;
 }
 .nbd-single-product__variations ul li div {
-  --s: 10px; /* the size on the corner */
-  --t: 1px; /* the thickness of the border */
-  --g: .5rem; /* the gap between the border and image */
+  --s: 10px;
+  --t: 1px;
+  --g: .5rem;
   padding: calc(var(--g) + var(--t));
-  outline: var(--t) solid #000; /* the color here */
+  outline: var(--t) solid #000;
   outline-offset: calc(-1 * var(--t));
   -webkit-mask: conic-gradient(at var(--s) var(--s), rgba(0, 0, 0, 0) 75%, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000 0 0) content-box;
   transition: 0.3s;
@@ -567,7 +570,6 @@ button, input[type=submit], input[type=reset] {
   background-color: #f2f2f2;
 }
 .nbd-single-product .single_add_to_cart_button.disabled:hover {
-  text-decoration: none;
   transform: scale(1);
 }
 

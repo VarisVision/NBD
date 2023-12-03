@@ -12,6 +12,10 @@
         }
     }
 
+    &__carousel {
+        position: relative;
+    }
+
     &__slide {
         img {
             display: block;
@@ -73,12 +77,12 @@
                 height: 2.5rem;
 
                 div {
-                    --s: 10px; /* the size on the corner */
-                    --t: 1px;  /* the thickness of the border */
-                    --g: .5rem; /* the gap between the border and image */
+                    --s: 10px;
+                    --t: 1px;
+                    --g: .5rem;
                     
                     padding: calc(var(--g) + var(--t));
-                    outline: var(--t) solid #000; /* the color here */
+                    outline: var(--t) solid #000;
                     outline-offset: calc(-1*var(--t));
                     -webkit-mask:
                       conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
@@ -138,7 +142,6 @@
             background-color: #f2f2f2;
 
             &:hover {
-                text-decoration: none;
                 transform: scale(1);
             }
         }

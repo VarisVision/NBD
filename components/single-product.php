@@ -32,6 +32,8 @@ function custom_product_image_gallery() {
     global $product;
     $attachment_ids = $product->get_gallery_image_ids();
 
+    echo '<div class="nbd-single-product__carousel">';
+
     if (!empty($attachment_ids)) {
         echo '<div class="nbd-single-product__slider">';
 
@@ -46,6 +48,10 @@ function custom_product_image_gallery() {
         }
         echo '</div>';
     }
+
+    include get_template_directory() . '/components/carousel-buttons.php';
+
+    echo '</div>';
 }
 add_action('woocommerce_before_single_product_summary', 'custom_product_image_gallery');
  

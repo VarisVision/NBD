@@ -1,12 +1,20 @@
 jQuery(document).ready(function($){
 
-    $('.nbd-single-product__slider').slick({
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        adaptiveHeight: true
+    const singleProductSlider = $('.nbd-single-product__slider');
+
+    singleProductSlider.each(function(){
+        $(this).slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+            prevArrow: $(this).parent().find(".nbd-carousel__arrow-left"),
+            nextArrow: $(this).parent().find(".nbd-carousel__arrow-right")
+        });
     });
+
+
 
     $(".nbd-single-product__variations ul li").click(function() {
         var selectedSize = $(this).find('span').data('nbd-value');
