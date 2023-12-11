@@ -145,7 +145,29 @@ function update_cart_item_quantity() {
     WC()->cart->set_quantity($cart_item_key, $new_quantity);
 
     $subtotal = WC()->cart->get_cart_subtotal();
-    echo $subtotal;
+
+    $items = WC()->cart->get_cart();
+
+    $product_prices = array();
+
+
+    foreach ($items as $item) {
+        $product_id = $item['product_id'];
+        $product = wc_get_product($product_id);
+        $product_price = $product->get_price();
+
+        $product_prices[$product_id] = array(
+            'price' => $product_price,
+            'subtotal' => wc_price($product_price * $item['quantity']),
+        );
+    }
+
+    $response = array(
+        'subtotal' => $subtotal,
+        'product_prices' => $product_prices,
+    );
+
+    echo json_encode($response);
     exit;
 }
 

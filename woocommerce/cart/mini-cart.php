@@ -49,7 +49,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 				$product_name = trim($product_parts[0]);
 				$variation = isset($product_parts[1]) ? trim($product_parts[1]) : '';
 
-				$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+				$product_price     = $_product->get_price();
 				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 				?>
 				<li class="woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
@@ -106,7 +106,9 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 										$cart_item,
 										$cart_item_key
 									);
-									echo $product_price; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									echo '<div class="product-price" data-product-id="' . $product_id . '">';
+									echo wc_price($product_price * $cart_item['quantity']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									echo '</div>'
 								?>
 							</div>
 						</div>
