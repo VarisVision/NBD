@@ -115,4 +115,31 @@ jQuery(document).ready(function($){
         });
     }
 
+
+    $('.checkout_coupon_btn').on('click', function(e){
+        e.preventDefault(); // Prevent the form from submitting
+
+        var couponCode = $('#coupon_code').val(); // Replace with your actual input field's ID or class
+
+        $.ajax({
+            url: nbdAjaxObject.ajaxUrl,
+            type: 'POST',
+            dataType: 'json', // Expect a JSON response
+            data: {
+                action: 'apply_coupon',
+                coupon_code: couponCode
+            },
+            success: function(response) {
+                if (response.success) {
+                    alert(response.data); // Display the success message
+                } else {
+                    alert('Coupon application failed: ' + response.data); // Display the failure message
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error: ' + errorThrown); // Handle any AJAX errors
+            }
+        });
+    });
+
 })

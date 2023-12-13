@@ -6,9 +6,9 @@ body {
     margin: 0;
 }
 
-main, footer {
+main, footer, .woocommerce {
     position: relative;
-    top: 58px;
+    top: 3.652rem;
 }
 
 ul {
@@ -91,7 +91,7 @@ button, input[type="submit"], input[type="reset"] {
 			border: none;
 			border-radius: 100%;
 			background-color: $lightGrey;
-			
+			transition: background-color 0.5s;
 			text-indent: -9999px;
 		}
 	

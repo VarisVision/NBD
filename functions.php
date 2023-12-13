@@ -173,3 +173,37 @@ function update_cart_item_quantity() {
 
 add_action('wp_ajax_update_cart_item_quantity', 'update_cart_item_quantity');
 add_action('wp_ajax_nopriv_update_cart_item_quantity', 'update_cart_item_quantity');
+
+
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
+add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_order_review', 10 );
+
+
+
+
+function ajax_apply_coupon() {
+    if ( ! empty( $_POST['coupon_code'] ) ) {
+        $coupon_code = sanitize_text_field( $_POST['coupon_code'] );
+
+        if ( WC()->cart->has_discount( $coupon_code ) ) {
+            wp_send_json_error( 'Coupon is already applied!' );
+        } else {
+            WC()->cart->apply_coupon( $coupon_code );
+            WC()->cart->calculate_totals();
+
+            if ( WC()->cart->has_discount( $coupon_code ) ) {
+                wp_send_json_success( 'Coupon applied successfully!' );
+            } else {
+                wp_send_json_error( 'Invalid coupon code!' );
+            }
+        }
+    } else {
+        wp_send_json_error( 'No coupon code entered!' );
+    }
+
+    wp_die();
+}
+add_action( 'wp_ajax_apply_coupon', 'ajax_apply_coupon' );
+add_action( 'wp_ajax_nopriv_apply_coupon', 'ajax_apply_coupon' ); 
