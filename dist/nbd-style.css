@@ -150,11 +150,42 @@ button, input[type=submit], input[type=reset] {
 .nbd.woocommerce-checkout .nbd-checkout__order-total, .nbd.woocommerce-checkout #order_review {
   width: 50%;
 }
+.nbd.woocommerce-checkout h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nbd.woocommerce-checkout #billing_first_name_field, .nbd.woocommerce-checkout #billing_last_name_field,
+.nbd.woocommerce-checkout #billing_address_1_field, .nbd.woocommerce-checkout #billing_address_2_field,
+.nbd.woocommerce-checkout #billing_phone_field, .nbd.woocommerce-checkout #billing_email_field,
+.nbd.woocommerce-checkout #shipping_first_name_field, .nbd.woocommerce-checkout #shipping_last_name_field,
+.nbd.woocommerce-checkout #shipping_address_1_field, .nbd.woocommerce-checkout #shipping_address_2 {
+  width: 50%;
+}
+.nbd.woocommerce-checkout #billing_company_field, .nbd.woocommerce-checkout #billing_country_field,
+.nbd.woocommerce-checkout #shipping_company_field, .nbd.woocommerce-checkout #shipping_country_field {
+  width: 100%;
+}
+.nbd.woocommerce-checkout #billing_city_field, .nbd.woocommerce-checkout #billing_state_field,
+.nbd.woocommerce-checkout #shipping_city_field, .nbd.woocommerce-checkout #shipping_state_field {
+  width: 40%;
+}
+.nbd.woocommerce-checkout #billing_postcode_field,
+.nbd.woocommerce-checkout #shipping_postcode_field {
+  width: 20%;
+}
 
 .nbd-checkout__order-review .product-name {
   display: flex;
   align-items: center;
 }
+
 .nbd-footer {
   background-color: #f2f2f2;
 }
