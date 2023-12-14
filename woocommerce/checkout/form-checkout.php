@@ -49,30 +49,29 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 	<?php endif; ?>
 
-	<div class="checkout_coupon woocommerce-form-coupon" method="post">
+	<div class="nbd-checkout__order-total">
+		<div class="checkout_coupon woocommerce-form-coupon" method="post">
 
-		<p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
+			<p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
 
-		<p class="form-row form-row-first">
-			<label for="coupon_code" class="screen-reader-text"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label>
-			<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" />
-		</p>
+			<p class="form-row form-row-first">
+				<label for="coupon_code" class="screen-reader-text"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label>
+				<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" />
+			</p>
 
-		<p class="form-row form-row-last">
-			<button  class="checkout_coupon_btn button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
-		</p>
+			<p class="form-row form-row-last">
+				<button  class="checkout_coupon_btn button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
+			</p>
 
-		<div class="clear"></div>
-	</div>
+			<div class="clear"></div>
+		</div>
+		
+		<div class="cart-subtotal">
+			<p><?php esc_html_e( 'Items Total', 'woocommerce' ); ?></p>
+			<p><?php wc_cart_totals_subtotal_html(); ?></p>
+		</div>
 
-	<div>
-
-	<tr class="cart-subtotal"></tr>
-		<th><?php esc_html_e( 'Items Total', 'woocommerce' ); ?></th>
-		<td><?php wc_cart_totals_subtotal_html(); ?></td>
-	</tr>
-
-	<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
 			<div class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
 				<p><?php wc_cart_totals_coupon_label( $coupon ); ?></p>
 				<p><?php wc_cart_totals_coupon_html( $coupon ); ?></p>

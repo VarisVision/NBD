@@ -28,6 +28,10 @@ main, footer, .woocommerce {
   top: 3.652rem;
 }
 
+.nbd.woocommerce {
+  top: 0;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -133,6 +137,24 @@ button, input[type=submit], input[type=reset] {
   background-color: #393939;
 }
 
+.nbd.woocommerce-checkout .woocommerce {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2.5rem 0.75rem;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nbd.woocommerce-checkout .shop_table, .nbd.woocommerce-checkout #customer_details,
+.nbd.woocommerce-checkout .nbd-checkout__order-total, .nbd.woocommerce-checkout #order_review {
+  width: 50%;
+}
+
+.nbd-checkout__order-review .product-name {
+  display: flex;
+  align-items: center;
+}
 .nbd-footer {
   background-color: #f2f2f2;
 }
@@ -142,7 +164,7 @@ button, input[type=submit], input[type=reset] {
   justify-content: space-between;
   align-items: center;
   max-width: 22rem;
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 0.75rem;
   margin: 0 auto;
   gap: 2.5rem;
 }
@@ -568,6 +590,7 @@ button, input[type=submit], input[type=reset] {
 }
 .nbd-single-product .related, .nbd-single-product .up-sells {
   padding: 0 0.75rem 2.5rem;
+  width: 100%;
 }
 .nbd-single-product .related h2, .nbd-single-product .up-sells h2 {
   font-family: "Oswald", sans-serif;

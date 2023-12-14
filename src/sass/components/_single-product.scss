@@ -130,6 +130,7 @@
 
     .related, .up-sells {
         padding: 0 .75rem 2.5rem;
+        width: 100%;
 
         h2 {
             @include font-primary($large, 600);

@@ -1,0 +1,29 @@
+.nbd.woocommerce-checkout {
+    .woocommerce {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 2.5rem .75rem;
+    }
+
+    form.woocommerce-checkout {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .shop_table, #customer_details, 
+    .nbd-checkout__order-total, #order_review {
+        width: 50%;
+    }
+}
+.nbd-checkout {
+    &__order-review {
+        .product-name {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__order-total {
+
+    }
+}
