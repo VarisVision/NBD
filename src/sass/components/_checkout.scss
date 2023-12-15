@@ -23,6 +23,23 @@
     .woocommerce-shipping-fields__field-wrapper {
         display: flex;
         flex-wrap: wrap;
+
+        p {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin: .75rem 0;
+
+            label {
+                @include font-primary($base, 400);
+                margin-bottom: .75rem;
+
+                abbr {
+                    text-decoration: none;
+                }
+            }
+
+        }
     }
 
     #billing_first_name_field, #billing_last_name_field, 
@@ -47,6 +64,110 @@
     #shipping_postcode_field {
         width: 20%;
     }
+
+
+
+    input {
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 300px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #b1b1b1;
+        color: #b1b1b1;
+        background: rgba(0, 0, 0, 0);
+        opacity: 0.5;
+        transition: 0.2s ease;
+      }
+      input:focus {
+        outline: none;
+        opacity: 1;
+      }
+
+      label {
+        color: #b1b1b1;
+        font-size: 13px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 15px;
+        opacity: 0.5;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+      }
+
+      .has-value {
+        top: -10px !important;
+        font-size: 12px !important;
+        color: #b1b1b1 !important;
+      }
+
+      label {
+        font-family: inherit;
+        font-size: 1.1em;
+        top: 8px;
+        color: rgba(21, 35, 57, 1);
+        font-weight: 500;
+      }
+
+      
+      select,
+      textarea,
+      input[type="text"],
+      input[type="password"],
+      input[type="datetime"],
+      input[type="datetime-local"],
+      input[type="date"],
+      input[type="month"],
+      input[type="time"],
+      input[type="week"],
+      input[type="number"],
+      input[type="email"],
+      input[type="url"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="color"],
+      .uneditable-input {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-radius: 0;
+        box-shadow: 0 0;
+        font-size: 1.1em;
+        font-family: inherit;
+        border-color: rgba(21, 35, 57, 0.65);
+        background-color: transparent;
+      }
+      input:focus {
+        border-color: rgba(21, 35, 57, 1) !important;
+      }
+
+      textarea:focus,
+      input[type="text"]:focus,
+      input[type="password"]:focus,
+      input[type="datetime"]:focus,
+      input[type="datetime-local"]:focus,
+      input[type="date"]:focus,
+      input[type="month"]:focus,
+      input[type="time"]:focus,
+      input[type="week"]:focus,
+      input[type="number"]:focus,
+      input[type="email"]:focus,
+      input[type="url"]:focus,
+      input[type="search"]:focus,
+      input[type="tel"]:focus,
+      input[type="color"]:focus,
+      .uneditable-input:focus {
+        box-shadow: 0 0;
+      }
+
+      #billing_country_field, #billing_state_field {
+        label {
+            position: relative;
+        }
+      }
 
 }
 .nbd-checkout {

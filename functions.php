@@ -207,3 +207,18 @@ function ajax_apply_coupon() {
 }
 add_action( 'wp_ajax_apply_coupon', 'ajax_apply_coupon' );
 add_action( 'wp_ajax_nopriv_apply_coupon', 'ajax_apply_coupon' ); 
+
+add_filter( 'woocommerce_default_address_fields', 'override_checkout_fields');
+
+function override_checkout_fields( $fields ) {
+    $fields['address_1']['placeholder'] = '';
+    return $fields;
+}
+
+add_filter( 'woocommerce_checkout_fields' , 'remove_checkout_fields' );
+
+function remove_checkout_fields( $fields ) {
+    unset($fields['billing']['billing_address_2']);
+    unset($fields['billing']['billing_company']);
+    return $fields;
+}

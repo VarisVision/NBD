@@ -142,4 +142,20 @@ jQuery(document).ready(function($){
         });
     });
 
+    $('form.checkout input').attr('autocomplete', 'off');
+    $('#billing_address_1').data('placeholder', '');
+
+    // $(".woocommerce-billing-fields__field-wrapper p input").each(function(i, e) {
+    //     $(e).val('');
+    // })
+
+    $(".nbd.woocommerce-checkout input, .nbd.woocommerce-checkout textarea").focus(function() {
+        $(this).parent().siblings('label').addClass('has-value');
+    }).blur(function() {
+        var text_val = $(this).val();
+        if(text_val === "") {
+            $(this).parent().siblings('label').removeClass('has-value');
+        }
+    });
+
 })
