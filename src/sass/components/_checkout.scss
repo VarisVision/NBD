@@ -23,12 +23,13 @@
     .woocommerce-shipping-fields__field-wrapper {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
 
         p {
             position: relative;
             display: flex;
             flex-direction: column;
-            margin: .75rem 0;
+            margin: 1.35rem 0;
 
             label {
                 @include font-primary($base, 400);
@@ -38,43 +39,38 @@
                     text-decoration: none;
                 }
             }
-
+            
+            &#billing_country_field,
+            &#billing_state_field {
+                margin-top: 0;
+            }
         }
     }
 
-    #billing_first_name_field, #billing_last_name_field, 
-    #billing_address_1_field, #billing_address_2_field, 
-    #billing_phone_field, #billing_email_field, 
-    #shipping_first_name_field, #shipping_last_name_field, 
-    #shipping_address_1_field, #shipping_address_2 {
-        width: 50%;
+    #billing_first_name_field, #billing_last_name_field,
+    #billing_address_1_field, #billing_address_2_field,
+    #billing_phone_field, #billing_email_field,
+    #shipping_first_name_field, #shipping_last_name_field,
+    #shipping_address_1_field, #shipping_address_2,
+    #billing_city_field, #billing_state_field, 
+    #shipping_city_field, #shipping_state_field,
+    #billing_postcode_field, #shipping_postcode_field {
+        width: calc(50% - .75rem);
     }
 
-    #billing_company_field, #billing_country_field, 
+    #billing_company_field, #billing_country_field,
     #shipping_company_field, #shipping_country_field {
         width: 100%;
     }
 
-    #billing_city_field, #billing_state_field, 
-    #shipping_city_field, #shipping_state_field {
-        width: 40%;
-    }
-
-    #billing_postcode_field,
-    #shipping_postcode_field {
-        width: 20%;
-    }
-
-
-
     input {
         padding: 10px 10px 10px 5px;
         display: block;
-        width: 300px;
+        width: 100%;
         border: none;
         outline: none;
-        border-bottom: 1px solid #b1b1b1;
-        color: #b1b1b1;
+        border-bottom: 1px solid $mediumGrey;
+        color: #000;
         background: rgba(0, 0, 0, 0);
         opacity: 0.5;
         transition: 0.2s ease;
@@ -84,8 +80,30 @@
         opacity: 1;
       }
 
+      .select2-selection {
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $mediumGrey;
+      }
+
+      .select2-dropdown {
+        border-top: 1px solid $mediumGrey;
+      }
+
+      .select2-selection__rendered {
+        color: $mediumGrey;
+      }
+
+      .select2-search__field {
+        background-image: url(icons/search.svg);
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: left;
+        padding-left: 25px;
+      }
+
       label {
-        color: #b1b1b1;
+        color: rgba(21, 35, 57, 0.65);
         font-size: 13px;
         font-weight: normal;
         position: absolute;
@@ -101,7 +119,7 @@
       .has-value {
         top: -10px !important;
         font-size: 12px !important;
-        color: #b1b1b1 !important;
+        color: #000 !important;
       }
 
       label {
@@ -112,7 +130,6 @@
         font-weight: 500;
       }
 
-      
       select,
       textarea,
       input[type="text"],

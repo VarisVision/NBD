@@ -160,13 +160,14 @@ button, input[type=submit], input[type=reset] {
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0.75rem 0;
+  margin: 1.35rem 0;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p label,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p label {
@@ -180,33 +181,33 @@ button, input[type=submit], input[type=reset] {
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p label abbr {
   text-decoration: none;
 }
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p#billing_country_field, .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p#billing_state_field,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p#billing_country_field,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p#billing_state_field {
+  margin-top: 0;
+}
 .nbd.woocommerce-checkout #billing_first_name_field, .nbd.woocommerce-checkout #billing_last_name_field,
 .nbd.woocommerce-checkout #billing_address_1_field, .nbd.woocommerce-checkout #billing_address_2_field,
 .nbd.woocommerce-checkout #billing_phone_field, .nbd.woocommerce-checkout #billing_email_field,
 .nbd.woocommerce-checkout #shipping_first_name_field, .nbd.woocommerce-checkout #shipping_last_name_field,
-.nbd.woocommerce-checkout #shipping_address_1_field, .nbd.woocommerce-checkout #shipping_address_2 {
-  width: 50%;
+.nbd.woocommerce-checkout #shipping_address_1_field, .nbd.woocommerce-checkout #shipping_address_2,
+.nbd.woocommerce-checkout #billing_city_field, .nbd.woocommerce-checkout #billing_state_field,
+.nbd.woocommerce-checkout #shipping_city_field, .nbd.woocommerce-checkout #shipping_state_field,
+.nbd.woocommerce-checkout #billing_postcode_field, .nbd.woocommerce-checkout #shipping_postcode_field {
+  width: calc(50% - 0.75rem);
 }
 .nbd.woocommerce-checkout #billing_company_field, .nbd.woocommerce-checkout #billing_country_field,
 .nbd.woocommerce-checkout #shipping_company_field, .nbd.woocommerce-checkout #shipping_country_field {
   width: 100%;
 }
-.nbd.woocommerce-checkout #billing_city_field, .nbd.woocommerce-checkout #billing_state_field,
-.nbd.woocommerce-checkout #shipping_city_field, .nbd.woocommerce-checkout #shipping_state_field {
-  width: 40%;
-}
-.nbd.woocommerce-checkout #billing_postcode_field,
-.nbd.woocommerce-checkout #shipping_postcode_field {
-  width: 20%;
-}
 .nbd.woocommerce-checkout input {
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 300px;
+  width: 100%;
   border: none;
   outline: none;
-  border-bottom: 1px solid #b1b1b1;
-  color: #b1b1b1;
+  border-bottom: 1px solid #aaa;
+  color: #000;
   background: rgba(0, 0, 0, 0);
   opacity: 0.5;
   transition: 0.2s ease;
@@ -215,8 +216,26 @@ button, input[type=submit], input[type=reset] {
   outline: none;
   opacity: 1;
 }
+.nbd.woocommerce-checkout .select2-selection {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #aaa;
+}
+.nbd.woocommerce-checkout .select2-dropdown {
+  border-top: 1px solid #aaa;
+}
+.nbd.woocommerce-checkout .select2-selection__rendered {
+  color: #aaa;
+}
+.nbd.woocommerce-checkout .select2-search__field {
+  background-image: url(icons/search.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: left;
+  padding-left: 25px;
+}
 .nbd.woocommerce-checkout label {
-  color: #b1b1b1;
+  color: rgba(21, 35, 57, 0.65);
   font-size: 13px;
   font-weight: normal;
   position: absolute;
@@ -231,7 +250,7 @@ button, input[type=submit], input[type=reset] {
 .nbd.woocommerce-checkout .has-value {
   top: -10px !important;
   font-size: 12px !important;
-  color: #b1b1b1 !important;
+  color: #000 !important;
 }
 .nbd.woocommerce-checkout label {
   font-family: inherit;
@@ -826,6 +845,7 @@ button, input[type=submit], input[type=reset] {
   font-weight: 500;
   letter-spacing: 1px;
   transition: all 0.3s ease-out;
+  opacity: 1;
 }
 .nbd-subscribe.tnp-subscription input[type=submit]:hover, .nbd-subscribe.tnp-subscription .tnp-field input[type=submit]:hover {
   transform: scale(1.1);

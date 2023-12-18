@@ -143,11 +143,13 @@ jQuery(document).ready(function($){
     });
 
     $('form.checkout input').attr('autocomplete', 'off');
-    $('#billing_address_1').data('placeholder', '');
 
-    // $(".woocommerce-billing-fields__field-wrapper p input").each(function(i, e) {
-    //     $(e).val('');
-    // })
+    $(".woocommerce-billing-fields__field-wrapper p input").each(function(i, e) {
+        if(!$(e).val('')) {
+            $(this).parent().siblings('label').addClass('has-value');
+        }
+        
+    })
 
     $(".nbd.woocommerce-checkout input, .nbd.woocommerce-checkout textarea").focus(function() {
         $(this).parent().siblings('label').addClass('has-value');
