@@ -146,6 +146,12 @@ button, input[type=submit], input[type=reset] {
   display: flex;
   flex-wrap: wrap;
 }
+.nbd.woocommerce-checkout form.woocommerce-checkout p label, .nbd.woocommerce-checkout form.woocommerce-checkout span {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
 .nbd.woocommerce-checkout .shop_table, .nbd.woocommerce-checkout #customer_details,
 .nbd.woocommerce-checkout .nbd-checkout__order-total, .nbd.woocommerce-checkout #order_review {
   width: 50%;
@@ -157,69 +163,157 @@ button, input[type=submit], input[type=reset] {
   letter-spacing: 1px;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper,
-.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper {
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p,
-.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p {
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 1.35rem 0;
+  margin: 0.75rem 0;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p label,
-.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p label {
-  font-family: "Oswald", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 1px;
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p label {
   margin-bottom: 0.75rem;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p label abbr,
-.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p label abbr {
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p label abbr,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p label abbr {
   text-decoration: none;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p#billing_country_field, .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p#billing_state_field,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p#billing_country_field,
-.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p#billing_state_field {
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p#billing_state_field,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p#billing_country_field,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p#billing_state_field {
   margin-top: 0;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input {
+  padding: 10px 10px 5px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+  color: #000;
+  opacity: 0.7;
+  transition: 0.2s ease;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input:focus,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input:focus,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input:focus {
+  outline: none;
+  opacity: 1;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper label {
+  color: rgba(21, 35, 57, 0.65);
+  font-size: 13px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 15px;
+  opacity: 0.5;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper .has-value,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .has-value,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper .has-value {
+  top: -10px !important;
+  font-size: 12px !important;
+  color: #000 !important;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #billing_country_field label,
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #billing_country_field label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #billing_country_field label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #billing_state_field label {
+  font-size: 0.75rem;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper label {
+  font-family: inherit;
+  font-size: 1rem;
+  top: 8px;
+  color: #000;
+  font-weight: 500;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper select,
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper textarea,
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input[type=text],
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input[type=number],
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input[type=email],
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input[type=search],
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input[type=tel],
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper select,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper textarea,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input[type=text],
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input[type=number],
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input[type=email],
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input[type=search],
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input[type=tel],
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper select,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper textarea,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=text],
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=number],
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=email],
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=search],
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=tel] {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  border-color: #aaa;
+  background-color: transparent;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #billing_country_field label, .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #billing_country_field label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #billing_country_field label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #billing_state_field label {
+  position: relative;
+}
+.nbd.woocommerce-checkout .woocommerce-form__label-for-checkbox {
+  position: relative;
+  display: flex;
 }
 .nbd.woocommerce-checkout #billing_first_name_field, .nbd.woocommerce-checkout #billing_last_name_field,
 .nbd.woocommerce-checkout #billing_address_1_field, .nbd.woocommerce-checkout #billing_address_2_field,
 .nbd.woocommerce-checkout #billing_phone_field, .nbd.woocommerce-checkout #billing_email_field,
 .nbd.woocommerce-checkout #shipping_first_name_field, .nbd.woocommerce-checkout #shipping_last_name_field,
 .nbd.woocommerce-checkout #shipping_address_1_field, .nbd.woocommerce-checkout #shipping_address_2,
-.nbd.woocommerce-checkout #billing_city_field, .nbd.woocommerce-checkout #billing_state_field,
-.nbd.woocommerce-checkout #shipping_city_field, .nbd.woocommerce-checkout #shipping_state_field,
+.nbd.woocommerce-checkout #billing_city_field, .nbd.woocommerce-checkout #shipping_city_field,
 .nbd.woocommerce-checkout #billing_postcode_field, .nbd.woocommerce-checkout #shipping_postcode_field {
   width: calc(50% - 0.75rem);
 }
-.nbd.woocommerce-checkout #billing_company_field, .nbd.woocommerce-checkout #billing_country_field,
-.nbd.woocommerce-checkout #shipping_company_field, .nbd.woocommerce-checkout #shipping_country_field {
+.nbd.woocommerce-checkout #billing_state_field, .nbd.woocommerce-checkout #billing_country_field,
+.nbd.woocommerce-checkout #shipping_state_field, .nbd.woocommerce-checkout #shipping_country_field,
+.nbd.woocommerce-checkout #order_comments_field {
   width: 100%;
 }
-.nbd.woocommerce-checkout input {
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 100%;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid #aaa;
-  color: #000;
-  background: rgba(0, 0, 0, 0);
-  opacity: 0.5;
-  transition: 0.2s ease;
-}
-.nbd.woocommerce-checkout input:focus {
-  outline: none;
-  opacity: 1;
+.nbd.woocommerce-checkout #break-field_field {
+  visibility: hidden;
 }
 .nbd.woocommerce-checkout .select2-selection {
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 .nbd.woocommerce-checkout .select2-dropdown {
   border-top: 1px solid #aaa;
@@ -233,82 +327,6 @@ button, input[type=submit], input[type=reset] {
   background-size: 20px;
   background-position: left;
   padding-left: 25px;
-}
-.nbd.woocommerce-checkout label {
-  color: rgba(21, 35, 57, 0.65);
-  font-size: 13px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 15px;
-  opacity: 0.5;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-.nbd.woocommerce-checkout .has-value {
-  top: -10px !important;
-  font-size: 12px !important;
-  color: #000 !important;
-}
-.nbd.woocommerce-checkout label {
-  font-family: inherit;
-  font-size: 1.1em;
-  top: 8px;
-  color: rgb(21, 35, 57);
-  font-weight: 500;
-}
-.nbd.woocommerce-checkout select,
-.nbd.woocommerce-checkout textarea,
-.nbd.woocommerce-checkout input[type=text],
-.nbd.woocommerce-checkout input[type=password],
-.nbd.woocommerce-checkout input[type=datetime],
-.nbd.woocommerce-checkout input[type=datetime-local],
-.nbd.woocommerce-checkout input[type=date],
-.nbd.woocommerce-checkout input[type=month],
-.nbd.woocommerce-checkout input[type=time],
-.nbd.woocommerce-checkout input[type=week],
-.nbd.woocommerce-checkout input[type=number],
-.nbd.woocommerce-checkout input[type=email],
-.nbd.woocommerce-checkout input[type=url],
-.nbd.woocommerce-checkout input[type=search],
-.nbd.woocommerce-checkout input[type=tel],
-.nbd.woocommerce-checkout input[type=color],
-.nbd.woocommerce-checkout .uneditable-input {
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-radius: 0;
-  box-shadow: 0 0;
-  font-size: 1.1em;
-  font-family: inherit;
-  border-color: rgba(21, 35, 57, 0.65);
-  background-color: transparent;
-}
-.nbd.woocommerce-checkout input:focus {
-  border-color: rgb(21, 35, 57) !important;
-}
-.nbd.woocommerce-checkout textarea:focus,
-.nbd.woocommerce-checkout input[type=text]:focus,
-.nbd.woocommerce-checkout input[type=password]:focus,
-.nbd.woocommerce-checkout input[type=datetime]:focus,
-.nbd.woocommerce-checkout input[type=datetime-local]:focus,
-.nbd.woocommerce-checkout input[type=date]:focus,
-.nbd.woocommerce-checkout input[type=month]:focus,
-.nbd.woocommerce-checkout input[type=time]:focus,
-.nbd.woocommerce-checkout input[type=week]:focus,
-.nbd.woocommerce-checkout input[type=number]:focus,
-.nbd.woocommerce-checkout input[type=email]:focus,
-.nbd.woocommerce-checkout input[type=url]:focus,
-.nbd.woocommerce-checkout input[type=search]:focus,
-.nbd.woocommerce-checkout input[type=tel]:focus,
-.nbd.woocommerce-checkout input[type=color]:focus,
-.nbd.woocommerce-checkout .uneditable-input:focus {
-  box-shadow: 0 0;
-}
-.nbd.woocommerce-checkout #billing_country_field label, .nbd.woocommerce-checkout #billing_state_field label {
-  position: relative;
 }
 
 .nbd-checkout__order-review .product-name {

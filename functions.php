@@ -222,3 +222,26 @@ function remove_checkout_fields( $fields ) {
     unset($fields['billing']['billing_company']);
     return $fields;
 }
+
+add_filter( 'woocommerce_checkout_fields' , 'custom_remove_order_comments_placeholder' );
+
+function custom_remove_order_comments_placeholder( $fields ) {
+    $fields['order']['order_comments']['placeholder'] = '';
+    $fields['order']['order_comments']['type'] = 'text';
+    return $fields;
+}
+
+add_filter( 'woocommerce_billing_fields', 'add_break_field' );
+
+function add_break_field( $fields ) {
+    $fields['break-field'] = array(
+        'type'        => 'text',
+        'label'       => __( '', 'woocommerce' ),
+        'placeholder' => __( '', 'woocommerce' ),
+        'required'    => false,
+        'class'       => array('form-row-wide'),
+        'clear'       => true,
+        'priority'    => 95
+    );
+    return $fields;
+}

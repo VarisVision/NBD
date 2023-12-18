@@ -8,6 +8,10 @@
     form.woocommerce-checkout {
         display: flex;
         flex-wrap: wrap;
+
+        p label, span {
+            @include font-primary($base, 400);
+        }
     }
 
     .shop_table, #customer_details, 
@@ -20,7 +24,8 @@
     }
 
     .woocommerce-billing-fields__field-wrapper,
-    .woocommerce-shipping-fields__field-wrapper {
+    .woocommerce-shipping-fields__field-wrapper,
+    .woocommerce-additional-fields__field-wrapper {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -29,22 +34,98 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            margin: 1.35rem 0;
+            margin: .75rem 0;
 
             label {
-                @include font-primary($base, 400);
                 margin-bottom: .75rem;
 
                 abbr {
                     text-decoration: none;
                 }
             }
-            
+
             &#billing_country_field,
             &#billing_state_field {
                 margin-top: 0;
             }
         }
+
+        input {
+            padding: 10px 10px 5px 5px;
+            display: block;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #000;
+            color: #000;
+            opacity: 0.7;
+            transition: 0.2s ease;
+          }
+          input:focus {
+            outline: none;
+            opacity: 1;
+          }
+
+          label {
+            color: rgba(21, 35, 57, 0.65);
+            font-size: 13px;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 5px;
+            top: 15px;
+            opacity: 0.5;
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+          }
+    
+          .has-value {
+            top: -10px !important;
+            font-size: 12px !important;
+            color: #000 !important;
+          }
+
+          #billing_country_field label,
+          #billing_state_field label {
+            font-size: .75rem;
+          }
+    
+          label {
+            font-family: inherit;
+            font-size: 1rem;
+            top: 8px;
+            color: #000;
+            font-weight: 500;
+          }
+    
+          select,
+          textarea,
+          input[type="text"],
+          input[type="number"],
+          input[type="email"],
+          input[type="search"],
+          input[type="tel"] {
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-radius: 0;
+            font-size: $base;
+            font-family: inherit;
+            border-color: $mediumGrey;
+            background-color: transparent;
+          }
+    
+          #billing_country_field, #billing_state_field {
+            label {
+                position: relative;
+            }
+          }
+    }
+
+    .woocommerce-form__label-for-checkbox{
+        position: relative;
+        display: flex;
     }
 
     #billing_first_name_field, #billing_last_name_field,
@@ -52,38 +133,25 @@
     #billing_phone_field, #billing_email_field,
     #shipping_first_name_field, #shipping_last_name_field,
     #shipping_address_1_field, #shipping_address_2,
-    #billing_city_field, #billing_state_field, 
-    #shipping_city_field, #shipping_state_field,
+    #billing_city_field, #shipping_city_field,
     #billing_postcode_field, #shipping_postcode_field {
         width: calc(50% - .75rem);
     }
 
-    #billing_company_field, #billing_country_field,
-    #shipping_company_field, #shipping_country_field {
+    #billing_state_field, #billing_country_field,
+    #shipping_state_field, #shipping_country_field,
+    #order_comments_field {
         width: 100%;
     }
 
-    input {
-        padding: 10px 10px 10px 5px;
-        display: block;
-        width: 100%;
-        border: none;
-        outline: none;
-        border-bottom: 1px solid $mediumGrey;
-        color: #000;
-        background: rgba(0, 0, 0, 0);
-        opacity: 0.5;
-        transition: 0.2s ease;
-      }
-      input:focus {
-        outline: none;
-        opacity: 1;
-      }
+    #break-field_field {
+        visibility: hidden;
+    }
 
       .select2-selection {
         border: none;
         border-radius: 0;
-        border-bottom: 1px solid $mediumGrey;
+        border-bottom: 1px solid rgba(0, 0, 0, .25);
       }
 
       .select2-dropdown {
@@ -101,91 +169,6 @@
         background-position: left;
         padding-left: 25px;
       }
-
-      label {
-        color: rgba(21, 35, 57, 0.65);
-        font-size: 13px;
-        font-weight: normal;
-        position: absolute;
-        pointer-events: none;
-        left: 5px;
-        top: 15px;
-        opacity: 0.5;
-        transition: 0.2s ease all;
-        -moz-transition: 0.2s ease all;
-        -webkit-transition: 0.2s ease all;
-      }
-
-      .has-value {
-        top: -10px !important;
-        font-size: 12px !important;
-        color: #000 !important;
-      }
-
-      label {
-        font-family: inherit;
-        font-size: 1.1em;
-        top: 8px;
-        color: rgba(21, 35, 57, 1);
-        font-weight: 500;
-      }
-
-      select,
-      textarea,
-      input[type="text"],
-      input[type="password"],
-      input[type="datetime"],
-      input[type="datetime-local"],
-      input[type="date"],
-      input[type="month"],
-      input[type="time"],
-      input[type="week"],
-      input[type="number"],
-      input[type="email"],
-      input[type="url"],
-      input[type="search"],
-      input[type="tel"],
-      input[type="color"],
-      .uneditable-input {
-        border-top: none;
-        border-right: none;
-        border-left: none;
-        border-radius: 0;
-        box-shadow: 0 0;
-        font-size: 1.1em;
-        font-family: inherit;
-        border-color: rgba(21, 35, 57, 0.65);
-        background-color: transparent;
-      }
-      input:focus {
-        border-color: rgba(21, 35, 57, 1) !important;
-      }
-
-      textarea:focus,
-      input[type="text"]:focus,
-      input[type="password"]:focus,
-      input[type="datetime"]:focus,
-      input[type="datetime-local"]:focus,
-      input[type="date"]:focus,
-      input[type="month"]:focus,
-      input[type="time"]:focus,
-      input[type="week"]:focus,
-      input[type="number"]:focus,
-      input[type="email"]:focus,
-      input[type="url"]:focus,
-      input[type="search"]:focus,
-      input[type="tel"]:focus,
-      input[type="color"]:focus,
-      .uneditable-input:focus {
-        box-shadow: 0 0;
-      }
-
-      #billing_country_field, #billing_state_field {
-        label {
-            position: relative;
-        }
-      }
-
 }
 .nbd-checkout {
     &__order-review {
