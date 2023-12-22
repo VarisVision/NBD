@@ -153,10 +153,16 @@ jQuery(document).ready(function($){
 
     $(".nbd.woocommerce-checkout input, .nbd.woocommerce-checkout textarea").focus(function() {
         $(this).parent().siblings('label').addClass('has-value');
+        if($(this).is('#coupon_code')){
+            $(this).siblings('label').addClass('has-value');
+        }
     }).blur(function() {
         var text_val = $(this).val();
         if(text_val === "") {
             $(this).parent().siblings('label').removeClass('has-value');
+            if($(this).is('#coupon_code')){
+                $(this).siblings('label').removeClass('has-value');
+            }
         }
     });
 

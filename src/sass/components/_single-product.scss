@@ -81,35 +81,7 @@
                 height: 2.5rem;
 
                 div {
-                    --s: 10px;
-                    --t: 1px;
-                    --g: .5rem;
-                    
-                    padding: calc(var(--g) + var(--t));
-                    outline: var(--t) solid #000;
-                    outline-offset: calc(-1*var(--t));
-                    -webkit-mask:
-                      conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
-                      0 0/calc(100% - var(--s)) calc(100% - var(--s)),
-                      linear-gradient(#000 0 0) content-box;
-                    transition: .3s;
-                    cursor: pointer;
-
-                    &:hover {
-                        padding: 4px;
-                    }
-
-                    &.active {
-                        padding: 4px;
-                        -webkit-mask:
-                      conic-gradient(at var(--s) var(--s),#000 0,#000 0)
-                      0 0/calc(100% - var(--s)) calc(100% - var(--s)),
-                      linear-gradient(#000 0 0) content-box;
-                    
-                        span {
-                            font-weight: bold;
-                        }
-                    }
+                    @include borderButton;
                 }
 
                 span {

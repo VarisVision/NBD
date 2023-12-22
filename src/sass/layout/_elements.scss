@@ -31,6 +31,83 @@ button, input[type="submit"], input[type="reset"] {
 	outline: inherit;
 }
 
+@mixin tooltip {
+    &::before, &::after {
+        position: absolute;
+        background-color: #333;
+        top: 0;
+        left: 50%;
+    }
+    &::before {
+        content: "";
+        width: .625rem;
+        height: .625rem;
+        transform: translate(-50%,-110%) rotate(45deg);
+        transform-origin: 50% 50%;
+    }
+
+    &::after {
+        color: #fff;
+        content: "ADD TO CART";
+        @include font-primary(.75rem, 300);
+        text-align: center;
+        padding: .375rem .75rem;
+        transform: translate(-50%, -122%);
+        min-width: max-content;
+        z-index: 1;
+    }
+}
+
+@mixin button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    @include font-primary(.875rem, 500);
+    color: #fff;
+    background-color: #444;
+    margin-top: 1.75rem;
+    padding: .7rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        transform: scale(1.05);
+        text-decoration: none;
+    }
+}
+
+@mixin borderButton {
+    --s: 10px;
+    --t: 1px;
+    --g: .5rem;
+    
+    padding: calc(var(--g) + var(--t));
+    outline: var(--t) solid #000;
+    outline-offset: calc(-1*var(--t));
+    -webkit-mask:
+      conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+      0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+      linear-gradient(#000 0 0) content-box;
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+        padding: 4px;
+    }
+
+    &.active {
+        padding: 4px;
+        -webkit-mask:
+      conic-gradient(at var(--s) var(--s),#000 0,#000 0)
+      0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+      linear-gradient(#000 0 0) content-box;
+    
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
 .nbd-quick-variation {
     button {
         position: relative;
@@ -82,25 +159,24 @@ button, input[type="submit"], input[type="reset"] {
 	
 	list-style-type: none;
 	
-		li {
-			margin: 0 .25rem;
-		}
-	
-		button {
-			display: block;
-			width: 1rem;
-			height: 1rem;
-			padding: 0;
-			
-			border: none;
-			border-radius: 100%;
-			background-color: $lightGrey;
-			transition: background-color 0.5s;
-			text-indent: -9999px;
-		}
-	
-		li.slick-active button {
-			background-color: $darkGrey;
-		}
-	
+    li {
+        margin: 0 .25rem;
+    }
+
+    button {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        padding: 0;
+        
+        border: none;
+        border-radius: 100%;
+        background-color: $lightGrey;
+        transition: background-color 0.5s;
+        text-indent: -9999px;
+    }
+
+    li.slick-active button {
+        background-color: $darkGrey;
+    }
 }

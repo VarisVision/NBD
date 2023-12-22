@@ -146,11 +146,90 @@ button, input[type=submit], input[type=reset] {
   display: flex;
   flex-wrap: wrap;
 }
-.nbd.woocommerce-checkout form.woocommerce-checkout p label, .nbd.woocommerce-checkout form.woocommerce-checkout span {
+.nbd.woocommerce-checkout form.woocommerce-checkout p label, .nbd.woocommerce-checkout form.woocommerce-checkout span, .nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-info,
+.nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-privacy-policy-text,
+.nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__order-total, .nbd.woocommerce-checkout form.woocommerce-checkout .product-name {
   font-family: "Oswald", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 1px;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .product-name {
+  gap: 1.5rem;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout #place_order {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #444;
+  margin-top: 1.75rem;
+  padding: 0.7rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+  width: -moz-max-content;
+  width: max-content;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout #place_order:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .cart-subtotal span, .nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__shipping label {
+  font-weight: 300;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon, .nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__price {
+  width: 53%;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon {
+  justify-content: flex-start;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon p:first-child {
+  width: 100%;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .form-row-first {
+  margin-right: 1.5rem;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .form-row-last {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 2.5rem;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .checkout_coupon_btn {
+  --s: 10px;
+  --t: 1px;
+  --g: .5rem;
+  padding: calc(var(--g) + var(--t));
+  outline: var(--t) solid #000;
+  outline-offset: calc(-1 * var(--t));
+  -webkit-mask: conic-gradient(at var(--s) var(--s), rgba(0, 0, 0, 0) 75%, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000 0 0) content-box;
+  transition: 0.3s;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 0;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .checkout_coupon_btn:hover {
+  padding: 4px;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .checkout_coupon_btn.active {
+  padding: 4px;
+  -webkit-mask: conic-gradient(at var(--s) var(--s), #000 0, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000 0 0) content-box;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .checkout_coupon_btn.active span {
+  font-weight: bold;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .cart-subtotal, .nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__shipping, .nbd.woocommerce-checkout form.woocommerce-checkout .order-total {
+  display: flex;
+  justify-content: space-between;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-checkout-review-order {
+  display: flex;
+  align-items: flex-end;
 }
 .nbd.woocommerce-checkout .shop_table, .nbd.woocommerce-checkout #customer_details,
 .nbd.woocommerce-checkout .nbd-checkout__order-total, .nbd.woocommerce-checkout #order_review {
@@ -164,14 +243,16 @@ button, input[type=submit], input[type=reset] {
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper {
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper,
+.nbd.woocommerce-checkout .woocommerce-form-coupon {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p {
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p,
+.nbd.woocommerce-checkout .woocommerce-form-coupon p {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -179,24 +260,29 @@ button, input[type=submit], input[type=reset] {
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p label,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p label,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p label {
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon p label {
   margin-bottom: 0.75rem;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p label abbr,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p label abbr,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p label abbr {
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p label abbr,
+.nbd.woocommerce-checkout .woocommerce-form-coupon p label abbr {
   text-decoration: none;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p#billing_country_field, .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p#billing_state_field,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p#billing_country_field,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p#billing_state_field,
 .nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p#billing_country_field,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p#billing_state_field {
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p#billing_state_field,
+.nbd.woocommerce-checkout .woocommerce-form-coupon p#billing_country_field,
+.nbd.woocommerce-checkout .woocommerce-form-coupon p#billing_state_field {
   margin-top: 0;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input {
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input,
+.nbd.woocommerce-checkout .woocommerce-form-coupon input {
   padding: 10px 10px 5px 5px;
   display: block;
   width: 100%;
@@ -209,20 +295,22 @@ button, input[type=submit], input[type=reset] {
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input:focus,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input:focus,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input:focus {
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input:focus,
+.nbd.woocommerce-checkout .woocommerce-form-coupon input:focus {
   outline: none;
   opacity: 1;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper label,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper label,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper label {
-  color: rgba(21, 35, 57, 0.65);
-  font-size: 13px;
-  font-weight: normal;
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon label {
   position: absolute;
-  pointer-events: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
   left: 5px;
-  top: 15px;
+  top: 8px;
   opacity: 0.5;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
@@ -230,27 +318,11 @@ button, input[type=submit], input[type=reset] {
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper .has-value,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .has-value,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper .has-value {
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper .has-value,
+.nbd.woocommerce-checkout .woocommerce-form-coupon .has-value {
   top: -10px !important;
   font-size: 12px !important;
   color: #000 !important;
-}
-.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #billing_country_field label,
-.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #billing_state_field label,
-.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #billing_country_field label,
-.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #billing_state_field label,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #billing_country_field label,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #billing_state_field label {
-  font-size: 0.75rem;
-}
-.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper label,
-.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper label,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper label {
-  font-family: inherit;
-  font-size: 1rem;
-  top: 8px;
-  color: #000;
-  font-weight: 500;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper select,
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper textarea,
@@ -272,7 +344,14 @@ button, input[type=submit], input[type=reset] {
 .nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=number],
 .nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=email],
 .nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=search],
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=tel] {
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=tel],
+.nbd.woocommerce-checkout .woocommerce-form-coupon select,
+.nbd.woocommerce-checkout .woocommerce-form-coupon textarea,
+.nbd.woocommerce-checkout .woocommerce-form-coupon input[type=text],
+.nbd.woocommerce-checkout .woocommerce-form-coupon input[type=number],
+.nbd.woocommerce-checkout .woocommerce-form-coupon input[type=email],
+.nbd.woocommerce-checkout .woocommerce-form-coupon input[type=search],
+.nbd.woocommerce-checkout .woocommerce-form-coupon input[type=tel] {
   border-top: none;
   border-right: none;
   border-left: none;
@@ -283,15 +362,28 @@ button, input[type=submit], input[type=reset] {
   background-color: transparent;
 }
 .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #billing_country_field label, .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #shipping_country_field label, .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #shipping_state_field label,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #billing_country_field label,
 .nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #shipping_country_field label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #shipping_state_field label,
 .nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #billing_country_field label,
-.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #billing_state_field label {
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #shipping_country_field label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #shipping_state_field label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon #billing_country_field label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon #shipping_country_field label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon #shipping_state_field label {
   position: relative;
+  font-size: 0.75rem;
 }
 .nbd.woocommerce-checkout .woocommerce-form__label-for-checkbox {
   position: relative;
   display: flex;
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+  margin-top: 0.75rem;
 }
 .nbd.woocommerce-checkout #billing_first_name_field, .nbd.woocommerce-checkout #billing_last_name_field,
 .nbd.woocommerce-checkout #billing_address_1_field, .nbd.woocommerce-checkout #billing_address_2_field,
@@ -332,6 +424,20 @@ button, input[type=submit], input[type=reset] {
 .nbd-checkout__order-review .product-name {
   display: flex;
   align-items: center;
+}
+.nbd-checkout__cart-items {
+  width: 75%;
+  max-height: 377px;
+  margin: 1.5rem 0;
+  overflow-y: auto;
+}
+.nbd-checkout__price {
+  margin-top: 1rem;
+}
+.nbd-checkout__shipping {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .nbd-footer {
