@@ -15,6 +15,10 @@ function scripts()
     if (is_product()) {
         wp_enqueue_script('single-product', get_template_directory_uri() . '/dist/scripts/single-product.js', ['jquery'], 1, true);
     }
+
+    if (is_checkout()){
+        wp_enqueue_script('checkout', get_template_directory_uri() . '/dist/scripts/checkout.js', ['jquery'], 1, true);
+    }
 }
 add_action('wp_enqueue_scripts', 'scripts');
 

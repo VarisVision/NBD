@@ -2,5 +2,6 @@
     "/scripts/nbd-script.js": "/scripts/nbd-script.js",
     "/scripts/header.js": "/scripts/header.js",
     "/scripts/single-product.js": "/scripts/single-product.js",
+    "/scripts/checkout.js": "/scripts/checkout.js",
     "/nbd-style.css": "/nbd-style.css"
 }
