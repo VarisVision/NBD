@@ -12,7 +12,7 @@ function scripts()
         'nonce' => wp_create_nonce('my_nonce_action'),
         'ajaxUrl' => admin_url('admin-ajax.php'),
     ));
-    
+
     wp_enqueue_script('drawer-script', get_template_directory_uri() . '/dist/vendors/slide-out-panel.min.js', ['jquery'], 1, true);
     wp_enqueue_script('slick-carousel', get_template_directory_uri() . '/dist/vendors/slick.min.js', array('jquery'), '1.9.0', true);
     
@@ -243,4 +243,11 @@ function add_break_field( $fields ) {
         'priority'    => 95
     );
     return $fields;
+}
+
+add_action( 'after_setup_theme', 'my_custom_image_sizes' );
+function my_custom_image_sizes() {
+    add_image_size( 'mobile', 425, 0, true );
+    add_image_size( 'tablet', 768, 0, true );
+    add_image_size( 'laptop', 1024, 0, true );
 }
