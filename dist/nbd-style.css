@@ -239,6 +239,9 @@ button, input[type=submit], input[type=reset] {
   letter-spacing: 1px;
   padding: 0 0.75rem;
 }
+.nbd-mini-cart__product-details--footer .disabled:hover, .nbd-cart__product-details--footer .disabled:hover {
+  cursor: not-allowed;
+}
 .nbd-mini-cart__footer, .nbd-cart__footer {
   margin-top: auto;
   padding-top: 0.75rem;
@@ -1128,6 +1131,7 @@ button, input[type=submit], input[type=reset] {
 }
 .nbd-single-product .single_add_to_cart_button.disabled:hover {
   transform: scale(1);
+  cursor: not-allowed;
 }
 .nbd-single-product .nbd-carousel__arrow-left, .nbd-single-product .nbd-carousel__arrow-right {
   position: absolute;

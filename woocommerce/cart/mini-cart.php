@@ -95,7 +95,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 									echo apply_filters(
 										'woocommerce_widget_cart_item_quantity',
 										'<div class="quantity">
-											<button title="Take less" class="quantity-minus" data-cart-item-key="' . esc_attr($cart_item_key) . '">
+											<button title="Take less" class="quantity-minus disabled" data-cart-item-key="' . esc_attr($cart_item_key) . '">
 												<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 -960 960 960">
 													<use href="#minus"></use>
 												</svg>

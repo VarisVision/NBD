@@ -77,9 +77,13 @@ jQuery(document).ready(function($){
             let newQuantity;
             if (action === '+') {
                 newQuantity = currentQuantity + 1;
+                $(this).siblings('.quantity-minus').removeClass('disabled');
             } 
             else {
                 newQuantity = currentQuantity > 1 ? currentQuantity - 1 : 1;
+                if(newQuantity < 2) {
+                    $(this).addClass('disabled');
+                }
             }
 
             quantityInput.text(newQuantity);
@@ -114,4 +118,10 @@ jQuery(document).ready(function($){
             },
         });
     }
+    
+    $('.nbd-mini-cart .quantity').each(function(i, e){
+        if($(e).find('.quantity-minus').hasClass('disabled') && $(e).find('.quantity-input').text() > 1){
+            $(this).find('.quantity-minus').removeClass('disabled');
+        }
+    });
 })
