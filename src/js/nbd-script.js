@@ -103,9 +103,9 @@ jQuery(document).ready(function($){
 
                 $('.woocommerce-mini-cart__total .woocommerce-Price-amount.amount').replaceWith(data.subtotal);
                 
-                for (let productId in data.product_prices) {
-                    let productInfo = data.product_prices[productId];
-                    let priceElement = $('.product-price[data-product-id="' + productId + '"]');
+                for (let variationId in data.product_prices) {
+                    let productInfo = data.product_prices[variationId];
+                    let priceElement = $('.product-price[data-product-id="' + variationId + '"]');
             
                     priceElement.html(productInfo.subtotal);
                 }

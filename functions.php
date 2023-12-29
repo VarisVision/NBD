@@ -156,7 +156,7 @@ function update_cart_item_quantity() {
 
 
     foreach ($items as $item) {
-        $product_id = $item['product_id'];
+        $product_id = $item['variation_id'];
         $product = wc_get_product($product_id);
         $product_price = $product->get_price();
 
