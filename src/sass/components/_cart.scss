@@ -32,28 +32,29 @@
         border-bottom: 1px solid #ddd;
         padding-bottom: .75rem;
     }
+}
 
-    .widget_shopping_cart_content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: calc(100% - 2.375rem);
+.widget_shopping_cart_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 2.375rem);
+}
+
+.woocommerce-mini-cart {
+    overflow-y: auto;
+    width: 100%;
+    min-height: 250px;
+
+    &__empty-message {
+        @include font-primary($base, 400);
+        text-align: center;
+        margin-top: .75rem;
     }
+}
 
-
-    .woocommerce-mini-cart {
-        overflow-y: auto;
-        width: 100%;
-        min-height: 250px;
-
-        &__empty-message {
-            @include font-primary($base, 400);
-            text-align: center;
-            margin-top: .75rem;
-        }
-    }
-
-    .mini_cart_item {
+.nbd-mini-cart, .nbd-cart {
+    .mini_cart_item, .cart_item {
         display: flex;
         gap: .75rem;
         padding: 0.75rem 0.75rem 0.75rem 0;
@@ -63,7 +64,6 @@
             border-bottom: unset;
         }
     }
-
     &__product-details {
         display: flex;
         flex-direction: column;
@@ -115,11 +115,51 @@
             a:first-child {
                 display: none;
             }
+        }
 
-            .checkout {
-                @include button;
+        a.button {
+            @include button;
+        }
+    }
+}
 
+.nbd-cart {
+    &__product-details {
+        &--footer {
+            .quantity {
+                input {
+                    width: 50px;
+                }
             }
         }
+    }
+
+    &__coupon {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #ddd;
+        padding: .75rem 0;
+
+        &--btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 112px;
+            height: 2.5rem;
+
+            .button {
+                @include borderButton;
+            }
+        }
+    }
+
+    &__update-btn {
+        @include button;
+        max-width: fit-content;
+        margin: 0 0 .75rem;
+    }
+
+    &__footer {
+        @include font-primary($base, 400);
     }
 }

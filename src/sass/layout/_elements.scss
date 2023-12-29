@@ -15,6 +15,18 @@ main, footer, .woocommerce {
     top: 0;
 }
 
+.nbd.woocommerce-cart, .nbd.woocommerce-checkout {
+    .woocommerce {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 2.5rem .75rem;
+    }
+}
+
+.nbd.woocommerce-cart .woocommerce {
+    max-width: 26.25rem;
+}
+
 ul {
     list-style-type: none;
     padding: 0;

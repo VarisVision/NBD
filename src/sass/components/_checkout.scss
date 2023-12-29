@@ -1,10 +1,4 @@
 .nbd.woocommerce-checkout {
-    .woocommerce {
-        max-width: 80rem;
-        margin: 0 auto;
-        padding: 2.5rem .75rem;
-    }
-
     form.woocommerce-checkout {
         display: flex;
         flex-wrap: wrap;
@@ -44,7 +38,6 @@
             }
 
             .form-row-last {
-                display: flex;
                 align-items: center;
                 justify-content: center;
                 width: 112px;

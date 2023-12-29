@@ -23,13 +23,14 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 
-	<ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
+	<ul class="nbd-mini-cart woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
 		<?php
 		do_action( 'woocommerce_before_mini_cart_contents' );
 
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 			$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 			$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+			$variation_id = apply_filters( 'woocommerce_cart_item_variation_id', $cart_item['variation_id'], $cart_item, $cart_item_key );
 
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				/**
@@ -44,8 +45,8 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 				$image_id = $_product->get_image_id();
 				$image_url = wp_get_attachment_image_url( $image_id, $thumbnail_size );
 				$thumbnail = '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $_product->get_name() ) . '" loading="lazy" />';
-				$product_name      = apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key );
-				$product_parts = explode(' - ', $product_name);
+				$product_name_and_size = apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key );
+				$product_parts = explode(' - ', $product_name_and_size);
 				$product_name = trim($product_parts[0]);
 				$variation = isset($product_parts[1]) ? trim($product_parts[1]) : '';
 
@@ -56,11 +57,11 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 					<?php if ( empty( $product_permalink ) ) : ?>
 						<?php echo $thumbnail . wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<?php else : ?>
-						<a class="nbd-side-cart__img" href="<?php echo esc_url( $product_permalink ); ?>">
+						<a class="nbd-mini-cart__img" href="<?php echo esc_url( $product_permalink ); ?>">
 							<?php echo $thumbnail // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</a>
-						<div class="nbd-side-cart__product-details">
-							<div class="nbd-side-cart__product-details--header">
+						<div class="nbd-mini-cart__product-details">
+							<div class="nbd-mini-cart__product-details--header">
 								<a href="<?php echo esc_url( $product_permalink ); ?>">
 									<?php echo wp_kses_post( $product_name ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 								</a>
@@ -84,9 +85,12 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 									);
 								?>
 							</div>
-							<p class="nbd-side-cart__product-details--size"><?php echo "Size: " . $variation; ?></p>
 
-							<div class="nbd-side-cart__product-details--footer">
+							<p class="nbd-mini-cart__product-details--size">
+								<?php echo "Size: " . $variation; ?>
+							</p>
+
+							<div class="nbd-mini-cart__product-details--footer">
 								<?php
 									echo apply_filters(
 										'woocommerce_widget_cart_item_quantity',
@@ -106,7 +110,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 										$cart_item,
 										$cart_item_key
 									);
-									echo '<div class="product-price" data-product-id="' . $product_id . '">';
+									echo '<div class="product-price" data-product-id="' . $variation_id . '">';
 									echo wc_price($product_price * $cart_item['quantity']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									echo '</div>'
 								?>
@@ -121,7 +125,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 		do_action( 'woocommerce_mini_cart_contents' );
 		?>
 	</ul>
-	<div class="nbd-side-cart__footer">
+	<div class="nbd-mini-cart__footer">
 		<p class="woocommerce-mini-cart__total total">
 			<?php
 			/**
