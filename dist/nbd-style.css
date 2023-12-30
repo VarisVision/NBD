@@ -162,7 +162,7 @@ button, input[type=submit], input[type=reset] {
 }
 .nbd-side-cart__count {
   position: absolute;
-  top: 50%;
+  top: 51.5%;
   left: 49%;
   font-family: sans-serif;
   font-size: 0.65rem;
@@ -862,6 +862,12 @@ button, input[type=submit], input[type=reset] {
     display: block;
   }
 }
+.nbd-header__mobile {
+  position: relative;
+  top: 4px;
+  height: 23px;
+  cursor: pointer;
+}
 .nbd-header__mobile--btn {
   display: block;
   background-color: transparent;
@@ -941,6 +947,60 @@ button, input[type=submit], input[type=reset] {
   text-decoration: underline;
   width: -moz-max-content;
   width: max-content;
+}
+
+#nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
+  width: 23px;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+}
+
+#nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #000;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
+  top: 7px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 14px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
 }
 
 .nbd-hero {

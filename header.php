@@ -13,9 +13,12 @@
         ?>
         <div class="nbd-header__mobile">
             <button class="nbd-header__mobile--btn">
-                <svg width="23" height="23">
-                    <use href="#menu-hamburger"></use>
-                </svg>
+                <div id="nav-icon3">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </button>
         </div>
 

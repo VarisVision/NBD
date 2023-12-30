@@ -9,11 +9,10 @@ jQuery(document).ready(function($){
 
     const mobileNav = $('#nbd-header__mobile--menu').SlideOutPanel( mobileNavSettings );
 
-    $(".nbd-header__mobile--btn").on('click', function() {
+    $(".nbd-header__mobile").on('click', function() {
         mobileNav.toggle();
+        $(this).find('#nav-icon3').toggleClass('open');
     });
-
-
 
     const sideCartSettings = {
         slideFrom: 'right',
