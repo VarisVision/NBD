@@ -165,11 +165,14 @@ button, input[type="submit"], input[type="reset"] {
 	display: flex;
 	justify-content: center;
 	position: relative;
-    bottom: 4rem;
+    bottom: 0rem;
 	margin: 0;
 	padding: 1rem 0;
-	
 	list-style-type: none;
+
+    @include for-tablet-landscape {
+        bottom: 4rem;
+    }
 	
     li {
         margin: 0 .25rem;

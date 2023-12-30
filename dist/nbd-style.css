@@ -124,10 +124,15 @@ button, input[type=submit], input[type=reset] {
   display: flex;
   justify-content: center;
   position: relative;
-  bottom: 4rem;
+  bottom: 0rem;
   margin: 0;
   padding: 1rem 0;
   list-style-type: none;
+}
+@media only screen and (min-width: 992px) {
+  .slick-dots {
+    bottom: 4rem;
+  }
 }
 .slick-dots li {
   margin: 0 0.25rem;
@@ -1061,8 +1066,12 @@ button, input[type=submit], input[type=reset] {
   display: none;
   gap: 0.75rem;
   height: inherit;
+  justify-content: center;
 }
 
+.nbd-single-product {
+  padding: 0 0.75rem;
+}
 .nbd-single-product__container {
   display: flex;
   flex-wrap: wrap;
@@ -1095,7 +1104,7 @@ button, input[type=submit], input[type=reset] {
   align-items: center;
   align-content: center;
   max-width: 420px;
-  margin: 0 auto;
+  margin: 1.5rem auto 2.5rem;
 }
 .nbd-single-product .variations_form.cart {
   width: 100%;
@@ -1189,6 +1198,7 @@ button, input[type=submit], input[type=reset] {
 .nbd-single-product .related ul.products, .nbd-single-product .up-sells ul.products {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.75rem;
 }
 @media only screen and (min-width: 992px) {
@@ -1232,10 +1242,10 @@ button, input[type=submit], input[type=reset] {
   transform: translateY(-50%);
 }
 .nbd-single-product .nbd-carousel__arrow-left {
-  left: 0.75rem;
+  left: 0;
 }
 .nbd-single-product .nbd-carousel__arrow-right {
-  right: 0.75rem;
+  right: -0.75rem;
 }
 
 .nbd-subscribe.tnp-subscription, .nbd-subscribe.tnp-subscription .tnp-field {

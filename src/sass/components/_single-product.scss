@@ -1,4 +1,6 @@
 .nbd-single-product {
+    padding: 0 .75rem;
+    
     &__container {
         display: flex;
         flex-wrap: wrap;
@@ -37,7 +39,7 @@
         align-items: center;
         align-content: center;
         max-width: 420px;
-        margin: 0 auto;
+        margin: 1.5rem auto 2.5rem;
     }
     .variations_form.cart {
         width: 100%;
@@ -109,9 +111,11 @@
         h2 {
             @include font-primary($large, 600);
         }
+
         ul.products {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: .75rem;
             @include for-tablet-landscape {
                 flex-direction: row;
@@ -147,11 +151,11 @@
         }
 
         &__arrow-left {
-            left: .75rem;
+            left: 0;
         }
 
         &__arrow-right {
-            right: .75rem;
+            right: -0.75rem;
         }
     }
 }
