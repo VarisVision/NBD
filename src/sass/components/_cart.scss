@@ -167,3 +167,7 @@
         @include font-primary($base, 400);
     }
 }
+
+#nbd-side-cart__drawer.slide-out-panel-container {
+    bottom: 0;
+}

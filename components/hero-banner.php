@@ -14,7 +14,7 @@ function heroBanner($imageData) {
                 <source srcset="'. $laptop .'" media="(min-width: 990px)">
                 <source srcset="'. $tablet .'" media="(min-width: 640px)">
                 <source srcset="'. $mobile .'" media="(min-width: 0px)">
-                <img src="'. $laptop .'" alt="'. $altText .'" loading="lazy"/>
+                <img src="'. $laptop .'" loading="lazy" alt="'. $altText .'"/>
             </picture>
             <div class="nbd-hero__gradient top"></div>
             <div class="nbd-hero__gradient bottom"></div>

@@ -58,6 +58,7 @@
     }
 
     &__mobile {
+
         &--btn {
             display: block;
             background-color: transparent;
@@ -68,9 +69,40 @@
                 display: none;
             }
         }
-        .slide-out-panel-container.open {
-            width: 86% !important;
+
+        &--menu {
+            text-align: center;
+
+            li {
+                padding: .75rem 0;
+                border-bottom: 1px solid $grey;
+
+                &:first-child {
+                    padding-top: 0;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                    border-bottom: 0;
+                }
+
+            }
+            
+            a {
+                @include font-primary($regular, 400);
+                text-transform: uppercase;
+            }
+
+            &.slide-out-panel-container {
+                left: 0;
+                z-index: 999;
+                &.open {
+                    top: 58px !important;
+                }
+            }
         }
+
+
     }
 
     &__menu-right,
