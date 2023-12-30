@@ -152,6 +152,24 @@ button, input[type=submit], input[type=reset] {
   background-color: #393939;
 }
 
+.nbd-mobile {
+  display: block;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-mobile {
+    display: none;
+  }
+}
+
+.nbd-desktop {
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-desktop {
+    display: block;
+  }
+}
+
 .nbd-side-cart {
   position: relative;
 }
@@ -365,6 +383,12 @@ button, input[type=submit], input[type=reset] {
 .nbd.woocommerce-checkout form.woocommerce-checkout {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+}
+@media only screen and (min-width: 992px) {
+  .nbd.woocommerce-checkout form.woocommerce-checkout {
+    flex-direction: row;
+  }
 }
 .nbd.woocommerce-checkout form.woocommerce-checkout p label, .nbd.woocommerce-checkout form.woocommerce-checkout span, .nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-info,
 .nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-privacy-policy-text,
@@ -374,8 +398,12 @@ button, input[type=submit], input[type=reset] {
   font-weight: 400;
   letter-spacing: 1px;
 }
-.nbd.woocommerce-checkout form.woocommerce-checkout .product-name {
-  gap: 1.5rem;
+.nbd.woocommerce-checkout form.woocommerce-checkout .product-name > *:not(:last-child) {
+  margin-right: 1.5rem;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .product-name > :last-child {
+  flex-grow: 1;
+  text-align: right;
 }
 .nbd.woocommerce-checkout form.woocommerce-checkout #place_order {
   display: flex;
@@ -402,7 +430,13 @@ button, input[type=submit], input[type=reset] {
   font-weight: 300;
 }
 .nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon, .nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__price {
-  width: 53%;
+  width: 100%;
+  margin: 1.5rem 0 2.5rem;
+}
+@media only screen and (min-width: 992px) {
+  .nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon, .nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__price {
+    width: 89%;
+  }
 }
 .nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon {
   justify-content: flex-start;
@@ -452,7 +486,13 @@ button, input[type=submit], input[type=reset] {
 }
 .nbd.woocommerce-checkout .shop_table, .nbd.woocommerce-checkout #customer_details,
 .nbd.woocommerce-checkout .nbd-checkout__order-total, .nbd.woocommerce-checkout #order_review {
-  width: 50%;
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .nbd.woocommerce-checkout .shop_table, .nbd.woocommerce-checkout #customer_details,
+  .nbd.woocommerce-checkout .nbd-checkout__order-total, .nbd.woocommerce-checkout #order_review {
+    width: 50%;
+  }
 }
 .nbd.woocommerce-checkout h3 {
   font-family: "Oswald", sans-serif;
@@ -645,10 +685,16 @@ button, input[type=submit], input[type=reset] {
   align-items: center;
 }
 .nbd-checkout__cart-items {
-  width: 75%;
-  max-height: 377px;
+  width: 100%;
   margin: 1.5rem 0;
-  overflow-y: auto;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-checkout__cart-items {
+    width: 89%;
+    overflow-y: auto;
+    max-height: 377px;
+    padding-right: 0.75rem;
+  }
 }
 .nbd-checkout__price {
   margin-top: 1rem;

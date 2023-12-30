@@ -26,12 +26,17 @@ defined( 'ABSPATH' ) || exit;
 		
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 			$_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+			$image_id = $_product->get_image_id();
+			$mobile_image_url = wp_get_attachment_image_url( $image_id, array(100, 100) );
+			$desktop_image_url = wp_get_attachment_image_url( $image_id, array(150, 150) );
+			$image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
 
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				?>
 				<li class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 					<div class="product-name">
-						<?php echo $_product->get_image('thumbnail');?>
+						<?php echo '<img class="nbd-mobile" src="'. $mobile_image_url .'" alt="'. $image_alt .'" />'?>
+						<?php echo '<img class="nbd-desktop" src="'. $desktop_image_url .'" alt="'. $image_alt .'" />'?>
 						<?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) ) . '&nbsp;'; ?>
 						<?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <span class="product-quantity">' . sprintf( '&times;&nbsp;%s', $cart_item['quantity'] ) . '</span>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						<?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>

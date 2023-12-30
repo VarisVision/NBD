@@ -51,10 +51,12 @@ jQuery(document).ready(function($){
     });
 
     $(".woocommerce-shipping-fields").click(function(){
-        if($("#ship-to-different-address-checkbox").is(':checked')){
-            $(".nbd-checkout__cart-items").css("max-height", "679px");
-        } else {
-            $(".nbd-checkout__cart-items").css("max-height", "377px");
+        if (window.innerWidth >= 992 ) { 
+            if($("#ship-to-different-address-checkbox").is(':checked')){
+                $(".nbd-checkout__cart-items").css("max-height", "679px");
+            } else {
+                $(".nbd-checkout__cart-items").css("max-height", "377px");
+            }
         }
     });
 });

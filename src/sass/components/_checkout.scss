@@ -2,6 +2,11 @@
     form.woocommerce-checkout {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
+
+        @include for-tablet-landscape {
+            flex-direction: row;
+        }
 
         p label, span, .woocommerce-info,
         .woocommerce-privacy-policy-text,
@@ -9,8 +14,13 @@
             @include font-primary($base, 400);
         }
 
-        .product-name {
-            gap: 1.5rem
+        .product-name > *:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+
+        .product-name > :last-child {
+            flex-grow: 1;
+            text-align: right;
         }
 
         #place_order {
@@ -23,7 +33,12 @@
         }
 
         .checkout_coupon, .nbd-checkout__price {
-            width: 53%;
+            width: 100%;
+            margin: 1.5rem 0 2.5rem;
+
+            @include for-tablet-landscape {
+                width: 89%;
+            }
         }
 
         .checkout_coupon {
@@ -63,7 +78,11 @@
 
     .shop_table, #customer_details, 
     .nbd-checkout__order-total, #order_review {
-        width: 50%;
+        width: 100%;
+
+        @include for-tablet-landscape {
+            width: 50%
+        }
     }
 
     h3 {
@@ -221,10 +240,15 @@
     }
 
     &__cart-items {
-        width: 75%;
-        max-height: 377px;
+        width: 100%;
         margin: 1.5rem 0;
-        overflow-y: auto;
+
+        @include for-tablet-landscape {
+            width: 89%;
+            overflow-y: auto;
+            max-height: 377px;
+            padding-right: .75rem;
+        }
     }
 
     &__price {

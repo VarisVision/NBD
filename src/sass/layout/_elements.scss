@@ -195,3 +195,19 @@ button, input[type="submit"], input[type="reset"] {
         background-color: $darkGrey;
     }
 }
+
+.nbd-mobile {
+    display: block;
+
+    @include for-tablet-landscape {
+        display: none;
+    }
+}
+
+.nbd-desktop {
+    display: none;
+
+    @include for-tablet-landscape {
+        display: block;
+    }
+}
