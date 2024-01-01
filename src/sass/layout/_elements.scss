@@ -19,7 +19,7 @@ main, footer, .woocommerce {
     .woocommerce {
         max-width: 80rem;
         margin: 0 auto;
-        padding: 2.5rem .75rem;
+        padding: 1rem .75rem 2.5rem;
     }
 }
 
@@ -137,12 +137,32 @@ button, input[type="submit"], input[type="reset"] {
     margin: .75rem 0;
 }
 
-.nbd-four-column-products {
+main > .nbd-section:first-child {
+    margin-top: 0;
+}
+
+.nbd-section, .nbd-article {
+    & header {
+        margin-bottom: 1.5rem;
+
+        h1{
+            @include font-primary($large, 500);
+        }
+    }
+}
+
+.nbd-four-column {
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    justify-items: center;
     gap: .75rem;
+
     @include for-tablet-landscape {
         grid-template-columns: repeat(4,1fr);
+    }
+
+    * {
+        max-width: 31.25rem;
     }
 }
 

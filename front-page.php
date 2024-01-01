@@ -13,7 +13,7 @@ get_header();
     ?>
 
     <section class="nbd-section">
-        <div class="nbd-four-column-products">
+        <div class="nbd-four-column">
             <?php    
                 categoryProducts('t-shirt');
             ?>
@@ -25,7 +25,7 @@ get_header();
     ?>
 
     <section class="nbd-section">
-        <div class="nbd-four-column-products">
+        <div class="nbd-four-column">
             <?php    
                 categoryProducts('hoodie');
             ?>

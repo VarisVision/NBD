@@ -1,0 +1,47 @@
+.nbd-blog {
+    &__article {
+        margin-bottom: .5rem;
+
+        @include for-tablet {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            display: block;
+        }
+        img {
+            width: 100%;
+        }
+
+        h2 {
+            @include font-primary($small, 300);
+
+            @include for-tablet {
+                @include font-primary($regular, 300);
+            }
+        }
+    }
+}
+
+.nbd-article {
+    padding: 0 0.75rem;
+    margin: 0 auto 2.5rem;
+    max-width: 48rem;
+
+    header {
+        text-align: center;
+    }
+
+    article {
+        p {
+            margin-bottom: 1.5rem;
+
+            img {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                max-width: 120%;
+            }
+        }
+    }
+}
