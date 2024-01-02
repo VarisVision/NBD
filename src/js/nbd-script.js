@@ -24,17 +24,6 @@ jQuery(document).ready(function($){
         });
     });
 
-    $('.nbd-product-card__image, .nbd-product-card__info').hover(function(){
-        if (window.innerWidth > 900) {
-            $(this).parent().find('.nbd-product-card__link').hide();
-            $(this).parent().find('.nbd-product-card__quick-add').css('display', 'flex');
-        }}, function() {
-            if (window.innerWidth > 900) {
-                $(this).parent().find('.nbd-product-card__quick-add').hide();
-                $(this).parent().find('.nbd-product-card__link').show();
-            }
-    });
-
     $(".nbd-footer__back-to-top p").click(function(){
         $("html, body").animate({ scrollTop: 0 }, "slow");
     });
@@ -118,7 +107,7 @@ jQuery(document).ready(function($){
             },
         });
     }
-    
+
     $('.nbd-mini-cart .quantity').each(function(i, e){
         if($(e).find('.quantity-minus').hasClass('disabled') && $(e).find('.quantity-input').text() > 1){
             $(this).find('.quantity-minus').removeClass('disabled');

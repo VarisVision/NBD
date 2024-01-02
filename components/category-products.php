@@ -12,11 +12,15 @@ function categoryProducts($category) {
             $products->the_post();
             $product = wc_get_product(get_the_ID());
             $image_url = wp_get_attachment_url($product->get_image_id());
+            $image_hover_url = get_field('product_image_on_hover', get_the_ID());
+            $image_hover = $image_hover_url ? $image_hover_url : $image_url;
+
             echo '<div class="nbd-product-card">';
                 if ($image_url) {
                     echo 
                         '<a href="' . get_permalink() . '" class="nbd-product-card__image">
                             <img src="' . $image_url . '" alt="' . get_the_title() . '" />
+                            <img src="' . $image_hover .'" alt="' . get_the_title() . ' in action mood"/>
                         </a>';
                 }
                 echo 

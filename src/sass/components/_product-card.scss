@@ -1,13 +1,38 @@
 .nbd-product-card {
+    @include for-tablet-landscape {
+        &:hover {
+            .nbd-product-card__image img {
+        
+                &:first-child {
+                    display: none;
+                }
+                &:last-child {
+                    display: block;
+                }
+            }
+    
+            .nbd-product-card__link {
+                display: none;
+            }
+            .nbd-product-card__quick-add {
+                display: flex;
+            }
+        }
+    }
+
     &__image {
         display: block;
-
         img {
             width: 100%;
+
+            &:last-child {
+                display: none;
+            }
         }
     }
     &__info {
         min-height: 74px;
+
         h2 {
             @include font-primary($regular, 300);
         }
@@ -21,5 +46,6 @@
         gap: .75rem;
         height: inherit;
         justify-content: center;
+        padding-top: .75rem;
     }
 }
