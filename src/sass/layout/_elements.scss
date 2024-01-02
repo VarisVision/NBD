@@ -6,6 +6,21 @@ body {
     margin: 0;
 }
 
+#breadcrumbs {
+    padding: 0 .75rem;
+
+    @include for-tablet {
+        position: absolute;
+    }
+
+    a {
+        @include font-primary($small, 300);
+    }
+    .breadcrumb_last {
+        @include font-primary($small, 400);
+    }
+}
+
 main, footer, .woocommerce {
     position: relative;
     top: 3.652rem;

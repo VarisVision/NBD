@@ -23,6 +23,27 @@ body {
   margin: 0;
 }
 
+#breadcrumbs {
+  padding: 0 0.75rem;
+}
+@media only screen and (min-width: 768px) {
+  #breadcrumbs {
+    position: absolute;
+  }
+}
+#breadcrumbs a {
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+#breadcrumbs .breadcrumb_last {
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
 main, footer, .woocommerce {
   position: relative;
   top: 3.652rem;
@@ -217,16 +238,19 @@ main > .nbd-section:first-child {
   }
 }
 
-.nbd-article {
+.nbd-article header {
+  text-align: center;
+}
+.nbd-article article {
   padding: 0 0.75rem;
   margin: 0 auto 2.5rem;
   max-width: 48rem;
 }
-.nbd-article header {
-  text-align: center;
-}
 .nbd-article article p {
   margin-bottom: 1.5rem;
+}
+.nbd-article article p:last-child {
+  margin-bottom: 0;
 }
 .nbd-article article p img {
   position: relative;

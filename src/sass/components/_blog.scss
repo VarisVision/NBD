@@ -24,17 +24,20 @@
 }
 
 .nbd-article {
-    padding: 0 0.75rem;
-    margin: 0 auto 2.5rem;
-    max-width: 48rem;
-
     header {
         text-align: center;
     }
 
     article {
+        padding: 0 0.75rem;
+        margin: 0 auto 2.5rem;
+        max-width: 48rem;
         p {
             margin-bottom: 1.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
 
             img {
                 position: relative;
