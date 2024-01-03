@@ -113,4 +113,13 @@ jQuery(document).ready(function($){
             $(this).find('.quantity-minus').removeClass('disabled');
         }
     });
+
+    $('a[href^="#"]').click(function(event) {
+        event.preventDefault();
+        let targetId = $(this).attr('href');
+
+        $('html, body').animate({
+            scrollTop: $(targetId).offset().top -58
+        }, 'slow');
+    });
 })

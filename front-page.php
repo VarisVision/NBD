@@ -1,6 +1,8 @@
 <?php 
 require_once('components/category-products.php');
 require_once('components/hero-banner.php');
+$categoryProductFirst = get_field('first_category');
+$categoryProductSecond = get_field('second_category');
 $imageCategoryFirst = get_field('first_category_image');
 $imageCategorySecond = get_field('second_category_image');
 
@@ -12,10 +14,10 @@ get_header();
         heroBanner($imageCategoryFirst);
     ?>
 
-    <section class="nbd-section">
+    <section id="<?php echo $categoryProductFirst;?>" class="nbd-section">
         <div class="nbd-four-column">
             <?php    
-                categoryProducts('t-shirt');
+                categoryProducts($categoryProductFirst);
             ?>
         </div>
     </section>
@@ -24,10 +26,10 @@ get_header();
         heroBanner($imageCategorySecond);
     ?>
 
-    <section class="nbd-section">
+    <section id="<?php echo $categoryProductSecond;?>" class="nbd-section">
         <div class="nbd-four-column">
             <?php    
-                categoryProducts('hoodie');
+                categoryProducts($categoryProductSecond);
             ?>
         </div>
     </section>
