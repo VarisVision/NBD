@@ -1176,6 +1176,41 @@ main > .nbd-section:first-child {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 40%);
 }
 
+.nbd-lookbook {
+  padding: 0 0.75rem;
+}
+.nbd-lookbook__grid {
+  width: 100%;
+}
+.nbd-lookbook__grid-sizer, .nbd-lookbook__grid-item {
+  width: calc(100% - 4px);
+}
+@media only screen and (min-width: 768px) {
+  .nbd-lookbook__grid-sizer, .nbd-lookbook__grid-item {
+    width: calc(50% - 9px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .nbd-lookbook__grid-sizer, .nbd-lookbook__grid-item {
+    width: calc(33.3% - 10px);
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .nbd-lookbook__grid-sizer, .nbd-lookbook__grid-item {
+    width: calc(25% - 11px);
+  }
+}
+.nbd-lookbook__grid-item {
+  margin-bottom: 12px;
+  float: left;
+}
+.nbd-lookbook__grid-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
 @media only screen and (min-width: 992px) {
   .nbd-product-card:hover .nbd-product-card__image img:first-child {
     display: none;

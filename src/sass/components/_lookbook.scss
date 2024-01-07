@@ -1,0 +1,33 @@
+.nbd-lookbook {
+    padding: 0 .75rem;
+
+    &__grid {
+        width: 100%;
+    }
+
+    &__grid-sizer, &__grid-item {
+        width: calc(100% - 4px);
+    
+        @include for-tablet {
+            width: calc(50% - 9px)
+        }
+        @include for-laptop {
+            width: calc(33.3% - 10px);
+        }
+        @include for-desktop-large {
+            width: calc(25% - 11px);
+        }
+    }
+    
+    &__grid-item {
+        margin-bottom: 12px;
+        float: left;
+    
+        & img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0;
+        }
+    }
+}

@@ -12,9 +12,6 @@ function scripts()
         'nonce' => wp_create_nonce('my_nonce_action'),
         'ajaxUrl' => admin_url('admin-ajax.php'),
     ));
-
-    wp_enqueue_script('drawer-script', get_template_directory_uri() . '/dist/vendors/slide-out-panel.min.js', ['jquery'], 1, true);
-    wp_enqueue_script('slick-carousel', get_template_directory_uri() . '/dist/vendors/slick.min.js', array('jquery'), '1.9.0', true);
     
     wp_enqueue_script('header', get_template_directory_uri() . '/dist/scripts/header.js', ['jquery'], 1, true);
 
@@ -25,6 +22,14 @@ function scripts()
     if (is_checkout()){
         wp_enqueue_script('checkout', get_template_directory_uri() . '/dist/scripts/checkout.js', ['jquery'], true);
     }
+
+    if (is_page_template('template-lookbook.php')) {
+        wp_enqueue_script('masonry-js', get_template_directory_uri() . '/dist/vendors/masonry.min.js', array('jquery'), null, true);
+    }
+
+    wp_enqueue_script('drawer-script', get_template_directory_uri() . '/dist/vendors/slide-out-panel.min.js', ['jquery'], 1, true);
+    wp_enqueue_script('slick-carousel', get_template_directory_uri() . '/dist/vendors/slick.min.js', array('jquery'), '1.9.0', true);
+
 }
 add_action('wp_enqueue_scripts', 'scripts');
 

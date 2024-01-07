@@ -114,12 +114,19 @@ jQuery(document).ready(function($){
         }
     });
 
-    $('a[href^="#"]').click(function(event) {
-        event.preventDefault();
+    $('a[href^="#"]').click(function(e) {
+        e.preventDefault();
         let targetId = $(this).attr('href');
 
         $('html, body').animate({
             scrollTop: $(targetId).offset().top -58
         }, 'slow');
+    });
+
+    $('.nbd-lookbook__grid').masonry({
+        itemSelector: '.nbd-lookbook__grid-item',
+        percentPosition: true,
+        columnWidth: '.nbd-lookbook__grid-item',
+        gutter: 14
     });
 })

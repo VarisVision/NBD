@@ -1,7 +1,7 @@
 <?php 
 
 /* 
-Template Name: Shop page
+Template Name: Shop Page
 */
 
 get_header();
