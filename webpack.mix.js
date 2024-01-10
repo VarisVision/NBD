@@ -11,6 +11,7 @@ mix.sass('src/sass/nbd-style.scss', 'dist/')
     .js('src/js/components/header.js', 'dist/scripts')
     .js('src/js/components/single-product.js', 'dist/scripts')
     .js('src/js/components/checkout.js', 'dist/scripts')
+    .js('src/js/components/lookbook.js', 'dist/scripts')
     
 
 mix.browserSync({
