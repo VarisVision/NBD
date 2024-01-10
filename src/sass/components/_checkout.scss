@@ -8,6 +8,10 @@
             flex-direction: row;
         }
 
+        .woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout {
+            display: none;
+        }
+
         p label, span, .woocommerce-info,
         .woocommerce-privacy-policy-text,
         .nbd-checkout__order-total, .product-name {

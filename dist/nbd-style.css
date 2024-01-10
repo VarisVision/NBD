@@ -479,6 +479,9 @@ main > .nbd-section:first-child {
     flex-direction: row;
   }
 }
+.nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout {
+  display: none;
+}
 .nbd.woocommerce-checkout form.woocommerce-checkout p label, .nbd.woocommerce-checkout form.woocommerce-checkout span, .nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-info,
 .nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-privacy-policy-text,
 .nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__order-total, .nbd.woocommerce-checkout form.woocommerce-checkout .product-name {
