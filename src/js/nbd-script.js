@@ -114,19 +114,31 @@ jQuery(document).ready(function($){
         }
     });
 
-    $('a[href^="#"]').click(function(e) {
+    $('a[href^="/#"]').click(function(e) {
         e.preventDefault();
-        let targetId = $(this).attr('href');
+        let targetId = $(this).attr('href').replace('/#', '#');
+    
+        if (window.location.pathname === '/') {
+            scrollToSection(targetId);
+        } else {
+            window.location.href = '/' + targetId;
+        }
+    });
+    
+    function scrollToSection(targetId) {
+        if ($(targetId).length) {
+            $('html, body').animate({
+                scrollTop: $(targetId).offset().top - 58
+            }, 'slow');
+        }
+    }
 
-        $('html, body').animate({
-            scrollTop: $(targetId).offset().top -58
-        }, 'slow');
+    $(document).ready(function() {
+        let hash = window.location.hash;
+        if (hash) {
+            scrollToSection(hash);
+        }
     });
 
-    $('.nbd-lookbook__grid').masonry({
-        itemSelector: '.nbd-lookbook__grid-item',
-        percentPosition: true,
-        columnWidth: '.nbd-lookbook__grid-item',
-        gutter: 14
-    });
-})
+    
+});

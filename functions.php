@@ -25,6 +25,7 @@ function scripts()
 
     if (is_page_template('template-lookbook.php')) {
         wp_enqueue_script('masonry-js', get_template_directory_uri() . '/dist/vendors/masonry.min.js', array('jquery'), null, true);
+        wp_enqueue_script('lookbook', get_template_directory_uri() . '/dist/scripts/lookbook.js', ['jquery'], true);
     }
 
     wp_enqueue_script('drawer-script', get_template_directory_uri() . '/dist/vendors/slide-out-panel.min.js', ['jquery'], 1, true);
