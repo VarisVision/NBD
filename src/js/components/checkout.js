@@ -31,7 +31,6 @@ jQuery(document).ready(function($){
         if(!$(e).val('')) {
             $(this).parent().siblings('label').addClass('has-value');
         }
-        
     })
 
     $(".nbd.woocommerce-checkout input, .nbd.woocommerce-checkout textarea").focus(function() {
@@ -60,6 +59,19 @@ jQuery(document).ready(function($){
         }
     });
 
+    let formSubmitted = false;
+    let fieldsToValidate = {
+        'billing_first_name': false, 
+        'billing_last_name': false, 
+        'billing_address_1': false, 
+        'billing_postcode': false, 
+        'billing_city': false, 
+        'billing_phone': false, 
+        'billing_email': false,
+        'billing_state': true,
+        'billing_country': true
+    };
+
     function isValidEmail(email) {
         let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
@@ -75,11 +87,13 @@ jQuery(document).ready(function($){
             errorMessage = 'Invalid billing email address';
         }
 
-        if (isDropdown && value === '') {
+        if (isDropdown && value === '' && formSubmitted) {
             errorMessage = 'Please select an option';
         }
 
-        let isFieldInvalid = !value || (fieldId === 'billing_email' && !isValidEmail(value));
+        let isFieldInvalid = (isDropdown && value === '' && formSubmitted) ||
+        (!isDropdown && !value) ||
+        (fieldId === 'billing_email' && !isValidEmail(value));
 
         if (isFieldInvalid) {
             if($('.' + errorClass).length === 0) {
@@ -90,20 +104,9 @@ jQuery(document).ready(function($){
         }
     }
 
-    let fieldsToValidate = {
-        'billing_first_name': false, 
-        'billing_last_name': false, 
-        'billing_address_1': false, 
-        'billing_postcode': false, 
-        'billing_city': false, 
-        'billing_phone': false, 
-        'billing_email': false,
-        'billing_state': true,
-        'billing_country': true
-    };
-
     $('form.checkout').on('checkout_place_order', function(event) {
         let preventSubmission = false;
+        formSubmitted = true;
 
         $.each(fieldsToValidate, function(fieldId, isDropdown) {
             validateField(fieldId, isDropdown);

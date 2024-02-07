@@ -14,7 +14,7 @@
 
         p label, span, .woocommerce-info,
         .woocommerce-privacy-policy-text,
-        .nbd-checkout__order-total, .product-name {
+        .nbd-checkout__order-total, .product-name, .payment_methods {
             @include font-primary($base, 400);
         }
 
@@ -80,8 +80,7 @@
         }
     }
 
-    .shop_table, #customer_details, 
-    .nbd-checkout__order-total, #order_review {
+    .shop_table, #customer_details {
         width: 100%;
 
         @include for-tablet-landscape {
@@ -264,4 +263,16 @@
         padding-bottom: .75rem;
         margin-bottom: .75rem;
     }
+
+    // &__payment {
+    //     ul.payment_methods li[class*=payment_method] li {
+    //         margin-top: 20px;
+    //     }
+    // }
+}
+
+label.p-FieldLabel.Label.Label--empty {
+    @include font-primary($base, 400);
+    color: #000 !important;
+    opacity: 0.5;
 }

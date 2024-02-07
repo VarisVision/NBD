@@ -1,4 +1,7 @@
 <?php
+require_once get_template_directory() . '/admin/custom-post-types.php';
+require_once get_template_directory() . '/admin/lookbook-gallery.php';
+require_once get_template_directory() . '/components/single-product.php';
 
 function scripts()
 {
@@ -23,7 +26,7 @@ function scripts()
         wp_enqueue_script('checkout', get_template_directory_uri() . '/dist/scripts/checkout.js', ['jquery'], true);
     }
 
-    if (is_page_template('template-lookbook.php')) {
+    if (is_singular('gallery')) {
         wp_enqueue_script('masonry-js', get_template_directory_uri() . '/dist/vendors/masonry.min.js', array('jquery'), null, true);
         wp_enqueue_script('lookbook', get_template_directory_uri() . '/dist/scripts/lookbook.js', ['jquery'], true);
     }
@@ -130,8 +133,6 @@ add_action('customize_register', 'nbd_customize_register');
 
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
-require_once get_template_directory() . '/components/single-product.php';
-
 function get_cart_count() {
     echo WC()->cart->get_cart_contents_count();
     die();
@@ -183,9 +184,6 @@ remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
 add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_order_review', 10 );
 
-
-
-
 function ajax_apply_coupon() {
     if ( ! empty( $_POST['coupon_code'] ) ) {
         $coupon_code = sanitize_text_field( $_POST['coupon_code'] );
@@ -208,6 +206,7 @@ function ajax_apply_coupon() {
 
     wp_die();
 }
+
 add_action( 'wp_ajax_apply_coupon', 'ajax_apply_coupon' );
 add_action( 'wp_ajax_nopriv_apply_coupon', 'ajax_apply_coupon' ); 
 

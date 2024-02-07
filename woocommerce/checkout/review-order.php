@@ -50,4 +50,79 @@ defined( 'ABSPATH' ) || exit;
 		do_action( 'woocommerce_review_order_after_cart_contents' );
 		?>
 	</ul>
+
+	<div class="nbd-checkout__order-total">
+		<div class="checkout_coupon woocommerce-form-coupon" method="post">
+
+			<p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
+
+			<p class="form-row form-row-first">
+				<label for="coupon_code" class=""><?php esc_html_e( 'Coupon Code', 'woocommerce' ); ?></label>
+				<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( '', 'woocommerce' ); ?>" id="coupon_code" value="" />
+			</p>
+
+			<p class="form-row form-row-last">
+				<button  class="checkout_coupon_btn button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
+			</p>
+
+			<div class="clear"></div>
+		</div>
+
+		<div class="nbd-checkout__price">
+			<div class="cart-subtotal">
+				<p><?php esc_html_e( 'Items Total', 'woocommerce' ); ?></p>
+				<p><?php wc_cart_totals_subtotal_html(); ?></p>
+			</div>
+
+			<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+				<div class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+					<p><?php wc_cart_totals_coupon_label( $coupon ); ?></p>
+					<p><?php wc_cart_totals_coupon_html( $coupon ); ?></p>
+				</div>
+			<?php endforeach; ?>
+
+			<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
+				<div class="nbd-checkout__shipping">
+					<?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
+
+					<?php wc_cart_totals_shipping_html(); ?>
+
+					<?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
+				</div>
+			<?php endif; ?>
+
+			<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
+				<div class="fee">
+					<p><?php echo esc_html( $fee->name ); ?></p>
+					<p><?php wc_cart_totals_fee_html( $fee ); ?></p>
+				</div>
+			<?php endforeach; ?>
+
+			<?php if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() ) : ?>
+				<?php if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) : ?>
+					<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited ?>
+						<div class="tax-rate tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+							<p><?php echo esc_html( $tax->label ); ?></p>
+							<p><?php echo wp_kses_post( $tax->formatted_amount ); ?></p>
+						</div>
+					<?php endforeach; ?>
+				<?php else : ?>
+					<div class="tax-total">
+						<p><?php echo esc_html( WC()->countries->tax_or_vat() ); ?></p>
+						<p><?php wc_cart_totals_taxes_total_html(); ?></p>
+					</div>
+				<?php endif; ?>
+			<?php endif; ?>
+
+			<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
+
+			<div class="order-total">
+				<p><?php esc_html_e( 'Total', 'woocommerce' ); ?></p>
+				<p><?php wc_cart_totals_order_total_html(); ?></p>
+			</div>
+
+			<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
+		</div>
+
+	</div>
 </div>
