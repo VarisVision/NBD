@@ -28,6 +28,8 @@ function scripts()
 
     if (is_singular('gallery')) {
         wp_enqueue_script('masonry-js', get_template_directory_uri() . '/dist/vendors/masonry.min.js', array('jquery'), null, true);
+        wp_enqueue_script('fluidbox-js', get_template_directory_uri() . '/dist/vendors/fluidbox.min.js', array('jquery'), null, false);
+        wp_enqueue_style('fluidbox-css', get_template_directory_uri() . '/dist/vendors/fluidbox.min.css');
         wp_enqueue_script('lookbook', get_template_directory_uri() . '/dist/scripts/lookbook.js', ['jquery'], true);
     }
 

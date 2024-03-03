@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+#breadcrumbs {
+    padding: 0 .75rem;
+
+    @include for-tablet {
+        position: absolute;
+    }
+
+    a {
+        @include font-primary($small, 300);
+    }
+    .breadcrumb_last {
+        @include font-primary($small, 400);
+    }
+}
+
+main, footer, .woocommerce {
+    position: relative;
+    top: 3.652rem;
+}
+
+.nbd.woocommerce {
+    top: 0;
+}
+
+.nbd.woocommerce-cart, .nbd.woocommerce-checkout {
+    .woocommerce {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 1rem .75rem 2.5rem;
+    }
+}
+
+.nbd.woocommerce-cart .woocommerce {
+    max-width: 26.25rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+    padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+@mixin tooltip {
+    &::before, &::after {
+        position: absolute;
+        background-color: #333;
+        top: 0;
+        left: 50%;
+    }
+    &::before {
+        content: "";
+        width: .625rem;
+        height: .625rem;
+        transform: translate(-50%,-110%) rotate(45deg);
+        transform-origin: 50% 50%;
+    }
+
+    &::after {
+        color: #fff;
+        content: "ADD TO CART";
+        @include font-primary(.75rem, 300);
+        text-align: center;
+        padding: .375rem .75rem;
+        transform: translate(-50%, -122%);
+        min-width: max-content;
+        z-index: 1;
+    }
+}
+
+@mixin button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    @include font-primary(.875rem, 500);
+    color: #fff;
+    background-color: #444;
+    margin-top: 1.75rem;
+    padding: .7rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        transform: scale(1.05);
+        text-decoration: none;
+    }
+}
+
+@mixin borderButton {
+    --s: 10px;
+    --t: 1px;
+    --g: .5rem;
+    
+    padding: calc(var(--g) + var(--t));
+    outline: var(--t) solid #000;
+    outline-offset: calc(-1*var(--t));
+    -webkit-mask:
+      conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+      0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+      linear-gradient(#000 0 0) content-box;
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+        padding: 4px;
+    }
+
+    &.active {
+        padding: 4px;
+        -webkit-mask:
+      conic-gradient(at var(--s) var(--s),#000 0,#000 0)
+      0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+      linear-gradient(#000 0 0) content-box;
+    
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.nbd-quick-variation {
+    button {
+        position: relative;
+        text-transform: uppercase;
+
+        &:hover {
+            text-decoration: underline;
+            @include tooltip;
+        }
+    }
+}
+
+.nbd-section {
+    padding: 0 .75rem;
+    margin: .75rem 0;
+}
+
+main > .nbd-section:first-child {
+    margin-top: 0;
+}
+
+.nbd-section, .nbd-article {
+    & header {
+        margin-bottom: 1.5rem;
+
+        h1{
+            @include font-primary($large, 500);
+        }
+    }
+}
+
+.nbd-four-column {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    gap: .75rem;
+
+    @include for-tablet-landscape {
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    * {
+        max-width: 31.25rem;
+    }
+}
+
+.nbd-svg {
+    display: none;
+}
+
+.nbd-social {
+    svg {
+        transition: all .3s ease-out;
+    }
+    &:hover {
+        svg {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.slick-dots {
+	display: flex;
+	justify-content: center;
+	position: relative;
+    bottom: 0rem;
+	margin: 0;
+	padding: 1rem 0;
+	list-style-type: none;
+
+    @include for-tablet-landscape {
+        bottom: 4rem;
+    }
+	
+    li {
+        margin: 0 .25rem;
+    }
+
+    button {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        padding: 0;
+        
+        border: none;
+        border-radius: 100%;
+        background-color: $lightGrey;
+        transition: background-color 0.5s;
+        text-indent: -9999px;
+    }
+
+    li.slick-active button {
+        background-color: $darkGrey;
+    }
+}
+
+.nbd-mobile {
+    display: block;
+
+    @include for-tablet-landscape {
+        display: none;
+    }
+}
+
+.nbd-desktop {
+    display: none;
+
+    @include for-tablet-landscape {
+        display: block;
+    }
+}

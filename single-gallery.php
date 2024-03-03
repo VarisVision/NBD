@@ -16,10 +16,24 @@ get_header();
             $count = sizeof($url_array);                
             for( $i=0; $i<$count; $i++ ){
                 $attachment_id = attachment_url_to_postid($url_array[$i]);
+
+                $mobile = wp_get_attachment_image_url($attachment_id, 'mobile');
+                $tablet = wp_get_attachment_image_url($attachment_id, 'tablet');
+                $laptop = wp_get_attachment_image_url($attachment_id, 'laptop');
+                $desktop = wp_get_attachment_image_url($attachment_id, 'desktop');
+                
                 $alt_text = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
-            ?>      
+            ?>
             <div class="nbd-lookbook__grid-item">
-                <img src="<?php echo $url_array[$i]; ?>" alt="<?php echo esc_attr($alt_text); ?>"/>
+                <a href="<?php echo esc_url($desktop); ?>" rel="gallery-1">
+                    <picture>
+                        <source srcset="<?php echo esc_url($desktop) ?>" media="(min-width: 1440px)"/>
+                        <source srcset="<?php echo esc_url($laptop) ?>" media="(min-width: 990px)"/>
+                        <source srcset="<?php echo esc_url($tablet) ?>" media="(min-width: 640px)"/>
+                        <source srcset="<?php echo esc_url($mobile) ?>" media="(min-width: 0px)"/>
+                        <img src="<?php echo esc_url($laptop) ?>" loading="lazy" alt="<?php echo esc_attr($alt_text); ?>"/>
+                    </picture>
+                </a>
             </div>  
             <?php 
             }
@@ -30,14 +44,3 @@ get_header();
 <?php
 get_footer();
 ?>
-<div class="nbd-lookbook__modal">
-    <div class="nbd-lookbook__overlay"></div>
-    <span class="nbd-lookbook__modal-close">×</span>
-    <div class="nbd-lookbook__modal-content">
-    <img src="" alt="" class="nbd-lookbook__modal-img">
-    <div class="nbd-lookbook__modal-nav">
-        <button type="button" class="btnPrev">❮</button>
-        <button type="button" class="btnNext">❯</button>
-    </div>
-    </div>
-</div>

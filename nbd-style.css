@@ -1,0 +1,1574 @@
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap);
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+#breadcrumbs {
+  padding: 0 0.75rem;
+}
+@media only screen and (min-width: 768px) {
+  #breadcrumbs {
+    position: absolute;
+  }
+}
+#breadcrumbs a {
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+#breadcrumbs .breadcrumb_last {
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+main, footer, .woocommerce {
+  position: relative;
+  top: 3.652rem;
+}
+
+.nbd.woocommerce {
+  top: 0;
+}
+
+.nbd.woocommerce-cart .woocommerce, .nbd.woocommerce-checkout .woocommerce {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem 0.75rem 2.5rem;
+}
+
+.nbd.woocommerce-cart .woocommerce {
+  max-width: 26.25rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+button, input[type=submit], input[type=reset] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.nbd-quick-variation button {
+  position: relative;
+  text-transform: uppercase;
+}
+.nbd-quick-variation button:hover {
+  text-decoration: underline;
+}
+.nbd-quick-variation button:hover::before, .nbd-quick-variation button:hover::after {
+  position: absolute;
+  background-color: #333;
+  top: 0;
+  left: 50%;
+}
+.nbd-quick-variation button:hover::before {
+  content: "";
+  width: 0.625rem;
+  height: 0.625rem;
+  transform: translate(-50%, -110%) rotate(45deg);
+  transform-origin: 50% 50%;
+}
+.nbd-quick-variation button:hover::after {
+  color: #fff;
+  content: "ADD TO CART";
+  font-family: "Oswald", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 0.375rem 0.75rem;
+  transform: translate(-50%, -122%);
+  min-width: -moz-max-content;
+  min-width: max-content;
+  z-index: 1;
+}
+
+.nbd-section {
+  padding: 0 0.75rem;
+  margin: 0.75rem 0;
+}
+
+main > .nbd-section:first-child {
+  margin-top: 0;
+}
+
+.nbd-section header, .nbd-article header {
+  margin-bottom: 1.5rem;
+}
+.nbd-section header h1, .nbd-article header h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.nbd-four-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 0.75rem;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-four-column {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.nbd-four-column * {
+  max-width: 31.25rem;
+}
+
+.nbd-svg {
+  display: none;
+}
+
+.nbd-social svg {
+  transition: all 0.3s ease-out;
+}
+.nbd-social:hover svg {
+  transform: scale(1.2);
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 0rem;
+  margin: 0;
+  padding: 1rem 0;
+  list-style-type: none;
+}
+@media only screen and (min-width: 992px) {
+  .slick-dots {
+    bottom: 4rem;
+  }
+}
+.slick-dots li {
+  margin: 0 0.25rem;
+}
+.slick-dots button {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border: none;
+  border-radius: 100%;
+  background-color: #f2f2f2;
+  transition: background-color 0.5s;
+  text-indent: -9999px;
+}
+.slick-dots li.slick-active button {
+  background-color: #393939;
+}
+
+.nbd-mobile {
+  display: block;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-mobile {
+    display: none;
+  }
+}
+
+.nbd-desktop {
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-desktop {
+    display: block;
+  }
+}
+
+.nbd-blog__article {
+  margin-bottom: 0.5rem;
+}
+@media only screen and (min-width: 768px) {
+  .nbd-blog__article {
+    margin-bottom: 1rem;
+  }
+}
+.nbd-blog__article a {
+  display: block;
+}
+.nbd-blog__article img {
+  width: 100%;
+}
+.nbd-blog__article h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+@media only screen and (min-width: 768px) {
+  .nbd-blog__article h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+}
+
+.nbd-article header {
+  text-align: center;
+}
+.nbd-article article {
+  padding: 0 0.75rem;
+  margin: 0 auto 2.5rem;
+  max-width: 48rem;
+}
+.nbd-article article p {
+  margin-bottom: 1.5rem;
+}
+.nbd-article article p:last-child {
+  margin-bottom: 0;
+}
+.nbd-article article p img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 120%;
+}
+
+.nbd-side-cart {
+  position: relative;
+}
+.nbd-side-cart .slide-out-panel-container .slide-out-content {
+  height: 100%;
+  padding: 0.75rem;
+}
+.nbd-side-cart .slide-out-panel-container .slide-out-content .close-slide-out-panel {
+  display: block;
+  top: 1.6rem;
+  right: 0.75rem;
+  font-size: 1rem;
+}
+.nbd-side-cart__count {
+  position: absolute;
+  top: 51.5%;
+  left: 49%;
+  font-family: sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #000;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.nbd-side-cart h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.75rem;
+}
+
+.widget_shopping_cart_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 2.375rem);
+}
+
+.woocommerce-mini-cart {
+  overflow-y: auto;
+  width: 100%;
+  min-height: 250px;
+}
+.woocommerce-mini-cart__empty-message {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.nbd-mini-cart .mini_cart_item, .nbd-mini-cart .cart_item, .nbd-cart .mini_cart_item, .nbd-cart .cart_item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 0.75rem 0.75rem 0;
+  border-bottom: 1px solid #ddd;
+}
+.nbd-mini-cart .mini_cart_item:last-child, .nbd-mini-cart .cart_item:last-child, .nbd-cart .mini_cart_item:last-child, .nbd-cart .cart_item:last-child {
+  border-bottom: unset;
+}
+.nbd-mini-cart__product-details, .nbd-cart__product-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.nbd-mini-cart__product-details--header, .nbd-mini-cart__product-details--footer, .nbd-cart__product-details--header, .nbd-cart__product-details--footer {
+  display: flex;
+  justify-content: space-between;
+}
+.nbd-mini-cart__product-details--size, .nbd-cart__product-details--size {
+  font-size: small;
+}
+.nbd-mini-cart__product-details--footer, .nbd-cart__product-details--footer {
+  margin-top: auto;
+}
+.nbd-mini-cart__product-details--footer .woocommerce-Price-amount, .nbd-cart__product-details--footer .woocommerce-Price-amount {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.nbd-mini-cart__product-details--footer .quantity-input, .nbd-cart__product-details--footer .quantity-input {
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 0 0.75rem;
+}
+.nbd-mini-cart__product-details--footer .disabled:hover, .nbd-cart__product-details--footer .disabled:hover {
+  cursor: not-allowed;
+}
+.nbd-mini-cart__footer, .nbd-cart__footer {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid #ddd;
+}
+.nbd-mini-cart__footer .woocommerce-mini-cart__total, .nbd-cart__footer .woocommerce-mini-cart__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nbd-mini-cart__footer .woocommerce-mini-cart__total strong, .nbd-cart__footer .woocommerce-mini-cart__total strong {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.nbd-mini-cart__footer .woocommerce-mini-cart__total .woocommerce-Price-amount, .nbd-cart__footer .woocommerce-mini-cart__total .woocommerce-Price-amount {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.nbd-mini-cart__footer .woocommerce-mini-cart__buttons a:first-child, .nbd-cart__footer .woocommerce-mini-cart__buttons a:first-child {
+  display: none;
+}
+.nbd-mini-cart__footer a.button, .nbd-cart__footer a.button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #444;
+  margin-top: 1.75rem;
+  padding: 0.7rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+}
+.nbd-mini-cart__footer a.button:hover, .nbd-cart__footer a.button:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+.nbd-cart__product-details--footer .quantity input {
+  width: 50px;
+}
+.nbd-cart__coupon {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+  padding: 0.75rem 0;
+}
+.nbd-cart__coupon--btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 2.5rem;
+}
+.nbd-cart__coupon--btn .button {
+  --s: 10px;
+  --t: 1px;
+  --g: .5rem;
+  padding: calc(var(--g) + var(--t));
+  outline: var(--t) solid #000;
+  outline-offset: calc(-1 * var(--t));
+  -webkit-mask: conic-gradient(at var(--s) var(--s), rgba(0, 0, 0, 0) 75%, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000 0 0) content-box;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.nbd-cart__coupon--btn .button:hover {
+  padding: 4px;
+}
+.nbd-cart__coupon--btn .button.active {
+  padding: 4px;
+  -webkit-mask: conic-gradient(at var(--s) var(--s), #000 0, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000 0 0) content-box;
+}
+.nbd-cart__coupon--btn .button.active span {
+  font-weight: bold;
+}
+.nbd-cart__update-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #444;
+  margin-top: 1.75rem;
+  padding: 0.7rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 0 0.75rem;
+}
+.nbd-cart__update-btn:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+.nbd-cart__footer {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+#nbd-side-cart__drawer.slide-out-panel-container {
+  bottom: 0;
+}
+
+.nbd.woocommerce-checkout form.woocommerce-checkout {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+@media only screen and (min-width: 992px) {
+  .nbd.woocommerce-checkout form.woocommerce-checkout {
+    flex-direction: row;
+  }
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout {
+  display: none;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout p label, .nbd.woocommerce-checkout form.woocommerce-checkout span, .nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-info,
+.nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-privacy-policy-text,
+.nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__order-total, .nbd.woocommerce-checkout form.woocommerce-checkout .product-name, .nbd.woocommerce-checkout form.woocommerce-checkout .payment_methods {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .product-name > *:not(:last-child) {
+  margin-right: 1.5rem;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .product-name > :last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout #place_order {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #444;
+  margin-top: 1.75rem;
+  padding: 0.7rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+  width: -moz-max-content;
+  width: max-content;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout #place_order:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .cart-subtotal span, .nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__shipping label {
+  font-weight: 300;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon, .nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__price {
+  width: 100%;
+  margin: 1.5rem 0 2.5rem;
+}
+@media only screen and (min-width: 992px) {
+  .nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon, .nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__price {
+    width: 89%;
+  }
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon {
+  justify-content: flex-start;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon p:first-child {
+  width: 100%;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .form-row-first {
+  margin-right: 1.5rem;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .form-row-last {
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 2.5rem;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .checkout_coupon_btn {
+  --s: 10px;
+  --t: 1px;
+  --g: .5rem;
+  padding: calc(var(--g) + var(--t));
+  outline: var(--t) solid #000;
+  outline-offset: calc(-1 * var(--t));
+  -webkit-mask: conic-gradient(at var(--s) var(--s), rgba(0, 0, 0, 0) 75%, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000 0 0) content-box;
+  transition: 0.3s;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 0;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .checkout_coupon_btn:hover {
+  padding: 4px;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .checkout_coupon_btn.active {
+  padding: 4px;
+  -webkit-mask: conic-gradient(at var(--s) var(--s), #000 0, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000 0 0) content-box;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .checkout_coupon .checkout_coupon_btn.active span {
+  font-weight: bold;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .cart-subtotal, .nbd.woocommerce-checkout form.woocommerce-checkout .nbd-checkout__shipping, .nbd.woocommerce-checkout form.woocommerce-checkout .order-total {
+  display: flex;
+  justify-content: space-between;
+}
+.nbd.woocommerce-checkout form.woocommerce-checkout .woocommerce-checkout-review-order {
+  display: flex;
+  align-items: flex-end;
+}
+.nbd.woocommerce-checkout .shop_table, .nbd.woocommerce-checkout #customer_details {
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .nbd.woocommerce-checkout .shop_table, .nbd.woocommerce-checkout #customer_details {
+    width: 50%;
+  }
+}
+.nbd.woocommerce-checkout h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper,
+.nbd.woocommerce-checkout .woocommerce-form-coupon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p,
+.nbd.woocommerce-checkout .woocommerce-form-coupon p {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0.75rem 0;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon p label {
+  margin-bottom: 0.75rem;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p label abbr,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p label abbr,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p label abbr,
+.nbd.woocommerce-checkout .woocommerce-form-coupon p label abbr {
+  text-decoration: none;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p#billing_country_field, .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper p#billing_state_field,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p#billing_country_field,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper p#billing_state_field,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p#billing_country_field,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper p#billing_state_field,
+.nbd.woocommerce-checkout .woocommerce-form-coupon p#billing_country_field,
+.nbd.woocommerce-checkout .woocommerce-form-coupon p#billing_state_field {
+  margin-top: 0;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input,
+.nbd.woocommerce-checkout .woocommerce-form-coupon input {
+  padding: 10px 10px 5px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+  color: #000;
+  opacity: 0.7;
+  transition: 0.2s ease;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input:focus,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input:focus,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input:focus,
+.nbd.woocommerce-checkout .woocommerce-form-coupon input:focus {
+  outline: none;
+  opacity: 1;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon label {
+  position: absolute;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  left: 5px;
+  top: 8px;
+  opacity: 0.5;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper .has-value,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .has-value,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper .has-value,
+.nbd.woocommerce-checkout .woocommerce-form-coupon .has-value {
+  top: -10px !important;
+  font-size: 12px !important;
+  color: #000 !important;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper select,
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper textarea,
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input[type=text],
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input[type=number],
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input[type=email],
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input[type=search],
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input[type=tel],
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper select,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper textarea,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input[type=text],
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input[type=number],
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input[type=email],
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input[type=search],
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper input[type=tel],
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper select,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper textarea,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=text],
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=number],
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=email],
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=search],
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper input[type=tel],
+.nbd.woocommerce-checkout .woocommerce-form-coupon select,
+.nbd.woocommerce-checkout .woocommerce-form-coupon textarea,
+.nbd.woocommerce-checkout .woocommerce-form-coupon input[type=text],
+.nbd.woocommerce-checkout .woocommerce-form-coupon input[type=number],
+.nbd.woocommerce-checkout .woocommerce-form-coupon input[type=email],
+.nbd.woocommerce-checkout .woocommerce-form-coupon input[type=search],
+.nbd.woocommerce-checkout .woocommerce-form-coupon input[type=tel] {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  border-color: #aaa;
+  background-color: transparent;
+}
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #billing_country_field label, .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #shipping_country_field label, .nbd.woocommerce-checkout .woocommerce-billing-fields__field-wrapper #shipping_state_field label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #billing_country_field label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #shipping_country_field label,
+.nbd.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper #shipping_state_field label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #billing_country_field label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #shipping_country_field label,
+.nbd.woocommerce-checkout .woocommerce-additional-fields__field-wrapper #shipping_state_field label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon #billing_country_field label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon #billing_state_field label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon #shipping_country_field label,
+.nbd.woocommerce-checkout .woocommerce-form-coupon #shipping_state_field label {
+  position: relative;
+  font-size: 0.75rem;
+}
+.nbd.woocommerce-checkout .woocommerce-form__label-for-checkbox {
+  position: relative;
+  display: flex;
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.nbd.woocommerce-checkout #billing_first_name_field, .nbd.woocommerce-checkout #billing_last_name_field,
+.nbd.woocommerce-checkout #billing_address_1_field, .nbd.woocommerce-checkout #billing_address_2_field,
+.nbd.woocommerce-checkout #billing_phone_field, .nbd.woocommerce-checkout #billing_email_field,
+.nbd.woocommerce-checkout #shipping_first_name_field, .nbd.woocommerce-checkout #shipping_last_name_field,
+.nbd.woocommerce-checkout #shipping_address_1_field, .nbd.woocommerce-checkout #shipping_address_2,
+.nbd.woocommerce-checkout #billing_city_field, .nbd.woocommerce-checkout #shipping_city_field,
+.nbd.woocommerce-checkout #billing_postcode_field, .nbd.woocommerce-checkout #shipping_postcode_field {
+  width: calc(50% - 0.75rem);
+}
+.nbd.woocommerce-checkout #billing_state_field, .nbd.woocommerce-checkout #billing_country_field,
+.nbd.woocommerce-checkout #shipping_state_field, .nbd.woocommerce-checkout #shipping_country_field,
+.nbd.woocommerce-checkout #order_comments_field {
+  width: 100%;
+}
+.nbd.woocommerce-checkout #break-field_field {
+  visibility: hidden;
+}
+.nbd.woocommerce-checkout .select2-selection {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+.nbd.woocommerce-checkout .select2-dropdown {
+  border-top: 1px solid #aaa;
+}
+.nbd.woocommerce-checkout .select2-selection__rendered {
+  color: #aaa;
+}
+.nbd.woocommerce-checkout .select2-search__field {
+  background-image: url(icons/search.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: left;
+  padding-left: 25px;
+}
+
+.nbd-checkout__order-review .product-name {
+  display: flex;
+  align-items: center;
+}
+.nbd-checkout__cart-items {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-checkout__cart-items {
+    width: 89%;
+    overflow-y: auto;
+    max-height: 377px;
+    padding-right: 0.75rem;
+  }
+}
+.nbd-checkout__price {
+  margin-top: 1rem;
+}
+.nbd-checkout__shipping {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+label.p-FieldLabel.Label.Label--empty {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #000 !important;
+  opacity: 0.5;
+}
+
+.nbd-footer {
+  background-color: #f2f2f2;
+}
+.nbd-footer__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 22rem;
+  padding: 2.5rem 0.75rem;
+  margin: 0 auto;
+  gap: 2.5rem;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer__container {
+    flex-direction: row;
+    align-items: unset;
+    max-width: 80rem;
+    gap: 1.5rem;
+  }
+}
+.nbd-footer__menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer__menu {
+    justify-content: unset;
+    width: auto;
+    gap: 3rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .nbd-footer__menu {
+    gap: 7rem;
+  }
+}
+.nbd-footer__menu--items a {
+  font-size: 1.125rem;
+}
+.nbd-footer h2, .nbd-footer__connect--socials ul {
+  margin-bottom: 0.75rem;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer h2, .nbd-footer__connect--socials ul {
+    margin-bottom: 0.5rem;
+  }
+}
+.nbd-footer__offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer__offer {
+    padding: 0 2.5rem;
+    border-right: 2px solid #ddd;
+    border-left: 2px solid #ddd;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .nbd-footer__offer {
+    padding: 0 5rem;
+  }
+}
+.nbd-footer__offer h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.nbd-footer__offer p {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.nbd-footer__payment-methods {
+  display: flex;
+  gap: 0.25rem;
+}
+.nbd-footer__payment-methods li {
+  display: flex;
+}
+.nbd-footer__connect {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer__connect {
+    align-items: flex-end;
+  }
+}
+.nbd-footer__connect h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.nbd-footer__connect--socials ul {
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-footer__connect--socials ul {
+    justify-content: flex-end;
+  }
+}
+.nbd-footer__copyright {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: #fff;
+}
+.nbd-footer__back-to-top {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  background-color: #fff;
+}
+.nbd-footer__back-to-top p {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.nbd-footer__back-to-top p span svg {
+  position: relative;
+  vertical-align: bottom;
+}
+.nbd-footer__back-to-top p:hover span svg {
+  animation: moveUpAndBack 2s ease infinite;
+}
+@keyframes moveUpAndBack {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.25rem);
+  }
+}
+
+.nbd-header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  padding: 0.75rem;
+  z-index: 9999;
+}
+.nbd-header__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -53%);
+  min-width: 174px;
+}
+.nbd-header nav .menu a {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.nbd-header__menu-right {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.nbd-header__menu-right .menu {
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-header__menu-right .menu {
+    display: block;
+  }
+}
+.nbd-header__menu-right--icons {
+  display: flex;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  position: relative;
+  align-items: center;
+  top: 2px;
+}
+.nbd-header__menu-right--icons .nbd-search__btn svg {
+  position: relative;
+  top: 1px;
+}
+.nbd-header__menu-left {
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-header__menu-left {
+    display: block;
+  }
+}
+.nbd-header__mobile {
+  position: relative;
+  top: 4px;
+  height: 23px;
+  cursor: pointer;
+}
+.nbd-header__mobile--btn {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-header__mobile--btn {
+    display: none;
+  }
+}
+.nbd-header__mobile--menu {
+  text-align: center;
+}
+.nbd-header__mobile--menu li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ccc;
+}
+.nbd-header__mobile--menu li:first-child {
+  padding-top: 0;
+}
+.nbd-header__mobile--menu li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.nbd-header__mobile--menu a {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.nbd-header__mobile--menu.slide-out-panel-container {
+  left: 0;
+  z-index: 999;
+}
+.nbd-header__mobile--menu.slide-out-panel-container.open {
+  top: 58px !important;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-header__menu-right ul.menu, .nbd-header__menu-left ul.menu {
+    display: flex;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+}
+.nbd-header__menu-right ul.menu li a, .nbd-header__menu-left ul.menu li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  padding: 0 0 0.2rem;
+}
+.nbd-header__menu-right ul.menu li a::after, .nbd-header__menu-left ul.menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1rem;
+  background-color: pink;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+.nbd-header__menu-right ul.menu li a:hover::after, .nbd-header__menu-right ul.menu li a:focus::after, .nbd-header__menu-left ul.menu li a:hover::after, .nbd-header__menu-left ul.menu li a:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.05rem, 0);
+}
+.nbd-header h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 0.9;
+  text-decoration: underline;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+#nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
+  width: 23px;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+}
+
+#nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #000;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
+  top: 7px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 14px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.nbd-hero {
+  position: relative;
+  z-index: 1;
+}
+.nbd-hero picture, .nbd-hero img {
+  display: block;
+}
+.nbd-hero img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 70vw;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-hero img {
+    max-height: 47vw;
+  }
+}
+.nbd-hero__gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.nbd-hero__gradient.top {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 40%);
+}
+.nbd-hero__gradient.bottom {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 40%);
+}
+
+.nbd-lookbook {
+  padding: 0 0.75rem;
+}
+.nbd-lookbook__grid {
+  width: 100%;
+}
+.nbd-lookbook__grid-sizer, .nbd-lookbook__grid-item {
+  width: calc(100% - 4px);
+}
+@media only screen and (min-width: 768px) {
+  .nbd-lookbook__grid-sizer, .nbd-lookbook__grid-item {
+    width: calc(50% - 9px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .nbd-lookbook__grid-sizer, .nbd-lookbook__grid-item {
+    width: calc(33.3% - 10px);
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .nbd-lookbook__grid-sizer, .nbd-lookbook__grid-item {
+    width: calc(25% - 11px);
+  }
+}
+.nbd-lookbook__grid-item {
+  margin-bottom: 12px;
+  float: left;
+}
+.nbd-lookbook__grid-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.nbd-lookbook__modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  place-items: center;
+  color: #fff;
+  z-index: 2;
+}
+.nbd-lookbook__modal.show {
+  display: grid;
+}
+.nbd-lookbook__modal-close {
+  position: absolute;
+  top: 4.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.nbd-lookbook__modal-content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-lookbook__modal-content {
+    width: unset;
+    min-height: 800px;
+    min-width: 800px;
+    max-width: 80%;
+  }
+}
+.nbd-lookbook__modal-content img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.nbd-lookbook__modal-content img.show {
+  opacity: 1;
+}
+.nbd-lookbook__overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+.nbd-lookbook__modal-nav {
+  padding: 10px 5px;
+}
+.nbd-lookbook__modal-nav button {
+  padding: 5px;
+  width: 100px;
+  font-size: 20px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.nbd-lookbook__modal-nav button:hover {
+  background-color: #000;
+}
+
+@media only screen and (min-width: 992px) {
+  .nbd-product-card:hover .nbd-product-card__image img:first-child {
+    display: none;
+  }
+  .nbd-product-card:hover .nbd-product-card__image img:last-child {
+    display: block;
+  }
+  .nbd-product-card:hover .nbd-product-card__link {
+    display: none;
+  }
+  .nbd-product-card:hover .nbd-product-card__quick-add {
+    display: flex;
+  }
+}
+.nbd-product-card__image {
+  display: block;
+}
+.nbd-product-card__image img {
+  width: 100%;
+}
+.nbd-product-card__image img:last-child {
+  display: none;
+}
+.nbd-product-card__info {
+  min-height: 74px;
+}
+.nbd-product-card__info h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.nbd-product-card__info .amount {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.nbd-product-card__quick-add {
+  display: none;
+  gap: 0.75rem;
+  height: inherit;
+  justify-content: center;
+  padding-top: 0.75rem;
+}
+
+.nbd-single-product {
+  padding: 0 0.75rem;
+}
+.nbd-single-product__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nbd-single-product__container .nbd-single-product__carousel, .nbd-single-product__container .entry-summary {
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-single-product__container .nbd-single-product__carousel, .nbd-single-product__container .entry-summary {
+    width: 50%;
+  }
+}
+.nbd-single-product__carousel {
+  position: relative;
+}
+.nbd-single-product__slide img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+.nbd-single-product .onsale {
+  display: none;
+}
+.nbd-single-product .entry-summary {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  max-width: 420px;
+  margin: 1.5rem auto 2.5rem;
+}
+.nbd-single-product .variations_form.cart {
+  width: 100%;
+}
+.nbd-single-product__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #000;
+}
+.nbd-single-product__title h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.nbd-single-product .woocommerce-Price-amount {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.nbd-single-product__variations {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nbd-single-product__variations p {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.nbd-single-product__variations ul {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 5px;
+}
+.nbd-single-product__variations ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.nbd-single-product__variations ul li div {
+  --s: 10px;
+  --t: 1px;
+  --g: .5rem;
+  padding: calc(var(--g) + var(--t));
+  outline: var(--t) solid #000;
+  outline-offset: calc(-1 * var(--t));
+  -webkit-mask: conic-gradient(at var(--s) var(--s), rgba(0, 0, 0, 0) 75%, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000 0 0) content-box;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.nbd-single-product__variations ul li div:hover {
+  padding: 4px;
+}
+.nbd-single-product__variations ul li div.active {
+  padding: 4px;
+  -webkit-mask: conic-gradient(at var(--s) var(--s), #000 0, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000 0 0) content-box;
+}
+.nbd-single-product__variations ul li div.active span {
+  font-weight: bold;
+}
+.nbd-single-product__variations ul li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.45rem;
+  min-height: 1.45rem;
+  font-size: 0.75rem;
+}
+.nbd-single-product .quantity, .nbd-single-product .product_meta, .nbd-single-product .variations {
+  display: none !important;
+}
+.nbd-single-product .related, .nbd-single-product .up-sells {
+  padding: 0 0.75rem 2.5rem;
+  width: 100%;
+}
+.nbd-single-product .related h2, .nbd-single-product .up-sells h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.nbd-single-product .related ul.products, .nbd-single-product .up-sells ul.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+@media only screen and (min-width: 992px) {
+  .nbd-single-product .related ul.products, .nbd-single-product .up-sells ul.products {
+    flex-direction: row;
+  }
+}
+.nbd-single-product .related ul.products li .add_to_cart_button, .nbd-single-product .up-sells ul.products li .add_to_cart_button {
+  display: none;
+}
+.nbd-single-product .single_add_to_cart_button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #444;
+  margin-top: 1.75rem;
+  padding: 0.7rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+}
+.nbd-single-product .single_add_to_cart_button:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+.nbd-single-product .single_add_to_cart_button.disabled {
+  color: #000;
+  background-color: #f2f2f2;
+}
+.nbd-single-product .single_add_to_cart_button.disabled:hover {
+  transform: scale(1);
+  cursor: not-allowed;
+}
+.nbd-single-product .nbd-carousel__arrow-left, .nbd-single-product .nbd-carousel__arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nbd-single-product .nbd-carousel__arrow-left {
+  left: 0;
+}
+.nbd-single-product .nbd-carousel__arrow-right {
+  right: -0.75rem;
+}
+
+.nbd-subscribe.tnp-subscription, .nbd-subscribe.tnp-subscription .tnp-field {
+  margin: 0;
+  background-color: #fff;
+}
+.nbd-subscribe.tnp-subscription input[type=email], .nbd-subscribe.tnp-subscription .tnp-field input[type=email] {
+  background: url("icons/mail.svg") no-repeat left #fff;
+  padding: 0.5rem 0 0.5rem 2.1rem;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.nbd-subscribe.tnp-subscription input[type=email]::-moz-placeholder, .nbd-subscribe.tnp-subscription .tnp-field input[type=email]::-moz-placeholder {
+  color: #393939;
+}
+.nbd-subscribe.tnp-subscription input[type=email]::placeholder, .nbd-subscribe.tnp-subscription .tnp-field input[type=email]::placeholder {
+  color: #393939;
+}
+.nbd-subscribe.tnp-subscription input[type=email]:focus-visible, .nbd-subscribe.tnp-subscription .tnp-field input[type=email]:focus-visible {
+  outline: none;
+}
+.nbd-subscribe.tnp-subscription .tnp-field-email, .nbd-subscribe.tnp-subscription .tnp-field .tnp-field-email {
+  width: 68%;
+}
+.nbd-subscribe.tnp-subscription .tnp-field-button, .nbd-subscribe.tnp-subscription .tnp-field .tnp-field-button {
+  display: flex;
+}
+.nbd-subscribe.tnp-subscription input[type=submit], .nbd-subscribe.tnp-subscription .tnp-field input[type=submit] {
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+  opacity: 1;
+}
+.nbd-subscribe.tnp-subscription input[type=submit]:hover, .nbd-subscribe.tnp-subscription .tnp-field input[type=submit]:hover {
+  transform: scale(1.1);
+}
+.nbd-subscribe__container {
+  display: flex;
+  padding-left: 0.75rem;
+  justify-content: space-between;
+}
+.nbd-subscribe__field label {
+  display: none !important;
+}
