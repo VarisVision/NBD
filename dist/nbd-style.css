@@ -23,6 +23,10 @@ body {
   margin: 0;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 #breadcrumbs {
   padding: 0 0.75rem;
 }
@@ -1079,7 +1083,7 @@ label.p-FieldLabel.Label.Label--empty {
   left: 0;
   width: 100%;
   height: 0.1rem;
-  background-color: hotpink;
+  background-color: pink;
   opacity: 0;
   transition: opacity 300ms, transform 300ms;
 }

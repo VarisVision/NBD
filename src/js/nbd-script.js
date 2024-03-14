@@ -139,6 +139,4 @@ jQuery(document).ready(function($){
             scrollToSection(hash);
         }
     });
-
-    
 });
