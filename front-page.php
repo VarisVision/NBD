@@ -11,7 +11,7 @@ get_header();
 
 <main class="no-bad-days">
     <?php 
-        heroBanner($imageCategoryFirst);
+        heroBanner($imageCategoryFirst, '');
     ?>
 
     <section id="<?php echo $categoryProductFirst;?>" class="nbd-section">
@@ -23,7 +23,7 @@ get_header();
     </section>
 
     <?php 
-        heroBanner($imageCategorySecond);
+        heroBanner($imageCategorySecond, '');
     ?>
 
     <section id="<?php echo $categoryProductSecond;?>" class="nbd-section">

@@ -1,8 +1,8 @@
 {
-    "/scripts/nbd-script.js": "/scripts/nbd-script.js",
+    "/dist/nbd-script.js": "/dist/nbd-script.js",
     "/scripts/header.js": "/scripts/header.js",
     "/scripts/single-product.js": "/scripts/single-product.js",
     "/scripts/checkout.js": "/scripts/checkout.js",
     "/scripts/lookbook.js": "/scripts/lookbook.js",
-    "/nbd-style.css": "/nbd-style.css"
+    "/dist/nbd-style.css": "/dist/nbd-style.css"
 }

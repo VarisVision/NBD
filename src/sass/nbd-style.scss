@@ -3,6 +3,8 @@
 @import "./layout/typography";
 @import "./layout/elements";
 
+@import "./woocommerce/order-details";
+
 @import "./components/blog";
 @import "./components/cart";
 @import "./components/checkout";
@@ -13,3 +15,5 @@
 @import "./components/product-card";
 @import "./components/single-product";
 @import "./components/subscribe";
+
+@import "./templates/two-column";

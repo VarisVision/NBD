@@ -1,10 +1,11 @@
-.nbd-hero {
+.nbdc-hero {
     position: relative;
     z-index: 1;
     
     picture, img {
         display: block;
     }
+
     img {
         width: 100%;
         height: auto;
@@ -13,6 +14,25 @@
 
         @include for-tablet-landscape {
             max-height: 47vw;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        z-index: 2;
+
+        h1 {
+            @include font-primary(2rem, 600);
+            text-transform: uppercase;
+            text-align: center;
+
+            @include for-tablet-landscape {
+                @include font-primary(3rem, 600);
+            }
         }
     }
 

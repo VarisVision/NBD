@@ -1,0 +1,17 @@
+.woocommerce-order-received {
+    .woocommerce-order {
+        text-align: center;
+    }
+
+    .woocommerce-table--order-details {
+        margin: 0 auto;
+    }
+
+    .order_details > * {
+        margin-bottom: 1rem;
+    }
+
+    .woocommerce-column__title {
+        margin: 1rem 0;
+    }
+}
