@@ -25,12 +25,18 @@ get_header();
     ?>
     <section class="nbdc-two-column__row">
         <div class="nbdc-two-column__col">
+        <?php
+            if (!empty($firstSectionTitle) || !empty($firstSectionText)) {
+        ?>
             <div class="nbdc-two-column__content">
                 <div class="nbdc-two-column__text">
-                    <h2><?php echo $firstSectionTitle ?></h2>
+                    <h2 <?php if(empty($firstSectionText)) echo 'style="margin-bottom: 0;"'?>><?php echo $firstSectionTitle ?></h2>
                     <?php echo $firstSectionText ?>
                 </div>
             </div>
+        <?php
+            }
+        ?>
         </div>
         <div class="nbdc-two-column__col">
             <div class="nbdc-two-column__image">
@@ -46,12 +52,18 @@ get_header();
             </div>
         </div>
         <div class="nbdc-two-column__col">
+        <?php
+            if (!empty($secondSectionTitle) || !empty($secondSectionText)) {
+        ?>
             <div class="nbdc-two-column__content">
                 <div class="nbdc-two-column__text">
-                    <h2><?php echo $secondSectionTitle ?></h2>
+                    <h2 <?php if(empty($secondSectionText)) echo 'style="margin-bottom: 0;"'?>><?php echo $secondSectionTitle ?></h2>
                     <?php echo $secondSectionText ?>
                 </div>
             </div>
+        <?php
+            }
+        ?>
         </div>
     </section>
 </main>

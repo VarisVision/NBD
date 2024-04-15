@@ -114,14 +114,15 @@ jQuery(document).ready(function($){
         }
     });
 
-    $('a[href^="/#"]').click(function(e) {
+    $('a[href^="/#"], a[href^="/sk/#"]').click(function(e) {
         e.preventDefault();
-        let targetId = $(this).attr('href').replace('/#', '#');
-    
-        if (window.location.pathname === '/') {
+        let targetId = $(this).attr('href').replace(/^\/(sk\/)?#/, '#');
+        let basePath = window.location.pathname.startsWith('/sk/') ? '/sk/' : '/';
+        
+        if (basePath === window.location.pathname) {
             scrollToSection(targetId);
         } else {
-            window.location.href = '/' + targetId;
+            window.location.href = basePath + targetId;
         }
     });
     
