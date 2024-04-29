@@ -6,22 +6,26 @@ body {
     margin: 0;
 }
 
+img {
+    display: block;
+}
+
 .no-scroll {
     overflow: hidden;
 }
 
 #breadcrumbs {
-    padding: 0 .75rem;
+    padding: .75rem;
 
     @include for-tablet {
         position: absolute;
     }
 
     a {
-        @include font-primary($small, 300);
+        @include font-primary($base, 300);
     }
     .breadcrumb_last {
-        @include font-primary($small, 400);
+        @include font-primary($base, 400);
     }
 }
 
@@ -30,11 +34,11 @@ main, footer, .woocommerce {
     top: 3.652rem;
 }
 
-.nbd.woocommerce {
+.nbdc.woocommerce {
     top: 0;
 }
 
-.nbd.woocommerce-cart, .nbd.woocommerce-checkout {
+.nbdc.woocommerce-cart, .nbdc.woocommerce-checkout {
     .woocommerce {
         max-width: 80rem;
         margin: 0 auto;
@@ -42,7 +46,7 @@ main, footer, .woocommerce {
     }
 }
 
-.nbd.woocommerce-cart .woocommerce {
+.nbdc.woocommerce-cart .woocommerce {
     max-width: 26.25rem;
 }
 
@@ -151,16 +155,16 @@ button, input[type="submit"], input[type="reset"] {
     }
 }
 
-.nbd-section {
+.nbdc-section {
     padding: 0 .75rem;
     margin: .75rem 0;
 }
 
-main > .nbd-section:first-child {
+main > .nbdc-section:first-child {
     margin-top: 0;
 }
 
-.nbd-section, .nbd-article {
+.nbdc-section, .nbd-article {
     & header {
         margin-bottom: 1.5rem;
 
