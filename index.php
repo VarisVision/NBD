@@ -1,7 +1,7 @@
 <?php get_header();?>
 
-<main class="no-bad-days nbd-blog">
-    <section class="nbd-section">
+<main class="no-bad-days-club nbd-blog">
+    <section class="nbdc-section">
         <header>
             <h1>Blog</h1>
         </header>

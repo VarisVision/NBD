@@ -18,9 +18,9 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<div class="nbd-checkout__order-review shop_table woocommerce-checkout-review-order-table">
+<div class="nbdc-checkout__order-review shop_table woocommerce-checkout-review-order-table">
 	<h3>Order Review</h3>
-	<ul class="nbd-checkout__cart-items">
+	<ul class="nbdc-checkout__cart-items">
 		<?php
 		do_action( 'woocommerce_review_order_before_cart_contents' );
 		
@@ -51,7 +51,7 @@ defined( 'ABSPATH' ) || exit;
 		?>
 	</ul>
 
-	<div class="nbd-checkout__order-total">
+	<div class="nbdc-checkout__order-total">
 		<div class="checkout_coupon woocommerce-form-coupon" method="post">
 
 			<p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
@@ -68,7 +68,7 @@ defined( 'ABSPATH' ) || exit;
 			<div class="clear"></div>
 		</div>
 
-		<div class="nbd-checkout__price">
+		<div class="nbdc-checkout__price">
 			<div class="cart-subtotal">
 				<p><?php esc_html_e( 'Items Total', 'woocommerce' ); ?></p>
 				<p><?php wc_cart_totals_subtotal_html(); ?></p>
@@ -82,7 +82,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php endforeach; ?>
 
 			<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
-				<div class="nbd-checkout__shipping">
+				<div class="nbdc-checkout__shipping">
 					<?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
 
 					<?php wc_cart_totals_shipping_html(); ?>

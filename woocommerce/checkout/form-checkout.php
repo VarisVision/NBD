@@ -46,7 +46,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 			<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
-			<div id="order_review" class="nbd-checkout__payment woocommerce-checkout-review-order">
+			<div id="order_review" class="nbdc-checkout__payment woocommerce-checkout-review-order">
 				<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 			</div>
 

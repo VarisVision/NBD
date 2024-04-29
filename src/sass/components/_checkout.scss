@@ -1,4 +1,4 @@
-.nbd.woocommerce-checkout {
+.nbdc.woocommerce-checkout {
     form.woocommerce-checkout {
         display: flex;
         flex-wrap: wrap;
@@ -14,7 +14,7 @@
 
         p label, span, .woocommerce-info,
         .woocommerce-privacy-policy-text,
-        .nbd-checkout__order-total, .product-name, .payment_methods {
+        .nbdc-checkout__order-total, .product-name, .payment_methods {
             @include font-primary($base, 400);
         }
 
@@ -32,11 +32,11 @@
             width: max-content;
         }
 
-        .cart-subtotal span, .nbd-checkout__shipping label {
+        .cart-subtotal span, .nbdc-checkout__shipping label {
             font-weight: 300;
         }
 
-        .checkout_coupon, .nbd-checkout__price {
+        .checkout_coupon, .nbdc-checkout__price {
             width: 100%;
             margin: 1.5rem 0 2.5rem;
 
@@ -70,7 +70,7 @@
             }
         }
 
-        .cart-subtotal, .nbd-checkout__shipping, .order-total {
+        .cart-subtotal, .nbdc-checkout__shipping, .order-total {
             display: flex;
             justify-content: space-between;
         }
@@ -234,7 +234,7 @@
     }
 }
 
-.nbd-checkout {
+.nbdc-checkout {
     &__order-review {
         .product-name {
             display: flex;

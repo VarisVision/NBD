@@ -9,12 +9,12 @@ $imageCategorySecond = get_field('second_category_image');
 get_header();
 ?>
 
-<main class="no-bad-days">
+<main class="no-bad-days-club">
     <?php 
         heroBanner($imageCategoryFirst, '');
     ?>
 
-    <section id="<?php echo $categoryProductFirst;?>" class="nbd-section">
+    <section id="<?php echo $categoryProductFirst;?>" class="nbdc-section">
         <div class="nbd-four-column">
             <?php    
                 categoryProducts($categoryProductFirst);
@@ -26,7 +26,7 @@ get_header();
         heroBanner($imageCategorySecond, '');
     ?>
 
-    <section id="<?php echo $categoryProductSecond;?>" class="nbd-section">
+    <section id="<?php echo $categoryProductSecond;?>" class="nbdc-section">
         <div class="nbd-four-column">
             <?php    
                 categoryProducts($categoryProductSecond);

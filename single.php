@@ -1,6 +1,6 @@
 <?php get_header();?>
 
-<main class="no-bad-days nbd-article">
+<main class="no-bad-days-club nbd-article">
     <?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); } ?>
     <article>
         <header>

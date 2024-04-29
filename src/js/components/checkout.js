@@ -33,7 +33,7 @@ jQuery(document).ready(function($){
         }
     })
 
-    $(".nbd.woocommerce-checkout input, .nbd.woocommerce-checkout textarea").focus(function() {
+    $(".nbdc.woocommerce-checkout input, .nbdc.woocommerce-checkout textarea").focus(function() {
         $(this).parent().siblings('label').addClass('has-value');
         if($(this).is('#coupon_code')){
             $(this).siblings('label').addClass('has-value');
@@ -52,9 +52,9 @@ jQuery(document).ready(function($){
     $(".woocommerce-shipping-fields").click(function(){
         if (window.innerWidth >= 992 ) { 
             if($("#ship-to-different-address-checkbox").is(':checked')){
-                $(".nbd-checkout__cart-items").css("max-height", "679px");
+                $(".nbdc-checkout__cart-items").css("max-height", "679px");
             } else {
-                $(".nbd-checkout__cart-items").css("max-height", "377px");
+                $(".nbdc-checkout__cart-items").css("max-height", "377px");
             }
         }
     });

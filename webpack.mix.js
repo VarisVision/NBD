@@ -6,8 +6,8 @@ mix.setPublicPath(`dist/`);
 mix.options({
     processCssUrls: false,
 })
-mix.sass('src/sass/nbd-style.scss', 'dist/')
-    .js('src/js/nbd-script.js', 'dist/scripts')
+mix.sass('src/sass/nbdc-styles.scss', 'dist/')
+    .js('src/js/nbdc-scripts.js', 'dist/scripts')
     .js('src/js/components/header.js', 'dist/scripts')
     .js('src/js/components/single-product.js', 'dist/scripts')
     .js('src/js/components/checkout.js', 'dist/scripts')

@@ -1,16 +1,16 @@
 <?php
-require_once get_template_directory() . '/components/single-product.php';
-// require_once get_template_directory() . '/admin/custom-post-types.php';
+require_once get_template_directory() . '/admin/customize.php';
 require_once get_template_directory() . '/admin/lookbook-gallery.php';
 
+require_once get_template_directory() . '/components/single-product.php';
 
 function scripts()
 {
-    wp_enqueue_style('nbd-style', get_template_directory_uri() . '/dist/nbd-style.css', [], 'all');
+    wp_enqueue_style('nbd-style', get_template_directory_uri() . '/dist/nbdc-styles.css', [], 'all');
     wp_enqueue_style('drawer-style', get_template_directory_uri() . '/dist/vendors/slide-out-panel.min.css', [], 1, 'all');
     wp_enqueue_style('slick-carousel', get_template_directory_uri() . '/dist/vendors/slick.css');
     
-    wp_enqueue_script('nbd-script', get_template_directory_uri() . '/dist/scripts/nbd-script.js', ['jquery'], true);
+    wp_enqueue_script('nbd-script', get_template_directory_uri() . '/dist/scripts/nbdc-scripts.js', ['jquery'], true);
 
     wp_localize_script('nbd-script', 'nbdAjaxObject', array(
         'nonce' => wp_create_nonce('my_nonce_action'),
@@ -82,57 +82,6 @@ function add_variation_to_cart() {
 
 add_action('wp_ajax_add_variation_to_cart', 'add_variation_to_cart');
 add_action('wp_ajax_nopriv_add_variation_to_cart', 'add_variation_to_cart');
-
-function nbd_customize_register($wp_customize) {
-    $wp_customize->add_panel('nbd_panel', array(
-        'title'    => __('No Bad Days Theme', 'no-bad-days'),
-        'priority' => 30,
-    ));
-
-    $wp_customize->add_section('nbd_footer', array(
-        'title'        => __('Footer', 'no-bad-days'),
-        'priority'     => 10,
-        'panel'        => 'nbd_panel',
-    ));
-
-    $wp_customize->add_setting('nbd_instagram_setting', array(
-        'default'   => '',
-        'transport' => 'refresh',
-    ));
-
-    $wp_customize->add_control('nbd_instagram_control', array(
-        'label'    => __('Instagram URL', 'no-bad-days'),
-        'section'  => 'nbd_footer',
-        'settings' => 'nbd_instagram_setting',
-        'type'     => 'text',
-    ));
-
-    $wp_customize->add_setting('nbd_facebook_setting', array(
-        'default'   => '',
-        'transport' => 'refresh',
-    ));
-
-    $wp_customize->add_control('nbd_facebook_control', array(
-        'label'    => __('Facebook URL', 'no-bad-days'),
-        'section'  => 'nbd_footer',
-        'settings' => 'nbd_facebook_setting',
-        'type'     => 'text',
-    ));
-
-    $wp_customize->add_setting('nbd_tiktok_setting', array(
-        'default'   => '',
-        'transport' => 'refresh',
-    ));
-
-    $wp_customize->add_control('nbd_tiktok_control', array(
-        'label'    => __('TikTok URL', 'no-bad-days'),
-        'section'  => 'nbd_footer',
-        'settings' => 'nbd_tiktok_setting',
-        'type'     => 'text',
-    ));
-}
-
-add_action('customize_register', 'nbd_customize_register');
 
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
