@@ -55,6 +55,8 @@
         }
 
         p {
+            font-size: $medium;
+            line-height: 1.4;
             margin-bottom: 1.5rem;
         }
 
@@ -79,7 +81,7 @@
             object-fit: cover;
 
             @include for-tablet-landscape {
-                max-height: 800px;
+                max-height: 100%;
             }
         }
     }
