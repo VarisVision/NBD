@@ -24,11 +24,11 @@ jQuery(document).ready(function($){
         });
     });
 
-    $(".nbd-footer__back-to-top p").click(function(){
+    $(".nbdc-footer__back-to-top p").click(function(){
         $("html, body").animate({ scrollTop: 0 }, "slow");
     });
 
-    $(".nbd-footer__copyright--year").text((new Date).getFullYear());
+    $(".nbdc-footer__copyright--year").text((new Date).getFullYear());
 
     function updateCartCount() {
         $.ajax({

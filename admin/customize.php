@@ -9,45 +9,111 @@ function nbdc_customize_register($wp_customize) {
         'priority' => 30,
     ));
 
-    $wp_customize->add_section('nbdc_footer', array(
-        'title'        => __('Footer', 'no-bad-days-club'),
+    $wp_customize->add_section('nbdc_footer_middle', array(
+        'title'        => __('Footer Middle', 'no-bad-days-club'),
         'priority'     => 10,
         'panel'        => 'nbdc_panel',
     ));
 
-    $wp_customize->add_setting('nbdc_instagram_setting', array(
+    $wp_customize->add_setting('nbdc_offer_title', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('nbdc_offer_title_control', array(
+        'label'    => __('Offer Title', 'no-bad-days-club'),
+        'section'  => 'nbdc_footer_middle',
+        'settings' => 'nbdc_offer_title',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('nbdc_offer_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('nbdc_offer_text_control', array(
+        'label'    => __('Offer Text', 'no-bad-days-club'),
+        'section'  => 'nbdc_footer_middle',
+        'settings' => 'nbdc_offer_text',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('nbdc_input_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('nbdc_input_text_control', array(
+        'label'    => __('Input Text', 'no-bad-days-club'),
+        'section'  => 'nbdc_footer_middle',
+        'settings' => 'nbdc_input_text',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('nbdc_cta_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('nbdc_cta_text_control', array(
+        'label'    => __('CTA Text', 'no-bad-days-club'),
+        'section'  => 'nbdc_footer_middle',
+        'settings' => 'nbdc_cta_text',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_section('nbdc_footer_socials', array(
+        'title'        => __('Footer Socials', 'no-bad-days-club'),
+        'priority'     => 10,
+        'panel'        => 'nbdc_panel',
+    ));
+
+    $wp_customize->add_setting('nbdc_social_title', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('nbdc_social_title_control', array(
+        'label'    => __('Social Title', 'no-bad-days-club'),
+        'section'  => 'nbdc_footer_socials',
+        'settings' => 'nbdc_social_title',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('nbdc_instagram', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
     $wp_customize->add_control('nbdc_instagram_control', array(
         'label'    => __('Instagram URL', 'no-bad-days-club'),
-        'section'  => 'nbdc_footer',
-        'settings' => 'nbdc_instagram_setting',
+        'section'  => 'nbdc_footer_socials',
+        'settings' => 'nbdc_instagram',
         'type'     => 'text',
     ));
 
-    $wp_customize->add_setting('nbdc_facebook_setting', array(
+    $wp_customize->add_setting('nbdc_facebook', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
     $wp_customize->add_control('nbdc_facebook_control', array(
         'label'    => __('Facebook URL', 'no-bad-days-club'),
-        'section'  => 'nbdc_footer',
-        'settings' => 'nbdc_facebook_setting',
+        'section'  => 'nbdc_footer_socials',
+        'settings' => 'nbdc_facebook',
         'type'     => 'text',
     ));
 
-    $wp_customize->add_setting('nbdc_tiktok_setting', array(
+    $wp_customize->add_setting('nbdc_tiktok', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
     $wp_customize->add_control('nbdc_tiktok_control', array(
         'label'    => __('TikTok URL', 'no-bad-days-club'),
-        'section'  => 'nbdc_footer',
-        'settings' => 'nbdc_tiktok_setting',
+        'section'  => 'nbdc_footer_socials',
+        'settings' => 'nbdc_tiktok',
         'type'     => 'text',
     ));
 
