@@ -1,5 +1,10 @@
 .nbdc-settings {
+    display: none;
     position: relative;
+
+    @include tablet {
+        display: block;
+    }
 
     &__btn {
         width: 27px;
@@ -42,5 +47,9 @@
 
     &__language {
         margin: .75rem 0 1rem;
+    }
+
+    .wpml-ls-sub-menu li a, .wcml-cs-submenu li a {
+        background-color: #eee;
     }
 }

@@ -1,5 +1,5 @@
 .nbd-product-card {
-    @include for-tablet-landscape {
+    @include tablet-landscape {
         &:hover {
             .nbd-product-card__image img {
         

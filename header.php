@@ -1,18 +1,18 @@
 <?php include get_template_directory() . '/components/head.php';?>
 
 <header>
-    <div class="nbd-header">
+    <div class="nbdc-header">
         <?php
         wp_nav_menu(
             array(
                 'theme_location' => 'main-nav-left',
                 'container' => 'nav',
-                'container_class' => 'nbd-header__menu-left',
+                'container_class' => 'nbdc-header__menu-left',
             )
         );
         ?>
-        <div class="nbd-header__mobile">
-            <button class="nbd-header__mobile--btn">
+        <div class="nbdc-header__mobile">
+            <button class="nbdc-header__mobile--btn">
                 <div id="nav-icon3">
                     <span></span>
                     <span></span>
@@ -22,7 +22,7 @@
             </button>
         </div>
 
-        <div class="nbd-header__logo">
+        <div class="nbdc-header__logo">
             <?php if ( get_theme_mod( 'custom_logo' ) ) : ?>
                 <?php 
                     $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -33,7 +33,7 @@
                     <a href="/"><h2><?php bloginfo('name');?></h2></a>
             <?php endif; ?>
         </div>
-            <div class="nbd-header__menu-right">
+            <div class="nbdc-header__menu-right">
             <?php
                 wp_nav_menu(
                     array(
@@ -42,23 +42,13 @@
                     )
                 );
             ?>
-            <nav class="nbd-header__menu-right--icons">
+            <nav class="nbdc-header__menu-right--icons">
                 <?php include get_template_directory() . '/components/nav-settings.php';?>
                 <?php include get_template_directory() . '/components/side-cart.php';?>
             </nav>
         </div>
     </div>
-    <div id="nbd-header__mobile--menu" class="nbd-header__mobile--menu">
-        <section>
-        <?php
-        wp_nav_menu(
-            array(
-                'theme_location' => 'main-nav-mobile',
-                'container' => 'nav',
-                'container_class' => 'nbd-header__mobile--nav',
-            )
-        );
-        ?>
-        </section>
-    </div>
+
+    <?php include get_template_directory() . '/components/header-mobile.php';?>
+
 </header>

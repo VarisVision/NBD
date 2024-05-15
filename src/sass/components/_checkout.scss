@@ -4,7 +4,7 @@
         flex-wrap: wrap;
         flex-direction: column;
 
-        @include for-tablet-landscape {
+        @include tablet-landscape {
             flex-direction: row;
         }
 
@@ -40,7 +40,7 @@
             width: 100%;
             margin: 1.5rem 0 2.5rem;
 
-            @include for-tablet-landscape {
+            @include tablet-landscape {
                 width: 89%;
             }
         }
@@ -83,7 +83,7 @@
     .shop_table, #customer_details {
         width: 100%;
 
-        @include for-tablet-landscape {
+        @include tablet-landscape {
             width: 50%
         }
     }
@@ -246,7 +246,7 @@
         width: 100%;
         margin: 1.5rem 0;
 
-        @include for-tablet-landscape {
+        @include tablet-landscape {
             width: 89%;
             overflow-y: auto;
             max-height: 377px;

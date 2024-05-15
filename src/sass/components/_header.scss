@@ -1,4 +1,4 @@
-.nbd-header {
+.nbdc-header {
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -29,7 +29,7 @@
         .menu {
             display: none;
 
-            @include for-tablet-landscape {
+            @include tablet-landscape {
                 display: block;
             }
         }
@@ -52,7 +52,7 @@
     &__menu-left {
         display: none;
 
-        @include for-tablet-landscape {
+        @include tablet-landscape {
             display: block;
         }
     }
@@ -69,12 +69,22 @@
             border: 0;
             padding: 0;
 
-            @include for-tablet-landscape {
+            @include tablet-landscape {
                 display: none;
             }
         }
 
         &--menu {
+            &.slide-out-panel-container {
+                left: 0;
+                z-index: 999;
+                &.open {
+                    top: 58px !important;
+                }
+            }
+        }
+
+        &--nav {
             text-align: center;
 
             li {
@@ -96,13 +106,25 @@
                 @include font-primary($regular, 400);
                 text-transform: uppercase;
             }
+        }
 
-            &.slide-out-panel-container {
-                left: 0;
-                z-index: 999;
-                &.open {
-                    top: 58px !important;
-                }
+        &--page-settings {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+            width: max-content;
+            margin: 0 auto 1.5rem;
+
+            @include tablet {
+                display: none;
+            }
+
+            li {
+                text-align: center;
+            }
+
+            .wpml-ls-sub-menu li a, .wcml-cs-submenu li a {
+                background-color: #eee;
             }
         }
     }
@@ -110,7 +132,7 @@
     &__menu-right,
     &__menu-left {
         ul.menu {
-            @include for-tablet-landscape {
+            @include tablet-landscape {
                 display: flex;
                 column-gap: 1.5rem;
                 padding: 0;

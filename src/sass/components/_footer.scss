@@ -11,7 +11,7 @@
         margin: 0 auto;
         gap: 2.5rem;
 
-        @include for-tablet-landscape {
+        @include tablet-landscape {
             flex-direction: row;
             align-items: unset;
             max-width: 80rem;
@@ -24,7 +24,7 @@
         justify-content: space-between;
         width: 100%;
 
-        @include for-tablet-landscape {
+        @include tablet-landscape {
             justify-content: unset;
             width: auto;
             gap: 3rem;
@@ -40,7 +40,7 @@
     h2, &__connect--socials ul {
         margin-bottom: .75rem;
 
-        @include for-tablet-landscape {
+        @include tablet-landscape {
             margin-bottom: .5rem;
         }
     }
@@ -50,14 +50,15 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 2.5rem;
+        max-width: 435px;
 
-        @include for-tablet-landscape {
+        @include tablet-landscape {
             padding: 0 2.5rem;
             border-right: 2px solid #ddd;
             border-left: 2px solid #ddd;
         }
 
-        @include for-desktop {
+        @include desktop {
             padding: 0 5rem;
         }
 
@@ -85,7 +86,7 @@
         justify-content: space-between;
         align-items: center;
 
-        @include for-tablet-landscape {
+        @include tablet-landscape {
             align-items: flex-end;
         }
 
@@ -99,7 +100,7 @@
                 display: flex;
                 justify-content: center;
 
-                @include for-tablet-landscape {
+                @include tablet-landscape {
                     justify-content: flex-end;
                 }
             }

@@ -15,7 +15,7 @@ get_header();
     ?>
 
     <section id="<?php echo $categoryProductFirst;?>" class="nbdc-section">
-        <div class="nbd-four-column">
+        <div class="nbdc-four-column">
             <?php    
                 categoryProducts($categoryProductFirst);
             ?>
@@ -27,7 +27,7 @@ get_header();
     ?>
 
     <section id="<?php echo $categoryProductSecond;?>" class="nbdc-section">
-        <div class="nbd-four-column">
+        <div class="nbdc-four-column">
             <?php    
                 categoryProducts($categoryProductSecond);
             ?>

@@ -8,13 +8,13 @@
     &__grid-sizer, &__grid-item {
         width: calc(100% - 4px);
     
-        @include for-tablet {
+        @include tablet {
             width: calc(50% - 9px)
         }
-        @include for-laptop {
+        @include laptop {
             width: calc(33.3% - 10px);
         }
-        @include for-desktop-large {
+        @include desktop-large {
             width: calc(25% - 11px);
         }
     }
@@ -62,7 +62,7 @@
         justify-content: center;
         z-index: 3;
 
-        @include for-tablet-landscape {
+        @include tablet-landscape {
             width: unset;
             min-height: 800px;
             min-width: 800px;

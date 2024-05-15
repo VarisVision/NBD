@@ -13,10 +13,10 @@ jQuery(document).ready(function($){
         width: '350px',
     }
 
-    const mobileNav = $('#nbd-header__mobile--menu').SlideOutPanel( mobileNavSettings );
+    const mobileNav = $('#nbdc-header__mobile--menu').SlideOutPanel( mobileNavSettings );
     const sideCart = $('#nbd-side-cart__drawer').SlideOutPanel( sideCartSettings );
 
-    $(".nbd-header__mobile").on('click', function() {
+    $(".nbdc-header__mobile").on('click', function() {
         mobileNav.toggle();
         $(this).find('#nav-icon3').toggleClass('open');
     });

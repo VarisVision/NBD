@@ -17,7 +17,7 @@ img {
 #breadcrumbs {
     padding: .75rem;
 
-    @include for-tablet {
+    @include tablet {
         position: absolute;
     }
 
@@ -174,13 +174,13 @@ main > .nbdc-section:first-child {
     }
 }
 
-.nbd-four-column {
+.nbdc-four-column {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     justify-items: center;
     gap: .75rem;
 
-    @include for-tablet-landscape {
+    @include tablet-landscape {
         grid-template-columns: repeat(4,1fr);
     }
 
@@ -213,7 +213,7 @@ main > .nbdc-section:first-child {
 	padding: 1rem 0;
 	list-style-type: none;
 
-    @include for-tablet-landscape {
+    @include tablet-landscape {
         bottom: 4rem;
     }
 	
@@ -242,7 +242,7 @@ main > .nbdc-section:first-child {
 .nbd-mobile {
     display: block;
 
-    @include for-tablet-landscape {
+    @include tablet-landscape {
         display: none;
     }
 }
@@ -250,7 +250,7 @@ main > .nbdc-section:first-child {
 .nbd-desktop {
     display: none;
 
-    @include for-tablet-landscape {
+    @include tablet-landscape {
         display: block;
     }
 }
