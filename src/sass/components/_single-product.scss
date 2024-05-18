@@ -129,7 +129,7 @@
         }
     }
 
-    .single_add_to_cart_button {
+    .nbdc-add-to-cart__button {
         @include button;
 
         &.disabled {
@@ -141,6 +141,10 @@
                 cursor: not-allowed;
             }
         }
+    }
+
+    .single_add_to_cart_button {
+        display: none;
     }
 
     .nbd-carousel {

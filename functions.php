@@ -1,6 +1,7 @@
 <?php
 require_once get_template_directory() . '/admin/customize.php';
 require_once get_template_directory() . '/admin/lookbook-gallery.php';
+require_once get_template_directory() . '/admin/wpml-strings.php';
 
 require_once get_template_directory() . '/components/single-product.php';
 
@@ -18,10 +19,6 @@ function scripts()
     ));
     
     wp_enqueue_script('header', get_template_directory_uri() . '/dist/scripts/header.js', ['jquery'], 1, true);
-
-    if (is_product()) {
-        wp_enqueue_script('single-product', get_template_directory_uri() . '/dist/scripts/single-product.js', ['jquery'], true);
-    }
 
     if (is_checkout()){
         wp_enqueue_script('checkout', get_template_directory_uri() . '/dist/scripts/checkout.js', ['jquery'], true);
@@ -93,7 +90,6 @@ function get_cart_count() {
 add_action('wp_ajax_get_cart_count', 'get_cart_count');
 add_action('wp_ajax_nopriv_get_cart_count', 'get_cart_count');
 
-
 function update_cart_item_quantity() {
     $cart_item_key = $_POST['cart_item_key'];
     $new_quantity = $_POST['quantity'];
@@ -105,7 +101,6 @@ function update_cart_item_quantity() {
     $items = WC()->cart->get_cart();
 
     $product_prices = array();
-
 
     foreach ($items as $item) {
         $product_id = $item['variation_id'];
@@ -129,7 +124,6 @@ function update_cart_item_quantity() {
 
 add_action('wp_ajax_update_cart_item_quantity', 'update_cart_item_quantity');
 add_action('wp_ajax_nopriv_update_cart_item_quantity', 'update_cart_item_quantity');
-
 
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 
@@ -158,18 +152,16 @@ function ajax_apply_coupon() {
 
     wp_die();
 }
-
 add_action( 'wp_ajax_apply_coupon', 'ajax_apply_coupon' );
 add_action( 'wp_ajax_nopriv_apply_coupon', 'ajax_apply_coupon' ); 
 
-add_filter( 'woocommerce_default_address_fields', 'override_checkout_fields');
 
 function override_checkout_fields( $fields ) {
     $fields['address_1']['placeholder'] = '';
     return $fields;
 }
+add_filter( 'woocommerce_default_address_fields', 'override_checkout_fields');
 
-add_filter( 'woocommerce_checkout_fields' , 'remove_checkout_fields' );
 
 function remove_checkout_fields( $fields ) {
     unset($fields['billing']['billing_address_2']);
@@ -178,16 +170,14 @@ function remove_checkout_fields( $fields ) {
     unset($fields['shipping']['shipping_company']);
     return $fields;
 }
-
-add_filter( 'woocommerce_checkout_fields' , 'custom_remove_order_comments_placeholder' );
+add_filter( 'woocommerce_checkout_fields' , 'remove_checkout_fields' );
 
 function custom_remove_order_comments_placeholder( $fields ) {
     $fields['order']['order_comments']['placeholder'] = '';
     $fields['order']['order_comments']['type'] = 'text';
     return $fields;
 }
-
-add_filter( 'woocommerce_billing_fields', 'add_break_field' );
+add_filter( 'woocommerce_checkout_fields' , 'custom_remove_order_comments_placeholder' );
 
 function add_break_field( $fields ) {
     $fields['break-field'] = array(
@@ -201,13 +191,14 @@ function add_break_field( $fields ) {
     );
     return $fields;
 }
+add_filter( 'woocommerce_billing_fields', 'add_break_field' );
 
-add_action( 'after_setup_theme', 'my_custom_image_sizes' );
 function my_custom_image_sizes() {
     add_image_size( 'mobile', 425, 0, true );
     add_image_size( 'tablet', 768, 0, true );
     add_image_size( 'laptop', 1024, 0, true );
 }
+add_action( 'after_setup_theme', 'my_custom_image_sizes' );
 
 function na_remove_slug( $post_link, $post, $leavename ) {
 

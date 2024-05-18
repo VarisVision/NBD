@@ -1,6 +1,6 @@
 
 jQuery(document).ready(function($){
-
+    //Homepage quick add to cart
     $('.add-to-cart-variation').click(function(e) {
         e.preventDefault();
         
@@ -22,6 +22,32 @@ jQuery(document).ready(function($){
                 $('.widget_shopping_cart_content').html(response);
             }
         });
+    });
+
+    //Single-product page add to cart
+    $('.nbdc-add-to-cart__button').click(function(e) {
+        e.preventDefault();
+
+        const productId = $(".nbdc-add-to-cart__product-id").val();
+        const variationId = $(".nbdc-add-to-cart__variation-id").val();
+
+        if(variationId != "") {
+            $.ajax({
+                type: 'POST',
+                url: nbdAjaxObject.ajaxUrl,
+                data: {
+                    action: 'add_variation_to_cart',
+                    product_id: productId,
+                    variation_id: variationId,
+                    security: nbdAjaxObject.nonce
+                },
+                success: function(response) {
+                    $('#nbd-side-cart').click();
+                    updateCartCount();
+                    $('.widget_shopping_cart_content').html(response);
+                }
+            });
+        }
     });
 
     $(".nbdc-footer__back-to-top p").click(function(){

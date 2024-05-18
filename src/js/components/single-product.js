@@ -14,23 +14,22 @@ jQuery(document).ready(function($){
         });
     });
 
-
-
     $(".nbd-single-product__variations ul li").click(function() {
-        var selectedSize = $(this).find('span').data('nbd-value');
+        const selectedSize = $(this).find('span').data('nbd-value');
+        const addToCartBtn =  $(".nbdc-add-to-cart__button");
         $("#pa_size").val(selectedSize).change();
         
         if($(this).find("div").hasClass("active")){
             $(this).find("div").removeClass("active");
             $('.reset_variations').trigger('click');
-            $(".single_add_to_cart_button").text("Select a size")
+            addToCartBtn.text(addToCartTranslation.selectSizeText);
+            addToCartBtn.addClass("disabled");
         } else {
             $(this).parent().find("div").removeClass("active");
             $(this).find("div").addClass("active");
-            $(".single_add_to_cart_button").text("Add to cart")
+            addToCartBtn.text(addToCartTranslation.addToCartText);
+            addToCartBtn.removeClass("disabled");
         }
-
-
     });
 
     if ( window.history.replaceState ) {

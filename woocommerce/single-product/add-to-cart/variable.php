@@ -106,6 +106,8 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php endif; ?>
 
 	<?php do_action( 'woocommerce_after_variations_form' ); ?>
+	
+	<p class="select-options-message" style="color: red; display: none;">Please select some product options before adding this product to your cart.</p>
 </form>
 
 <?php
