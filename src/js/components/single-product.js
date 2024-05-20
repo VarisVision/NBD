@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 
-    const singleProductSlider = $('.nbd-single-product__slider');
+    const singleProductSlider = $('.nbdc-single-product__slider');
 
     singleProductSlider.each(function(){
         $(this).slick({
@@ -9,12 +9,12 @@ jQuery(document).ready(function($){
             speed: 300,
             slidesToShow: 1,
             adaptiveHeight: true,
-            prevArrow: $(this).parent().find(".nbd-carousel__arrow-left"),
-            nextArrow: $(this).parent().find(".nbd-carousel__arrow-right")
+            prevArrow: $(this).parent().find(".nbdc-carousel__arrow-left"),
+            nextArrow: $(this).parent().find(".nbdc-carousel__arrow-right")
         });
     });
 
-    $(".nbd-single-product__variations ul li").click(function() {
+    $(".nbdc-single-product__variations ul li").click(function() {
         const selectedSize = $(this).find('span').data('nbd-value');
         const addToCartBtn =  $(".nbdc-add-to-cart__button");
         $("#pa_size").val(selectedSize).change();

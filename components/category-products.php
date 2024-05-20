@@ -39,9 +39,10 @@ function categoryProducts($category) {
 
                             foreach ($variations as $variation) {
                                 echo 
-                                    '<li class="nbd-quick-variation">
+                                    '<li class="nbdc-quick-variation">
                                         <button 
                                             class="add-to-cart-variation"
+                                            data-text="' . esc_attr( icl_translate('nbdc_theme', 'Add to cart', 'Add to Cart') ) . '"
                                             data-product-id="' . $product->get_id() . '" 
                                             data-variation-id="' . $variation['variation_id'] . '">
                                             '. wc_attribute_label($variation['attributes']['attribute_pa_size']) . '

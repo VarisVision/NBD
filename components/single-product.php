@@ -1,7 +1,7 @@
 <?php
 function wrap_product_content_start() {
     if (is_product()) {
-        echo '<main class="nbd-single-product">';
+        echo '<main class="nbdc-single-product">';
     }
 }
 add_action('woocommerce_before_single_product', 'wrap_product_content_start');
@@ -15,7 +15,7 @@ add_action('woocommerce_after_single_product', 'wrap_product_content_end');
 
 function nbd_container_class($classes) {
     if (is_product()) {
-        $classes[] = 'nbd-single-product__container';
+        $classes[] = 'nbdc-single-product__container';
     }
     return $classes;
 }
@@ -32,17 +32,17 @@ function custom_product_image_gallery() {
     global $product;
     $attachment_ids = $product->get_gallery_image_ids();
 
-    echo '<div class="nbd-single-product__carousel">';
+    echo '<div class="nbdc-single-product__carousel">';
 
     if (!empty($attachment_ids)) {
-        echo '<div class="nbd-single-product__slider">';
+        echo '<div class="nbdc-single-product__slider">';
 
-        echo '<div class="nbd-single-product__slide">';
+        echo '<div class="nbdc-single-product__slide">';
         echo wp_get_attachment_image(get_post_thumbnail_id(), 'woocommerce_single');
         echo '</div>';
 
         foreach ($attachment_ids as $attachment_id) {
-            echo '<div class="nbd-single-product__slide">';
+            echo '<div class="nbdc-single-product__slide">';
             echo wp_get_attachment_image($attachment_id, 'woocommerce_single');
             echo '</div>';
         }
@@ -56,7 +56,7 @@ function custom_product_image_gallery() {
 add_action('woocommerce_before_single_product_summary', 'custom_product_image_gallery');
  
 function before_product_title() {
-   echo '<div class="nbd-single-product__title">';
+   echo '<div class="nbdc-single-product__title">';
 }
 add_action( 'woocommerce_single_product_summary' , 'before_product_title', 4 );
 

@@ -1,11 +1,11 @@
-.nbd-single-product {
+.nbdc-single-product {
     padding: 0 .75rem;
     
     &__container {
         display: flex;
         flex-wrap: wrap;
 
-        .nbd-single-product__carousel, .entry-summary {
+        .nbdc-single-product__carousel, .entry-summary {
             width: 100%;
 
             @include tablet-landscape {
@@ -89,6 +89,7 @@
                 }
 
                 span {
+                    @include font-secondary($large, 700);
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -147,7 +148,7 @@
         display: none;
     }
 
-    .nbd-carousel {
+    .nbdc-carousel {
         &__arrow-left, &__arrow-right {
             position: absolute;
             top: 50%;
