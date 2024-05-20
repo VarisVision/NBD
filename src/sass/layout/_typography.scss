@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 @mixin font-primary($size: $base, $weight: 300) {
     font-family: 'Oswald', sans-serif;
     font-size: $size;
     font-weight: $weight;
     letter-spacing: 1px;
+}
+
+@mixin font-secondary($size: $base, $weight: 300) {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: $size;
+    font-weight: $weight;
 }
 
 $x-small: .65rem;

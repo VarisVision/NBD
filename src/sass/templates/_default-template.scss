@@ -27,8 +27,8 @@
         }
     
         p {
+            @include font-secondary($medium, 300);
             margin-bottom: 1.5rem;
-            font-size: $medium;
             line-height: 1.4;
     
             &:last-child {
@@ -49,6 +49,7 @@
             margin: 1rem 0 2rem;
 
             h1 {
+                @include font-primary($base, 600);
                 font-size: 2rem;
             }
         }

@@ -40,7 +40,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 				'orderby'    => 'menu_order',
 			) );
 			?>
-			<div class="nbd-single-product__variations">
+			<div class="nbdc-single-product__variations">
 				<p><?php echo wc_attribute_label( $attribute_name ); ?></p>
 				<ul>	
 					<?php foreach ( $terms as $term ) : ?>

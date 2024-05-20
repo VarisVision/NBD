@@ -83,7 +83,7 @@ button, input[type="submit"], input[type="reset"] {
 
     &::after {
         color: #fff;
-        content: "ADD TO CART";
+        content: attr(data-text);
         @include font-primary(.75rem, 300);
         text-align: center;
         padding: .375rem .75rem;
@@ -127,7 +127,9 @@ button, input[type="submit"], input[type="reset"] {
     cursor: pointer;
 
     &:hover {
-        padding: 4px;
+        @include laptop {
+            padding: 4px;
+        }
     }
 
     &.active {
@@ -143,7 +145,7 @@ button, input[type="submit"], input[type="reset"] {
     }
 }
 
-.nbd-quick-variation {
+.nbdc-quick-variation {
     button {
         position: relative;
         text-transform: uppercase;

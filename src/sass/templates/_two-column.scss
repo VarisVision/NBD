@@ -55,7 +55,7 @@
         }
 
         p {
-            font-size: $medium;
+            @include font-secondary($medium, 300);
             line-height: 1.4;
             margin-bottom: 1.5rem;
         }
