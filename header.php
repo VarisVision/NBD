@@ -1,7 +1,7 @@
 <?php include get_template_directory() . '/components/head.php';?>
 
-<header>
-    <div class="nbdc-header">
+<header class="nbdc-header">
+    <div class="nbdc-header__container">
         <?php
         wp_nav_menu(
             array(
@@ -48,6 +48,7 @@
             </nav>
         </div>
     </div>
+
 
     <?php include get_template_directory() . '/components/header-mobile.php';?>
 

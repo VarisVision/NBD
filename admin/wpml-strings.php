@@ -8,7 +8,7 @@ add_action('init', 'nbdc_add_to_cart_translations');
 
 function custom_enqueue_scripts() {
     if (is_product()) {
-        wp_enqueue_script('single-product', get_template_directory_uri() . '../dist/scripts/single-product.js', ['jquery'], true);
+        wp_enqueue_script('single-product', get_template_directory_uri() . '/dist/scripts/single-product.js', ['jquery'], true);
     }
 
     $translations = array(

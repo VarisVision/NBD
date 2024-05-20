@@ -19,6 +19,9 @@ jQuery(document).ready(function($){
     $(".nbdc-header__mobile").on('click', function() {
         mobileNav.toggle();
         $(this).find('#nav-icon3').toggleClass('open');
+        if($(".nbdc").hasClass("admin-bar")) {
+            $("#nbdc-header__mobile--menu").addClass("admin-panel");
+        }
     });
 
     $(".nbd-side-cart").on("click", function() {
@@ -32,4 +35,8 @@ jQuery(document).ready(function($){
     $('.nbdc-settings__panel-close').on('click', function(){
         $('.nbdc-settings__panel').slideUp();
     });
+
+    if($(".nbdc").hasClass("admin-bar")) {
+        $("#nbd-side-cart__drawer").css("top", "33px");
+    }
 })
