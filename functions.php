@@ -194,9 +194,9 @@ function add_break_field( $fields ) {
 add_filter( 'woocommerce_billing_fields', 'add_break_field' );
 
 function my_custom_image_sizes() {
-    add_image_size( 'mobile', 425, 0, true );
-    add_image_size( 'tablet', 768, 0, true );
-    add_image_size( 'laptop', 1024, 0, true );
+    add_image_size( 'mobile', 880, 0, true );
+    add_image_size( 'tablet', 1224, 0, true );
+    add_image_size( 'laptop', 1750, 0, true );
 }
 add_action( 'after_setup_theme', 'my_custom_image_sizes' );
 
