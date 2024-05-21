@@ -17,24 +17,24 @@ function categoryProducts($category) {
             $thumbnail_hover_url = get_field('product_image_on_hover', get_the_ID());
             $thumbnail_hover = $thumbnail_hover_url ? $thumbnail_hover_url : $image_url;
 
-            echo '<div class="nbd-product-card">';
+            echo '<div class="nbdc-product-card">';
                 if ($image_url) {
                     echo 
-                        '<a href="' . get_permalink() . '" class="nbd-product-card__image">
-                            <img src="' . $thumbnail . '" alt="' . get_the_title() . '" />
-                            <img src="' . $thumbnail_hover .'" alt="' . get_the_title() . ' in action mood"/>
+                        '<a href="' . get_permalink() . '" class="nbdc-product-card__images">
+                                <img src="' . $thumbnail . '" alt="' . get_the_title() . '" />
+                                <img src="' . $thumbnail_hover .'" alt="' . get_the_title() . ' in action mood"/>
                         </a>';
                 }
                 echo 
-                    '<div class="nbd-product-card__info">
-                        <a href="' . get_permalink() . '" class="nbd-product-card__link">
+                    '<div class="nbdc-product-card__info">
+                        <a href="' . get_permalink() . '" class="nbdc-product-card__link">
                             <h2>' . get_the_title() . '</h2>'
                             . $product->get_price_html() .
                         '</a>';
 
                     if (get_post_type() === 'product' && $product = wc_get_product(get_the_ID())) {
                         if ($product->is_type('variable')) {
-                            echo '<ul class="nbd-product-card__quick-add">';
+                            echo '<ul class="nbdc-product-card__quick-add">';
                             $variations = $product->get_available_variations();
 
                             foreach ($variations as $variation) {

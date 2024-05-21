@@ -1,5 +1,18 @@
 
 jQuery(document).ready(function($){
+    function setSquare() {
+        $('.nbdc-product-card__images').each(function() {
+            var width = $(this).width();
+            $(this).height(width);
+        });
+    }
+
+    setSquare();
+    
+    $(window).resize(function() {
+        setSquare();
+    });
+
     //Homepage quick add to cart
     $('.add-to-cart-variation').click(function(e) {
         e.preventDefault();

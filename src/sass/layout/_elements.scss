@@ -147,6 +147,7 @@ button, input[type="submit"], input[type="reset"] {
 
 .nbdc-quick-variation {
     button {
+        @include font-secondary($base, 500);
         position: relative;
         text-transform: uppercase;
 
@@ -186,9 +187,6 @@ main > .nbdc-section:first-child {
         grid-template-columns: repeat(4,1fr);
     }
 
-    * {
-        max-width: 31.25rem;
-    }
 }
 
 .nbdc-svg {
