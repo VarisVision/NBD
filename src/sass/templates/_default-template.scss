@@ -7,6 +7,7 @@
         max-width: 48rem;
     
         h2, h3, h4 {
+            @include font-secondary($large, 600);
             margin-bottom: 1.5rem;
         }
     
@@ -15,10 +16,10 @@
             padding-left: 0;
     
             li {
+                @include font-secondary($regular, 300);
+                padding-bottom: 1rem;
                 list-style-type: disc;
                 margin-left: 1rem;
-                font-size: $medium;
-                line-height: 1.4;
             }
         }
     
@@ -27,7 +28,7 @@
         }
     
         p {
-            @include font-secondary($medium, 300);
+            @include font-secondary($regular, 300);
             margin-bottom: 1.5rem;
             line-height: 1.4;
     
@@ -35,6 +36,11 @@
                 margin-bottom: 0;
             }
             
+        }
+
+        a {
+            @include font-secondary($regular, 300);
+            text-decoration: underline;
         }
     
         figure img {

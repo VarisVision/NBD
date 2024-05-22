@@ -49,24 +49,26 @@
     &__text {
         max-width: 450px;
 
-        h2 {
+        h2, h3, h4 {
             @include font-primary($large, 600);
             margin-bottom: 1.5rem;
         }
 
         p {
-            @include font-secondary($medium, 300);
+            @include font-secondary($regular, 300);
             line-height: 1.4;
             margin-bottom: 1.5rem;
         }
 
         a {
+            @include font-secondary($regular, 300);
             text-decoration: underline;
         }
 
         ul {
             padding-left: 1.5rem;
             li {
+                @include font-secondary($regular, 300);
                 list-style-type: disc;
             }
         }

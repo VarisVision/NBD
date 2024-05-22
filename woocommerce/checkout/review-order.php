@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <div class="nbdc-checkout__order-review shop_table woocommerce-checkout-review-order-table">
-	<h3>Order Review</h3>
+	<h3><?php esc_html_e( 'Order Summary', 'nbdc_theme' ); ?></h3>
 	<ul class="nbdc-checkout__cart-items">
 		<?php
 		do_action( 'woocommerce_review_order_before_cart_contents' );
@@ -57,7 +57,7 @@ defined( 'ABSPATH' ) || exit;
 			<p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
 
 			<p class="form-row form-row-first">
-				<label for="coupon_code" class=""><?php esc_html_e( 'Coupon Code', 'woocommerce' ); ?></label>
+				<!-- <label for="coupon_code" class=""><?php esc_html_e( 'Coupon Code', 'woocommerce' ); ?></label> -->
 				<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( '', 'woocommerce' ); ?>" id="coupon_code" value="" />
 			</p>
 
