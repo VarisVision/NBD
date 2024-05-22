@@ -52,22 +52,10 @@ defined( 'ABSPATH' ) || exit;
 	</ul>
 
 	<div class="nbdc-checkout__order-total">
-		<div class="checkout_coupon woocommerce-form-coupon" method="post">
-
-			<p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
-
-			<p class="form-row form-row-first">
-				<label for="coupon_code" class=""><?php esc_html_e( 'Coupon Code', 'woocommerce' ); ?></label>
-				<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( '', 'woocommerce' ); ?>" id="coupon_code" value="" />
-			</p>
-
-			<p class="form-row form-row-last">
-				<button  class="checkout_coupon_btn button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
-			</p>
-
-			<div class="clear"></div>
+		<div class="nbdc-checkout__coupon">
+			<input type="text"/>
+			<a>Apply Coupon</a>
 		</div>
-
 		<div class="nbdc-checkout__price">
 			<div class="cart-subtotal">
 				<p><?php esc_html_e( 'Items Total', 'woocommerce' ); ?></p>
