@@ -52,10 +52,6 @@ defined( 'ABSPATH' ) || exit;
 	</ul>
 
 	<div class="nbdc-checkout__order-total">
-		<div class="nbdc-checkout__coupon">
-			<input type="text"/>
-			<a>Apply Coupon</a>
-		</div>
 		<div class="nbdc-checkout__price">
 			<div class="cart-subtotal">
 				<p><?php esc_html_e( 'Items Total', 'woocommerce' ); ?></p>
