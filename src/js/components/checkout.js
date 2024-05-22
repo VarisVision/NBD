@@ -1,29 +1,29 @@
 jQuery(document).ready(function($){
-    $('.checkout_coupon_btn').on('click', function(e){
-        e.preventDefault();
+    // $('.checkout_coupon_btn').on('click', function(e){
+    //     e.preventDefault();
 
-        let couponCode = $('#coupon_code').val();
+    //     let couponCode = $('#coupon_code').val();
 
-        $.ajax({
-            url: nbdAjaxObject.ajaxUrl,
-            type: 'POST',
-            dataType: 'json',
-            data: {
-                action: 'apply_coupon',
-                coupon_code: couponCode
-            },
-            success: function(response) {
-                if (response.success) {
-                    alert(response.data);
-                } else {
-                    alert('Coupon application failed: ' + response.data);
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert('Error: ' + errorThrown);
-            }
-        });
-    });
+    //     $.ajax({
+    //         url: nbdAjaxObject.ajaxUrl,
+    //         type: 'POST',
+    //         dataType: 'json',
+    //         data: {
+    //             action: 'ajax_apply_coupon',
+    //             coupon_code: couponCode
+    //         },
+    //         success: function(response) {
+    //             if (response.success) {
+    //                 alert(response.data);
+    //             } else {
+    //                 alert('Coupon application failed: ' + response.data);
+    //             }
+    //         },
+    //         error: function(jqXHR, textStatus, errorThrown) {
+    //             alert('Error: ' + errorThrown);
+    //         }
+    //     });
+    // });
 
     $('form.checkout input').attr('autocomplete', 'off');
 
