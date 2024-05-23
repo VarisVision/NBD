@@ -9,11 +9,14 @@ jQuery(document).ready(function($){
         });
     }
 
-    const classesToSquare = ['.nbdc-product-card__images', '.nbdc-blog__article--image'];
+    const classesToSquare = ['.nbdc-product-card__images', '.nbdc-blog__article--image', '.nbdc-single-product__slide', '.nbdc-single-product .slick-list'];
+
     setSquare(classesToSquare);
 
     $(window).resize(function() {
-        setSquare(classesToSquare);
+        setTimeout(function() { 
+            setSquare(classesToSquare);
+        }, 100);
     });
 
     //Homepage quick add to cart

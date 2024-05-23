@@ -18,12 +18,23 @@
         position: relative;
     }
 
+    .slick-list {
+        max-height: 700px;
+    }
+
     &__slide {
+        max-height: 700px;
+
         img {
             display: block;
             margin: 0 auto;
+            height: 100%;
+            object-fit: cover;
             max-width: 100%;
-            height: auto;
+
+            @include desktop-large {
+                max-width: 700px;
+            }
         }
     }
 
