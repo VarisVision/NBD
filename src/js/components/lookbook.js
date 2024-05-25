@@ -1,10 +1,12 @@
 jQuery(document).ready(function($){
-    $(window).on("load", function(){
+    $(window).on("load", function() {
         $('.nbd-lookbook__grid').masonry({
             itemSelector: '.nbd-lookbook__grid-item',
             percentPosition: true,
             columnWidth: '.nbd-lookbook__grid-item',
             gutter: 14
+        }).imagesLoaded().always(function() {
+            $('#loader').hide();
         });
     });
 

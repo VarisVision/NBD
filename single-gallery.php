@@ -2,6 +2,7 @@
 get_header();
 ?>
 <main class="nbd-lookbook">
+    <div id="loader">Loading...</div>
     <div class="nbd-lookbook__grid">
     <?php 
         global $post;    
