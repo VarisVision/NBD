@@ -25,11 +25,11 @@
                 <h2><?php echo esc_html(get_theme_mod('nbdc_offer_title'));?></h2>
                 <p><?php echo esc_html(get_theme_mod('nbdc_offer_text'));?></p>
             </div>
-            <div class="nbd-subscribe tnp tnp-subscription">
+            <div class="nbdc-subscribe tnp tnp-subscription">
                 <form method="post" action="http://nbd.local/?na=s">
-                    <div class="nbd-subscribe__container">
+                    <div class="nbdc-subscribe__container">
                         <input type="hidden" name="nlang" value="">
-                        <div class="tnp-field tnp-field-email nbd-subscribe__field">
+                        <div class="tnp-field tnp-field-email nbdc-subscribe__field">
                             <label for="tnp-1">Email</label>
                             <input class="tnp-email" type="email" name="ne" placeholder="<?php echo esc_html(get_theme_mod('nbdc_input_text'));?>" id="tnp-1" value="" required>
                         </div>
