@@ -1,4 +1,5 @@
 .nbdc-footer {
+    display: block;
     background-color: #f2f2f2;
 
     &__container {
@@ -146,4 +147,8 @@
             }
         }
     }
+}
+
+.single-gallery .nbdc-footer {
+    display: none;
 }

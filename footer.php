@@ -26,7 +26,7 @@
                 <p><?php echo esc_html(get_theme_mod('nbdc_offer_text'));?></p>
             </div>
             <div class="nbdc-subscribe tnp tnp-subscription">
-                <form method="post" action="http://nbd.local/?na=s">
+                <form method="post" action="http://nbdc.store/?na=s">
                     <div class="nbdc-subscribe__container">
                         <input type="hidden" name="nlang" value="">
                         <div class="tnp-field tnp-field-email nbdc-subscribe__field">

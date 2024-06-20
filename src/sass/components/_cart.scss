@@ -170,7 +170,12 @@
 
 #nbd-side-cart__drawer {
     position: absolute;
-    right: -380px;
+    right: -400px !important;
+
+    &.open {
+        position: fixed;
+        right: 0 !important;
+    }
 
     .slide-out-panel-container {
         bottom: 0;

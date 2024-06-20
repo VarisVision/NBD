@@ -10,6 +10,7 @@ jQuery(document).ready(function($){
         }).imagesLoaded().always(function() {
             $('#loader').hide();
             $('.nbd-lookbook__grid').css('visibility', 'visible');
+            $('.single-gallery .nbdc-footer').show();
         });
     });
 
