@@ -82,6 +82,7 @@
             @include tablet-landscape {
                 display: none !important;
             }
+            
             &.slide-out-panel-container {
                 left: 0;
                 z-index: 999;
