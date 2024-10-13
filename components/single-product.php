@@ -37,14 +37,18 @@ function custom_product_image_gallery() {
     if (!empty($attachment_ids)) {
         echo '<div class="nbdc-single-product__slider">';
 
-        echo '<div class="nbdc-single-product__slide">';
+        $main_image_url = wp_get_attachment_image_url(get_post_thumbnail_id(), 'woocommerce_single');
+
+        echo '<a class="nbdc-single-product__slide" href="' . esc_url($main_image_url) . '">';
         echo wp_get_attachment_image(get_post_thumbnail_id(), 'woocommerce_single');
-        echo '</div>';
+        echo '</a>';
 
         foreach ($attachment_ids as $attachment_id) {
-            echo '<div class="nbdc-single-product__slide">';
+            $image_url = wp_get_attachment_image_url($attachment_id, 'woocommerce_single');
+
+            echo '<a class="nbdc-single-product__slide" href="' . esc_url($image_url) . '">';
             echo wp_get_attachment_image($attachment_id, 'woocommerce_single');
-            echo '</div>';
+            echo '</a>';
         }
         echo '</div>';
     }

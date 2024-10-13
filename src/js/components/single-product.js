@@ -3,6 +3,16 @@ jQuery(document).ready(function($){
     const singleProductSlider = $('.nbdc-single-product__slider');
 
     singleProductSlider.each(function(){
+        $(this).on('init', function (event, slick, direction) {
+            const container = document.querySelector('.slick-track');
+            console.log('Slick slider initialized');
+            window.lightGallery(container, {
+                selector: '.nbdc-single-product__slide',
+                plugins: [
+                    lgZoom
+                ],
+            });
+        });
         $(this).slick({
             dots: true,
             infinite: true,
