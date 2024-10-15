@@ -37,18 +37,18 @@ function custom_product_image_gallery() {
     if (!empty($attachment_ids)) {
         echo '<div class="nbdc-single-product__slider">';
 
-        $main_image_url = wp_get_attachment_image_url(get_post_thumbnail_id(), 'woocommerce_single');
+        $main_image_url = wp_get_attachment_image_url(get_post_thumbnail_id(), 'large');
 
-        echo '<a class="nbdc-single-product__slide" href="' . esc_url($main_image_url) . '">';
-        echo wp_get_attachment_image(get_post_thumbnail_id(), 'woocommerce_single');
-        echo '</a>';
+        echo '<div class="nbdc-single-product__slide">';
+        echo wp_get_attachment_image(get_post_thumbnail_id(), 'woocommerce_single', false, array('data-zoom-image' => esc_url($main_image_url)));
+        echo '</div>';
 
         foreach ($attachment_ids as $attachment_id) {
-            $image_url = wp_get_attachment_image_url($attachment_id, 'woocommerce_single');
+            $image_url = wp_get_attachment_image_url($attachment_id, 'large');
 
-            echo '<a class="nbdc-single-product__slide" href="' . esc_url($image_url) . '">';
-            echo wp_get_attachment_image($attachment_id, 'woocommerce_single');
-            echo '</a>';
+            echo '<div class="nbdc-single-product__slide">';
+            echo wp_get_attachment_image($attachment_id, 'woocommerce_single', false, array('data-zoom-image' => esc_url($image_url)));
+            echo '</div>';
         }
         echo '</div>';
     }
