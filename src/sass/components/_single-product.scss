@@ -18,6 +18,10 @@
         position: relative;
     }
 
+    .slick-slider {
+        touch-action: auto;
+    }
+
     .slick-list {
         max-height: 700px;
     }
