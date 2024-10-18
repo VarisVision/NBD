@@ -1,23 +1,81 @@
 .woocommerce-order-received {
+    @include font-secondary($regular, 300);
+
     .woocommerce-order {
         text-align: center;
+    }
+
+    .woocommerce-order-overview {
+        margin: 2rem 0;
     }
 
     .woocommerce-table--order-details {
         margin: 0 auto;
     }
 
-    .order_details > * {
-        margin-bottom: 1rem;
+
+    .order_details {
+        & > * {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .woocommerce-table--order-details {
+        margin-bottom: 2rem;
+
+        tfoot {
+            text-align: left;
+
+            tr {
+                margin-bottom: 1rem;
+
+                .woocommerce-Price-amount, td {
+                    font-size: 1rem;
+                }
+            }
+        }
     }
 
     .woocommerce-column__title {
         margin: 1rem 0;
     }
+    
+    .woocommerce-order-details__title {
+        margin-bottom: 2rem;
+    }
+
+    .woocommerce-columns--addresses {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
 
     .nbdc-order {
         &__product {
             display: flex;
+            align-items: center;
+
+            a {
+                @include tablet {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        &__product-details {
+            text-align: left;
+
+            @include tablet {
+                text-align: center;
+            }
+
+            .product-quantity {
+                font-size: 0.8rem;
+
+                @include tablet {
+                    font-size: 1.2rem;
+                }
+            }
         }
     }
 }

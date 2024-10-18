@@ -29,11 +29,19 @@ if ( ! apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {
 		<?php
 			echo $product_image;
 		?>
-		<div>
+		<div class="nbdc-order__product-details">
 			<?php
 			$is_visible        = $product && $product->is_visible();
 			$product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visible ? $product->get_permalink( $item ) : '', $item, $order );
-			echo wp_kses_post( apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a href="%s">%s</a>', $product_permalink, $item->get_name() ) : $item->get_name(), $item, $is_visible ) );
+			
+			if ( $product_permalink ) {
+				$product_permalink = strtok( $product_permalink, '?' );
+			}
+
+			$product_name = $item->get_name();
+			$product_name = preg_replace( '/\s*-\s*\w+$/', '', $product_name );
+			
+			echo wp_kses_post( apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a href="%s">%s</a>', $product_permalink, $product_name ) : $product_name, $item, $is_visible ) );
 
 			$qty          = $item->get_quantity();
 			$refunded_qty = $order->get_qty_refunded_for_item( $item_id );

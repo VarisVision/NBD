@@ -223,3 +223,9 @@ function na_parse_request( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'na_parse_request' );
+
+
+function mm_email_header( $email_heading, $email ) { 
+	echo "<p> Thanks for shopping with us. We appreciate you and your business!</p>";
+}
+add_action( 'woocommerce_email_header', 'mm_email_header', 10, 2 );
