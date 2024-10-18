@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <div class="nbdc-checkout__order-review shop_table woocommerce-checkout-review-order-table">
-	<h3>Order Review</h3>
+	<h3><?php esc_html_e( 'Order Summary', 'nbdc_theme' ); ?></h3>
 	<ul class="nbdc-checkout__cart-items">
 		<?php
 		do_action( 'woocommerce_review_order_before_cart_contents' );
@@ -52,10 +52,6 @@ defined( 'ABSPATH' ) || exit;
 	</ul>
 
 	<div class="nbdc-checkout__order-total">
-		<div class="nbdc-checkout__coupon">
-			<input type="text"/>
-			<a>Apply Coupon</a>
-		</div>
 		<div class="nbdc-checkout__price">
 			<div class="cart-subtotal">
 				<p><?php esc_html_e( 'Items Total', 'woocommerce' ); ?></p>

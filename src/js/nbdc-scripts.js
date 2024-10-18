@@ -1,16 +1,22 @@
 
 jQuery(document).ready(function($){
-    function setSquare() {
-        $('.nbdc-product-card__images').each(function() {
-            var width = $(this).width();
-            $(this).height(width);
+    function setSquare(classes) {
+        classes.forEach(className => {
+            $(className).each(function() {
+                const width = $(this).width();
+                $(this).height(width);
+            });
         });
     }
 
-    setSquare();
-    
+    const classesToSquare = ['.nbdc-product-card__images', '.nbdc-blog__article--image', '.nbdc-single-product__slide', '.nbdc-single-product .slick-list'];
+
+    setSquare(classesToSquare);
+
     $(window).resize(function() {
-        setSquare();
+        setTimeout(function() { 
+            setSquare(classesToSquare);
+        }, 100);
     });
 
     //Homepage quick add to cart

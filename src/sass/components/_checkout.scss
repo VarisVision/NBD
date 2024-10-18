@@ -36,37 +36,12 @@
             font-weight: 300;
         }
 
-        .checkout_coupon, .nbdc-checkout__price {
+        .nbdc-checkout__price {
             width: 100%;
             margin: 1.5rem 0 2.5rem;
 
             @include tablet-landscape {
                 width: 89%;
-            }
-        }
-
-        .checkout_coupon {
-            justify-content: flex-start;
-    
-            p:first-child {
-                width: 100%;
-            }
-
-            .form-row-first {
-                margin-right: 1.5rem;
-            }
-
-            .form-row-last {
-                align-items: center;
-                justify-content: center;
-                width: 112px;
-                height: 2.5rem;
-            }
-    
-            .checkout_coupon_btn {
-                @include borderButton;
-                font-family: 'Times New Roman', Times, serif;
-                margin-top: 0;
             }
         }
 
@@ -95,7 +70,7 @@
     .woocommerce-billing-fields__field-wrapper,
     .woocommerce-shipping-fields__field-wrapper,
     .woocommerce-additional-fields__field-wrapper,
-    .woocommerce-form-coupon {
+    .nbdc-checkout__field-wrapper {
 
         display: flex;
         flex-wrap: wrap;
@@ -183,6 +158,10 @@
             }
         }
     }
+    .nbdc-checkout__field-wrapper {
+        justify-content: flex-start;
+        gap: 1.5rem;
+    }
 
     .woocommerce-form__label-for-checkbox{
         position: relative;
@@ -212,26 +191,36 @@
     }
 
     .select2-selection {
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, .25);
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, .25);
     }
 
     .select2-dropdown {
-    border-top: 1px solid $mediumGrey;
+        border-top: 1px solid $mediumGrey;
     }
 
     .select2-selection__rendered {
-    color: $mediumGrey;
+        color: $mediumGrey;
     }
 
     .select2-search__field {
-    background-image: url(icons/search.svg);
-    background-repeat: no-repeat;
-    background-size: 20px;
-    background-position: left;
-    padding-left: 25px;
+        background-image: url(icons/search.svg);
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: left;
+        padding-left: 25px;
     }
+}
+
+.woocommerce-error {
+    color: red;
+    @include font-primary($base, 400);
+}
+
+.woocommerce-message {
+    color: green;
+    @include font-primary($base, 400);
 }
 
 .nbdc-checkout {
@@ -256,6 +245,15 @@
 
     &__price {
         margin-top: 1rem;
+
+        .cart-subtotal, .cart-discount {
+            margin-bottom: .75rem;
+        }
+
+        .cart-discount {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     &__shipping {
@@ -264,11 +262,16 @@
         margin-bottom: .75rem;
     }
 
-    // &__payment {
-    //     ul.payment_methods li[class*=payment_method] li {
-    //         margin-top: 20px;
-    //     }
-    // }
+    &__coupon {
+        margin-bottom: 1.5rem;
+
+        &-btn {
+            @include button;
+            max-width: max-content;
+            height: max-content;
+            margin-top: .5rem;
+        }
+    }
 }
 
 label.p-FieldLabel.Label.Label--empty {

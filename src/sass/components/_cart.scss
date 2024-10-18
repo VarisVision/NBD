@@ -3,7 +3,7 @@
 
     .slide-out-panel-container {
         .slide-out-content {
-            height: 100%;
+            height: 100vh;
             padding: .75rem;
             .close-slide-out-panel {
                 display: block;
@@ -168,6 +168,16 @@
     }
 }
 
-#nbd-side-cart__drawer.slide-out-panel-container {
-    bottom: 0;
+#nbd-side-cart__drawer {
+    position: absolute;
+    right: -400px !important;
+
+    &.open {
+        position: fixed;
+        right: 0 !important;
+    }
+
+    .slide-out-panel-container {
+        bottom: 0;
+    }
 }

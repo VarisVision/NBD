@@ -1,39 +1,34 @@
 jQuery(document).ready(function($){
-    // $('.checkout_coupon_btn').on('click', function(e){
-    //     e.preventDefault();
 
-    //     let couponCode = $('#coupon_code').val();
+    $('.nbdc-checkout__coupon-btn').on('click', function (e) {
+        e.preventDefault();
+        $('#coupon_code').val($(".nbdc-checkout__coupon-input").val());
+        $(".woocommerce-form-coupon").trigger('submit');
+    });
 
-    //     $.ajax({
-    //         url: nbdAjaxObject.ajaxUrl,
-    //         type: 'POST',
-    //         dataType: 'json',
-    //         data: {
-    //             action: 'ajax_apply_coupon',
-    //             coupon_code: couponCode
-    //         },
-    //         success: function(response) {
-    //             if (response.success) {
-    //                 alert(response.data);
-    //             } else {
-    //                 alert('Coupon application failed: ' + response.data);
-    //             }
-    //         },
-    //         error: function(jqXHR, textStatus, errorThrown) {
-    //             alert('Error: ' + errorThrown);
-    //         }
-    //     });
-    // });
+    function moveWooCommerceMessages() {
+        let couponField = $('.nbdc-checkout__coupon');
+        let messages = $('.woocommerce-error, .woocommerce-message').not('.wc-ppcp-notice__info .woocommerce-error');
+        
+        if (couponField.length && messages.length) {
+            couponField.find('.custom-messages').html(messages);
+        }
+    }
+    moveWooCommerceMessages();
+
+    $(document).ajaxComplete(function() {
+        moveWooCommerceMessages();
+    });
 
     $('form.checkout input').attr('autocomplete', 'off');
 
-    $(".woocommerce-billing-fields__field-wrapper p input").each(function(i, e) {
+    $(".woocommerce-billing-fields__field-wrapper p input, .woocommerce-shipping-fields__field-wrapper p input").each(function(i, e) {
         if(!$(e).val('')) {
             $(this).parent().siblings('label').addClass('has-value');
         }
     })
 
-    $(".nbdc.woocommerce-checkout input, .nbdc.woocommerce-checkout textarea").focus(function() {
+    $(".nbdc.woocommerce-checkout input").focus(function() {
         $(this).parent().siblings('label').addClass('has-value');
         if($(this).is('#coupon_code')){
             $(this).siblings('label').addClass('has-value');

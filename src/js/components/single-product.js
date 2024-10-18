@@ -12,6 +12,13 @@ jQuery(document).ready(function($){
             prevArrow: $(this).parent().find(".nbdc-carousel__arrow-left"),
             nextArrow: $(this).parent().find(".nbdc-carousel__arrow-right")
         });
+        $('.nbdc-single-product__slide img').each(function() {
+            $(this).ezPlus({
+                zoomType: 'lens',
+                lensShape: 'round',
+                lensSize: 100
+            });
+        });
     });
 
     $(".nbdc-single-product__variations ul li").click(function() {

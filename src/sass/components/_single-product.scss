@@ -18,12 +18,31 @@
         position: relative;
     }
 
+    .slick-slider {
+        touch-action: auto;
+    }
+
+    .slick-list {
+        max-height: 700px;
+    }
+
+    .slick-dots {
+        margin-top: 2.5rem
+    }
+
     &__slide {
+        max-height: 700px;
+
         img {
             display: block;
             margin: 0 auto;
+            height: 100%;
+            object-fit: cover;
             max-width: 100%;
-            height: auto;
+
+            @include desktop-large {
+                max-width: 700px;
+            }
         }
     }
 
