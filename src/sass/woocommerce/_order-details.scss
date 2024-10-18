@@ -14,4 +14,10 @@
     .woocommerce-column__title {
         margin: 1rem 0;
     }
+
+    .nbdc-order {
+        &__product {
+            display: flex;
+        }
+    }
 }
