@@ -22,7 +22,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-	<ul class="nbd-cart shop_table shop_table_responsive cart woocommerce-cart-form__contents">
+	<ul class="nbdc-cart shop_table shop_table_responsive cart woocommerce-cart-form__contents">
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
 		<?php
@@ -48,19 +48,28 @@ do_action( 'woocommerce_before_cart' ); ?>
 			$thumbnail = '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $_product->get_name() ) . '" loading="lazy" />';
 
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
+				if ( $_product->is_type( 'variation' ) ) {
+					$parent_id = $_product->get_parent_id();
+					$product_permalink = get_permalink( $parent_id );
+				} else {
+					$product_permalink = $_product->get_permalink();
+				}
+				
+				$product_permalink = wp_parse_url( $product_permalink, PHP_URL_PATH );
+				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $product_permalink, $cart_item, $cart_item_key );
+
 				?>
-				<li class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+				<li class="nbdc-cart__item woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
 					<?php if ( empty( $product_permalink ) ) : ?>
 						<?php echo $thumbnail . wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<?php else : ?>
-						<a class="nbd-cart__img" href="<?php echo esc_url( $product_permalink ); ?>">
+						<a class="nbdc-cart__img" href="<?php echo esc_url( $product_permalink ); ?>">
 							<?php echo $thumbnail // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</a>
 
-						<div class="nbd-cart__product-details">
-							<div class="nbd-cart__product-details--header">
+						<div class="nbdc-cart__product-details">
+							<div class="nbdc-cart__product-details--header">
 								<div class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
 									<a href="<?php echo esc_url( $product_permalink ); ?>">
 										<?php echo wp_kses_post( $product_name ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
@@ -98,10 +107,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 									);
 								?>
 							</div>
-							<p class="nbd-cart__product-details--size">
+							<p class="nbdc-cart__product-details--size">
 								<?php echo "Size: " . $variation; ?>
 							</p>
-							<div class="nbd-cart__product-details--footer">
+							<div class="nbdc-cart__product-details--footer">
 								<div class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
 									<?php
 									if ( $_product->is_sold_individually() ) {
@@ -147,10 +156,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<div class="actions">
 
 			<?php if ( wc_coupons_enabled() ) { ?>
-				<div class="nbd-cart__coupon coupon">
+				<div class="nbdc-cart__coupon coupon">
 					<label for="coupon_code" class="screen-reader-text"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label>
 					<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
-					<div class="nbd-cart__coupon--btn">
+					<div class="nbdc-cart__coupon--btn">
 						<button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>">
 							<?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?>
 						</button>
@@ -159,7 +168,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				</div>
 			<?php } ?>
 
-			<button type="submit" class="nbd-cart__update-btn button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>">
+			<button type="submit" class="nbdc-cart__update-btn button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>">
 				<?php esc_html_e( 'Update cart', 'woocommerce' ); ?>
 			</button>
 
@@ -174,7 +183,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 
-<div class="nbd-cart__footer cart-collaterals">
+<div class="nbdc-cart__footer cart-collaterals">
 	<?php
 		/**
 		 * Cart collaterals hook.

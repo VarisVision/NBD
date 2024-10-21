@@ -48,6 +48,14 @@
         display: flex;
         justify-content: center;
         gap: 1rem;
+
+        @include tablet {
+            gap: 2.5rem;
+        }
+
+        @include desktop-large {
+            gap: 6rem;
+        }
     }
 
     .nbdc-order {

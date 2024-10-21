@@ -153,7 +153,7 @@ jQuery(document).ready(function($){
         });
     }
 
-    $('.nbd-mini-cart .quantity').each(function(i, e){
+    $('.nbdc-mini-cart .quantity').each(function(i, e){
         if($(e).find('.quantity-minus').hasClass('disabled') && $(e).find('.quantity-input').text() > 1){
             $(this).find('.quantity-minus').removeClass('disabled');
         }

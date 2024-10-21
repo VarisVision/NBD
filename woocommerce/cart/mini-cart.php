@@ -23,7 +23,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 
-	<ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
+	<ul class="nbdc-mini-cart woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
 		<?php
 		do_action( 'woocommerce_before_mini_cart_contents' );
 
@@ -46,19 +46,30 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 			$product_parts = explode(' - ', $product_name_and_size);
 			$product_name = trim($product_parts[0]);
 			$variation = isset($product_parts[1]) ? trim($product_parts[1]) : '';
+			$variation_id = $_product->is_type('variation') ? $_product->get_id() : '';
 
 			$product_price     = $_product->get_price();
-			$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
+			if ( $_product->is_type( 'variation' ) ) {
+				$parent_id = $_product->get_parent_id();
+				$product_permalink = get_permalink( $parent_id );
+			} else {
+				$product_permalink = $_product->get_permalink();
+			}
+			
+			$product_permalink = wp_parse_url( $product_permalink, PHP_URL_PATH );
+			
+			$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $product_permalink, $cart_item, $cart_item_key );
+
 			?>
-			<li class="woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
+			<li class="nbdc-mini-cart__item woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
 				<?php if ( empty( $product_permalink ) ) : ?>
 					<?php echo $thumbnail . wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				<?php else : ?>
-					<a class="nbd-mini-cart__img" href="<?php echo esc_url( $product_permalink ); ?>">
+					<a class="nbdc-mini-cart__img" href="<?php echo esc_url( $product_permalink ); ?>">
 						<?php echo $thumbnail // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</a>
-					<div class="nbd-mini-cart__product-details">
-						<div class="nbd-mini-cart__product-details--header">
+					<div class="nbdc-mini-cart__product-details">
+						<div class="nbdc-mini-cart__product-details--header">
 							<a href="<?php echo esc_url( $product_permalink ); ?>">
 								<?php echo wp_kses_post( $product_name ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							</a>
@@ -83,11 +94,11 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 							?>
 						</div>
 
-						<p class="nbd-mini-cart__product-details--size">
+						<p class="nbdc-mini-cart__product-details--size">
 							<?php echo "Size: " . $variation; ?>
 						</p>
 
-						<div class="nbd-mini-cart__product-details--footer">
+						<div class="nbdc-mini-cart__product-details--footer">
 							<?php
 								echo apply_filters(
 									'woocommerce_widget_cart_item_quantity',
@@ -122,7 +133,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 	do_action( 'woocommerce_mini_cart_contents' );
 	?>
 	</ul>
-	<div class="nbd-mini-cart__footer">
+	<div class="nbdc-mini-cart__footer">
 		<p class="woocommerce-mini-cart__total total">
 			<?php
 			/**

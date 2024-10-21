@@ -224,8 +224,11 @@ function na_parse_request( $query ) {
 }
 add_action( 'pre_get_posts', 'na_parse_request' );
 
-
-function mm_email_header( $email_heading, $email ) { 
-	echo "<p> Thanks for shopping with us. We appreciate you and your business!</p>";
+function add_image_to_wc_emails( $args ) {
+    $args['show_image'] = true;
+    $args['image_size'] = array( 100, 50 );
+    $args['show_variation'] = false;
+    return $args;
 }
-add_action( 'woocommerce_email_header', 'mm_email_header', 10, 2 );
+
+add_filter( 'woocommerce_email_order_items_args', 'add_image_to_wc_emails' );

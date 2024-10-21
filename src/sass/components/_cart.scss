@@ -53,8 +53,8 @@
     }
 }
 
-.nbd-mini-cart, .nbd-cart {
-    .mini_cart_item, .cart_item {
+.nbdc-mini-cart, .nbdc-cart {
+    &__item {
         display: flex;
         gap: .75rem;
         padding: 0.75rem 0.75rem 0.75rem 0;
@@ -64,6 +64,7 @@
             border-bottom: unset;
         }
     }
+
     &__product-details {
         display: flex;
         flex-direction: column;
@@ -127,7 +128,7 @@
     }
 }
 
-.nbd-cart {
+.nbdc-cart {
     &__product-details {
         &--footer {
             .quantity {
@@ -142,7 +143,7 @@
         display: flex;
         justify-content: space-between;
         border-top: 1px solid #ddd;
-        padding: .75rem 0;
+        padding: 1.5rem 0;
 
         &--btn {
             display: flex;
@@ -160,11 +161,22 @@
     &__update-btn {
         @include button;
         max-width: fit-content;
-        margin: 0 0 .75rem;
+        margin: 0 0 1.5rem;
     }
 
     &__footer {
-        @include font-primary($base, 400);
+        @include font-secondary($base, 400);
+        .shop_table {
+            tr {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: .5rem;
+            }
+            .shipping td {
+                text-align: right;
+                margin-bottom: 1rem;
+            }
+        }
     }
 }
 
